@@ -37,6 +37,7 @@ color = '#ffa198'
 
 
 [window]
+dimensions = { columns = 130, lines = 45 }
 padding = { x = 12, y = 12 }
 dynamic_padding = true
 decorations = "Buttonless"
