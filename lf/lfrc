@@ -1,0 +1,7 @@
+set info size
+set dircounts
+set hidden
+
+map <f-4> push $nano<space>
+map <f-7> push :mkdir<space>
+map p : paste; clear
