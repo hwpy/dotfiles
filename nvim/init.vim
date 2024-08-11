@@ -1,0 +1,39 @@
+syntax on
+set number
+set mouse=a  " enable mouse
+set encoding=utf-8 " кодировка
+set noswapfile " указание на то, чтобы не генерить swapfile
+set scrolloff=7
+
+set tabstop=4 " 1 tab = 4 space
+set autoindent " копмирование текущих отступов при переходе на новую строку
+set fileformat=unix
+filetype indent on      " load filetype-specific indent files
+
+
+call plug#begin()
+
+" Тема для NVIM
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+
+" файловый мененджер.
+Plug 'preservim/nerdtree'
+
+" плагин для отображения статуса работы
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'tamton-aquib/staline.nvim'
+"Plug 'https://github.com/adelarsq/neoline.vim'
+
+" поддержка языков
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
+call plug#end()
+
+let g:pymode_python = 'python3'
+let g:material_theme_style = 'ocean'
+colorscheme material
+
+" Start NERDTree and leave the cursor in it.
+autocmd VimEnter * NERDTree
