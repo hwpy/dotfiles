@@ -22,18 +22,24 @@ Plug 'preservim/nerdtree'
 " плагин для отображения статуса работы
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 "Plug 'tamton-aquib/staline.nvim'
 "Plug 'https://github.com/adelarsq/neoline.vim'
 
 " поддержка языков
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 call plug#end()
 
-let g:pymode_python = 'python3'
-let g:material_theme_style = 'ocean'
+" let g:pymode_python = 'python'
+" let g:material_theme_style = 'ocean'
 colorscheme material
 
 " Start NERDTree and leave the cursor in it.
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 autocmd VimEnter * NERDTree
