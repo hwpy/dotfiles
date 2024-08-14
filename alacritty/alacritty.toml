@@ -35,6 +35,8 @@ color = '#d18616'
 index = 17
 color = '#ffa198'
 
+[shell]
+program = "/opt/local/bin/tmux"
 
 [window]
 dimensions = { columns = 120, lines = 40 }
