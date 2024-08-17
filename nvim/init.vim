@@ -14,7 +14,8 @@ filetype indent on      " load filetype-specific indent files
 call plug#begin()
 
 " Тема для NVIM
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'projekt0n/github-nvim-theme'
 
 " файловый мененджер.
 Plug 'preservim/nerdtree'
@@ -34,12 +35,13 @@ call plug#end()
 
 " let g:pymode_python = 'python'
 " let g:material_theme_style = 'ocean'
-colorscheme material
+colorscheme github_dark_default
 
 " Start NERDTree and leave the cursor in it.
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
 
 autocmd VimEnter * NERDTree
