@@ -21,14 +21,25 @@ filetype indent on      " load filetype-specific indent files
 call plug#begin()
 
 " LSP
+" client for LSP.
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+" completion source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip'
+" snippet engine
 Plug 'L3MON4D3/LuaSnip'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'lspcontainers/lspcontainers.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
+" additional snippet support 
+Plug 'rafamadriz/friendly-snippets'
+" path completion
+Plug 'hrsh7th/cmp-path'
+" command line completion
+Plug 'hrsh7th/cmp-cmdline'
+" GIT
+" Plug 'kdheepak/lazygit.nvim'
 
 " Тема для NVIM
 " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
@@ -55,7 +66,6 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 call plug#end()
 
 " let g:pymode_python = 'python'
-" let g:material_theme_style = 'ocean'
 colorscheme github_dark_default
 
 " Start NERDTree and leave the cursor in it.
