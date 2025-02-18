@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/alacritty-theme/themes/github_dark_tritanopia.toml"
+    "~/.config/alacritty/alacritty-theme/themes/github_dark_tritanopia.toml"
 ]
 
 [window]
