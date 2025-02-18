@@ -164,3 +164,4 @@ cython_debug/
 .DS_Store
 # COC extentions
 /coc/
+/alacritty/themes/alacritty-theme/images/

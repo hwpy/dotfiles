@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "tokyonight",
+	theme = "tokyodark",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -14,6 +14,7 @@ M.base46 = {
 	-- },
 }
 
+require("custom.chadrc")
 -- M.nvdash = { load_on_startup = true }
 -- M.ui = {
 --       tabufline = {

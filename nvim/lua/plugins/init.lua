@@ -13,6 +13,8 @@ return {
     end,
   },
 
+  require("custom.plugins")
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
