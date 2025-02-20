@@ -36,12 +36,15 @@ vim.schedule(function()
   require "mappings"
 end)
 
+-- автокомплит cmp
+require("custom.configs.cmp")
+
 -- автообновление nvim-tree
 require("custom.configs.nvim-tree")
 
 -- lua lsp указание пути
 require 'lspconfig'.lua_ls.setup {
-  cmd = {"/opt/local/bin/lua-language-server"};
+  cmd = {"lua-language-server"};
 }
 
 -- Настройка ruff для работы с pyright
@@ -62,3 +65,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 
 })
+
+require("custom.overrides")

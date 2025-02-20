@@ -165,3 +165,6 @@ cython_debug/
 # COC extentions
 /coc/
 /alacritty/themes/alacritty-theme/images/
+/fish/
+/ruff/
+QtProject.conf
