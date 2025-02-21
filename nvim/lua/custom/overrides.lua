@@ -41,6 +41,8 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Команда для запуска текущего файла
 vim.api.nvim_create_user_command("RunPython", function()
     local python_interpreter = vim.b.python_interpreter or get_venv_python()
+    -- Загрузка переменных из .env
+    -- require("dotenv").load()
     local file_path = vim.fn.expand("%:p")
     vim.cmd("! " .. python_interpreter .. " " .. file_path)
 end, {})
