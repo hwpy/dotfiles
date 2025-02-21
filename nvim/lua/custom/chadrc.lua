@@ -52,5 +52,21 @@ M.mappings = {
   },
 }
 
+M.git = {
+  n = {
+    ["<leader>gt"] = {
+      function()
+        -- Открываем список изменённых файлов с помощью Telescope
+        require("telescope.builtin").git_status({
+          show_untracked = true,
+          show_staged = true,
+          show_unstaged = true,
+        })
+      end,
+      "Просмотр изменённых файлов в ветке",
+    },
+  },
+}
+
 return M
 
