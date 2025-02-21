@@ -38,14 +38,29 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Функция для загрузки переменных из .env
+local function load_dotenv()
+    local env_file = vim.fn.getcwd() .. "/.env"
+    if vim.fn.filereadable(env_file) == 1 then
+        for line in io.lines(env_file) do
+            local key, value = line:match("([^=]+)=(.+)")
+            if key and value then
+                vim.env[key] = value
+            end
+        end
+    end
+end
+
 -- Команда для запуска текущего файла
 vim.api.nvim_create_user_command("RunPython", function()
+    -- Загружаем переменные из .env
+    load_dotenv()
     local python_interpreter = vim.b.python_interpreter or get_venv_python()
-    -- Загрузка переменных из .env
-    -- require("dotenv").load()
     local file_path = vim.fn.expand("%:p")
     vim.cmd("! " .. python_interpreter .. " " .. file_path)
 end, {})
 
 -- Горячая клавиша
 vim.keymap.set("n", "<leader>rp", ":RunPython<CR>", { silent = true })
+vim.opt.number = true          -- Включает абсолютную нумерацию строк
+vim.opt.relativenumber = true  -- Включает относительную нумерацию строк

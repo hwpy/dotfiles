@@ -17,10 +17,4 @@ return {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
   },
-  -- {
-  --   "ellisonleao/nvim-dotenv",
-  --   config = function()
-  --     require("dotenv").setup()
-  --   end,
-  -- },
 }
