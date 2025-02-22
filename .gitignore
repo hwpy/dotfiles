@@ -167,4 +167,5 @@ cython_debug/
 /alacritty/themes/alacritty-theme/images/
 /fish/
 /ruff/
+/nvim/lazy-lock.json
 QtProject.conf
