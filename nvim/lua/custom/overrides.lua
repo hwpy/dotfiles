@@ -76,3 +76,4 @@ end, {})
 vim.keymap.set("n", "<leader>rp", ":RunPython<CR>", { silent = true })
 vim.opt.number = true          -- Включает абсолютную нумерацию строк
 vim.opt.relativenumber = true  -- Включает относительную нумерацию строк
+vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope lsp_references<CR>', { noremap = true }) -- Переход к референсу
