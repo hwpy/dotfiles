@@ -39,37 +39,37 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Функция для получения текущего каталога из nvim-tree
-local function get_nvim_tree_dir()
-  local nvim_tree = require("nvim-tree.api")
-  local node = nvim_tree.tree.get_node_under_cursor()
-  if node and node.absolute_path then
-    return vim.fn.fnamemodify(node.absolute_path, ":h")  -- Возвращаем директорию файла
-  else
-    return vim.fn.getcwd()  -- Если nvim-tree не активен, возвращаем текущий рабочий каталог
-  end
-end
+-- local function get_nvim_tree_dir()
+--   local nvim_tree = require("nvim-tree.api")
+--   local node = nvim_tree.tree.get_node_under_cursor()
+--   if node and node.absolute_path then
+--     return vim.fn.fnamemodify(node.absolute_path, ":h")  -- Возвращаем директорию файла
+--   else
+--     return vim.fn.getcwd()  -- Если nvim-tree не активен, возвращаем текущий рабочий каталог
+--   end
+-- end
 
 -- Функция для загрузки переменных из .env
-local function load_dotenv()
-    local env_file = vim.fn.getcwd() .. "/.env"
-    if vim.fn.filereadable(env_file) == 1 then
-        for line in io.lines(env_file) do
-            local key, value = line:match("([^=]+)=(.+)")
-            if key and value then
-                vim.env[key] = value
-            end
-        end
-    end
-end
+-- local function load_dotenv()
+--     local env_file = vim.fn.getcwd() .. "/.env"
+--     if vim.fn.filereadable(env_file) == 1 then
+--         for line in io.lines(env_file) do
+--             local key, value = line:match("([^=]+)=(.+)")
+--             if key and value then
+--                 vim.env[key] = value
+--             end
+--         end
+--     end
+-- end
 
 -- Команда для запуска текущего файла
 vim.api.nvim_create_user_command("RunPython", function()
     -- Загружаем переменные из .env
-    load_dotenv()
-    local current_dir = get_nvim_tree_dir()
+    -- load_dotenv()
+    -- local current_dir = get_nvim_tree_dir()
     local python_interpreter = vim.b.python_interpreter or get_venv_python()
     local file_path = vim.fn.expand("%:p")
-    vim.cmd("! " .. "terminal cd " .. current_dir .. python_interpreter .. " " .. file_path)
+    vim.cmd("! " .. python_interpreter .. " " .. file_path)
 end, {})
 
 -- Горячая клавиша
@@ -77,3 +77,12 @@ vim.keymap.set("n", "<leader>rp", ":RunPython<CR>", { silent = true })
 vim.opt.number = true          -- Включает абсолютную нумерацию строк
 vim.opt.relativenumber = true  -- Включает относительную нумерацию строк
 vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope lsp_references<CR>', { noremap = true }) -- Переход к референсу
+vim.api.nvim_set_keymap('n', '<leader>f', ':NvimTreeFindFile<CR>', { noremap = true }) -- Переход к открытому файлу в nvim-tree
+
+local function change_root_to_file_dir()
+  local file_path = vim.fn.expand('%:p:h')
+  vim.cmd('cd ' .. file_path)
+  -- Если вы используете плагин для дерева, например nvim-tree,
+  -- вам может потребоваться обновить его после смены директории.
+end
+vim.keymap.set('n', '<leader>r', change_root_to_file_dir, { desc = 'Change root to file directory' })
