@@ -38,6 +38,17 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Функция для получения текущего каталога из nvim-tree
+local function get_nvim_tree_dir()
+  local nvim_tree = require("nvim-tree.api")
+  local node = nvim_tree.tree.get_node_under_cursor()
+  if node and node.absolute_path then
+    return vim.fn.fnamemodify(node.absolute_path, ":h")  -- Возвращаем директорию файла
+  else
+    return vim.fn.getcwd()  -- Если nvim-tree не активен, возвращаем текущий рабочий каталог
+  end
+end
+
 -- Функция для загрузки переменных из .env
 local function load_dotenv()
     local env_file = vim.fn.getcwd() .. "/.env"
@@ -55,9 +66,10 @@ end
 vim.api.nvim_create_user_command("RunPython", function()
     -- Загружаем переменные из .env
     load_dotenv()
+    local current_dir = get_nvim_tree_dir()
     local python_interpreter = vim.b.python_interpreter or get_venv_python()
     local file_path = vim.fn.expand("%:p")
-    vim.cmd("! " .. python_interpreter .. " " .. file_path)
+    vim.cmd("! " .. "terminal cd " .. current_dir .. python_interpreter .. " " .. file_path)
 end, {})
 
 -- Горячая клавиша
