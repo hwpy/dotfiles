@@ -43,15 +43,11 @@ M.mappings = {
         "Открыть вертикальный терминал в проекте",
         { nowait = true }
       },
-      ["<leader>tf"] = {
-        function() M.term.new_term("float") end,
-        "Открыть плавающий терминал в проекте",
-        { nowait = true }
-      },
     },
   },
 }
 
+-- Настройки Git
 M.git = {
   n = {
     ["<leader>gt"] = {
