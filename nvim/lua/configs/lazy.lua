@@ -33,7 +33,7 @@ return {
         "vimballPlugin",
         "zip",
         "zipPlugin",
-        "tutor",
+        -- "tutor",
         "rplugin",
         "syntax",
         "synmenu",
