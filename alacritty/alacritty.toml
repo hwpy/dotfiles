@@ -6,11 +6,15 @@ import = [
 [window]
 dimensions = { columns = 135, lines = 40 }
 decorations = "Full"
+startup_mode = "Maximized"
 # padding.x = 15
 # padding.y = 15
 # opacity = 0.7
 # blur = true
 option_as_alt = "Both"
+
+[selection]
+save_to_clipboard = true
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
