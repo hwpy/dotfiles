@@ -20,7 +20,6 @@ M.term = {
     -- Автоматическое определение корня проекта
     local root_dir = require("nvchad.term.utils").get_project_root()
     vim.cmd("cd " .. vim.fn.fnameescape(root_dir))
-    
     -- Создание терминала с учетом типа
     require("nvchad.term").new(
       term_type == "float" and {}
@@ -29,7 +28,7 @@ M.term = {
   end
 }
 
--- Оптимизированные маппинги
+-- Маппинги терминала
 M.mappings = {
   custom = {
     n = {
@@ -47,7 +46,7 @@ M.mappings = {
   },
 }
 
--- Настройки Git
+-- Маппинги Git
 M.git = {
   n = {
     ["<leader>gt"] = {
