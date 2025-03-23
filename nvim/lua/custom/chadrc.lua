@@ -5,7 +5,7 @@ local M = {}
 M.mason = {
   pkgs = {
     "pyright",
-    "ruff",
+    -- "ruff",
   },
 }
 

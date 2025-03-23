@@ -1,6 +1,6 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
-require("custom.configs.ruff")
+-- require("custom.configs.ruff")
 require("custom.configs.pyright")
 require("custom.configs.lspconfig")
 
