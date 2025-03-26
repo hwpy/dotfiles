@@ -6,8 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "tokyodark",
-  theme_toggle = { "tokyodark", "oceanic-light" },
+	theme = "chadracula-evondev",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -15,7 +14,6 @@ M.base46 = {
 	-- },
 }
 
-require("custom.chadrc")
 -- M.nvdash = { load_on_startup = true }
 -- M.ui = {
 --       tabufline = {

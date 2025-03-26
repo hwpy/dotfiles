@@ -1,3 +1,31 @@
+# запуск ssh agent в ubuntu
+eval "$(ssh-agent -s)"
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH=$PATH:/snap/bin
+export LUA_LS="/home/alexey/.local/share/nvim/mason/bin/lua-language-server"
+
+# aliases
+alias c="clear"
+alias h="history"
+alias l="ls -lah"
+alias q="exit"
+alias n="nvim"
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=500
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/alexey/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -8,7 +36,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="gozilla"
+ZSH_THEME="refined"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,13 +98,7 @@ ZSH_THEME="gozilla"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git
-	tmux
-	sudo
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -108,8 +130,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias n="nvim"
-alias c="clear"
-if [ -x "$(command -v eza)" ]; then
-    alias l="eza --long --all --group"
-fi
+
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
+
+
+
+. "$HOME/.local/bin/env"
