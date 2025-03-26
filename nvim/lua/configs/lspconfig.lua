@@ -31,7 +31,7 @@ lspconfig.pyright.setup {
   settings = {
     python = {
       analysis = {
-        typeCheckingMode = "off",
+        typeCheckingMode = "basic",
         autoSearchPaths = true,
         useLibraryCodeForTypes = true
       }
@@ -39,17 +39,21 @@ lspconfig.pyright.setup {
   }
 }
 
--- Ruff-lsp config
+-- Ruff config
 lspconfig.ruff.setup {
   on_attach = function(client, bufnr)
     -- Disable hover in favor of Pyright
     client.server_capabilities.hoverProvider = false
-    on_attach(client, bufnr)
+    nvlsp.on_attach(client, bufnr)
   end,
   capabilities = capabilities,
   init_options = {
     settings = {
       args = {"--ignore=E501"},
+      organizeImports = {
+        enabled = true,
+        groupBy = "type"
+      }
     }
   }
 }
