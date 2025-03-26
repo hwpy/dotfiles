@@ -111,6 +111,21 @@ return {
       integrations = { diffview = {lazy_load = false} }
     }
   },
+  
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      view = {
+        width = 30,
+      },
+      filters = {
+        dotfiles = false,  -- Показывать скрытые файлы (начинающиеся с .)
+      },
+      git = {
+        ignore = false,     -- Показывать файлы, игнорируемые git
+      },
+    },
+  },
 
   require('gitsigns').setup {
     current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
@@ -125,16 +140,4 @@ return {
     current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
   },
 
-  require("nvim-tree").setup({
-    sync_root_with_cwd = true,
-    filters = {
-      dotfiles = false,  -- Показывать dotfiles (файлы, начинающиеся с точки)
-      custom = {},       -- Пользовательские фильтры (если есть)
-      exclude = {},      -- Исключить определенные файлы или директории
-    },
-    git = {
-     enable = true,     -- Включить интеграцию с Git
-     ignore = false,    -- Не игнорировать файлы из .gitignore
-    },
-  })
 }
