@@ -54,25 +54,31 @@ return {
     end,
   },
   -- 1. Автозагрузка .env через direnv (универсально для всех языков)
-  {
-    "direnv/direnv.vim",
-    config = function()
-      vim.g.direnv_auto = 1       -- Автозагрузка при входе в директорию
-      vim.g.direnv_silent = 1     -- Без уведомлений
-    end
-  },
+  -- {
+  --   "direnv/direnv.vim",
+  --   config = function()
+  --     vim.g.direnv_auto = 1       -- Автозагрузка при входе в директорию
+  --     vim.g.direnv_silent = 1     -- Без уведомлений
+  --   end
+  -- },
 
   -- 2. Запуск Python-кода с поддержкой .env
   {
     "CRAG666/code_runner.nvim",
     opts = {
       filetype = {
-        python = "env $(grep -v '^#' .env | xargs) python $file"
+        python = function()
+          local env = vim.fn.findfile(".env", ".;")
+          return string.format(
+            env ~= "" and 'bash -c "set -a; source %s; set +a; python -u %s"' or 'python -u %s',
+            vim.fn.shellescape(vim.fn.fnamemodify(env, ":p")),
+            vim.fn.shellescape(vim.fn.expand("%:p"))
+          )
+        end
       },
+      term = { position = "bot", size = 10 }
     },
-    keys = {
-      { "<leader>rr", "<cmd>RunCode<CR>", desc = "Run Python (with .env)" }
-    }
+    keys = { { "<leader>rr", "<cmd>RunCode<CR>", desc = "Run Python (.env)" } }
   },
 
   -- 3. Дополнительно: визуализация .env-переменных
