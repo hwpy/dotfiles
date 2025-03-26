@@ -21,4 +21,13 @@ M.base46 = {
 --      }
 --}
 
+M.ui = {
+  statusline = {
+    theme = "minimal",  -- Доступные темы: "default", "vscode_colored", "minimal"
+    separator_style = "block",  -- Стили разделителей: "round", "block", "arrow", "slant"
+    -- Опционально: кастомизация модулей
+    overriden_modules = nil     -- Можно добавить свою логику при необходимости
+  }
+}
+
 return M
