@@ -61,25 +61,56 @@ return {
   --     vim.g.direnv_silent = 1     -- Без уведомлений
   --   end
   -- },
-
-  -- 2. Запуск Python-кода с поддержкой .env
+  -- 2.1 Запуск Python-кода с поддержкий .env (через direnv)
   {
-    "CRAG666/code_runner.nvim",
-    opts = {
-      filetype = {
-        python = function()
-          local env = vim.fn.findfile(".env", ".;")
+  "CRAG666/code_runner.nvim",
+  opts = {
+    filetype = {
+      python = function()
+        local envrc = vim.fn.findfile(".envrc", ".;")
+        local python_file = vim.fn.expand("%:p")
+        
+        if envrc ~= "" then
+          -- 1. Разрешаем .envrc если нужно
+          vim.cmd('silent !cd ' .. vim.fn.shellescape(vim.fn.fnamemodify(envrc, ":h")) .. ' && direnv allow')
+          -- 2. Запускаем через direnv
           return string.format(
-            env ~= "" and 'bash -c "set -a; source %s; set +a; python -u %s"' or 'python -u %s',
-            vim.fn.shellescape(vim.fn.fnamemodify(env, ":p")),
-            vim.fn.shellescape(vim.fn.expand("%:p"))
+            'bash -c "cd %s && direnv exec . python -u %s"',
+            vim.fn.shellescape(vim.fn.fnamemodify(envrc, ":h")),
+            vim.fn.shellescape(python_file)
           )
         end
-      },
-      term = { position = "bot", size = 10 }
+        return 'python -u ' .. vim.fn.shellescape(python_file)
+      end
     },
-    keys = { { "<leader>rr", "<cmd>RunCode<CR>", desc = "Run Python (.env)" } }
+    term = {
+      position = "bot",
+      size = 10
+    }
   },
+  keys = {
+    { "<leader>rr", "<cmd>RunCode<CR>", desc = "Run Python (.envrc)" }
+  }
+},
+
+  -- 2.2 Запуск Python-кода с поддержкой .env (без direnv)
+  -- {
+  --   "CRAG666/code_runner.nvim",
+  --   opts = {
+  --     filetype = {
+  --       python = function()
+  --         local env = vim.fn.findfile(".env", ".;")
+  --         return string.format(
+  --           env ~= "" and 'bash -c "set -a; source %s; set +a; python -u %s"' or 'python -u %s',
+  --           vim.fn.shellescape(vim.fn.fnamemodify(env, ":p")),
+  --           vim.fn.shellescape(vim.fn.expand("%:p"))
+  --         )
+  --       end
+  --     },
+  --     term = { position = "bot", size = 10 }
+  --   },
+  --   keys = { { "<leader>rr", "<cmd>RunCode<CR>", desc = "Run Python (.env)" } }
+  -- },
 
   -- 3. Дополнительно: визуализация .env-переменных
   {
