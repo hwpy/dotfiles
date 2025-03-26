@@ -127,11 +127,45 @@ return {
     },
   },
 
+  -- для подсветки python кода treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = { "python" },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      -- Дополнительные фичи для Python:
+      indent = { enable = true },  -- автоматические отступы
+      context_commentstring = { enable = true },  -- умные комментарии
+    },
+  },
+
+  -- для скобок
+  {
+    "HiPhish/rainbow-delimiters.nvim",  -- разноцветные скобки
+    event = "BufRead",
+    config = function()
+      local rainbow = require("rainbow-delimiters")
+      vim.g.rainbow_delimiters = {
+        strategy = {
+          [""] = rainbow.strategy["global"],
+          python = rainbow.strategy["local"],
+        },
+        query = {
+          [""] = "rainbow-delimiters",
+          python = "rainbow-parens",  -- специально для Python
+        },
+      }
+    end,
+  },
+
   require('gitsigns').setup {
-    current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+    current_line_blame = true,
     current_line_blame_opts = {
       virt_text = true,
-      virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+      virt_text_pos = 'eol',
       delay = 1000,
       ignore_whitespace = false,
       virt_text_priority = 100,
