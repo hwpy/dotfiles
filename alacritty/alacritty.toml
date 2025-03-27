@@ -17,11 +17,14 @@ option_as_alt = "Both"
 save_to_clipboard = true
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+normal = { family = "JetBrainsMono Nerd Font", style = "Light" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 size = 14
+[font.offset]
+x = 0
+y = -1
 
 [keyboard]
 bindings = [
