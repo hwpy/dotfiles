@@ -42,17 +42,31 @@ lspconfig.pyright.setup {
 -- Ruff config
 lspconfig.ruff.setup {
   on_attach = function(client, bufnr)
-    -- Disable hover in favor of Pyright
     client.server_capabilities.hoverProvider = false
     nvlsp.on_attach(client, bufnr)
   end,
   capabilities = capabilities,
+  root_dir = lspconfig.util.root_pattern(
+    "pyproject.toml",
+    "ruff.toml",
+    "settings/pyproject.toml",  -- если конфиг лежит в settings/
+    ".git"
+  ),
   init_options = {
     settings = {
-      args = {"--ignore=E501"},
-      organizeImports = {
-        enabled = true,
-        groupBy = "type"
+      args = { "--ignore=E501" }, -- Пример игнорирования ошибок
+      format = {
+      enabled = true,
+      organizeImports = true,
+        groupBy = "type" -- Группировка импортов
+      },
+      lint = {
+        select = {"ALL"},
+        ignore = {"D400", "D415", "RUF", "COM812", "S608", "ERA001"}
+      },
+      line_length = 100,
+      per_file_ignores = {
+        ["test.py"] = {"ALL"}
       }
     }
   }

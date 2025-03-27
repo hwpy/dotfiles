@@ -19,3 +19,5 @@ map("n", "<leader>rf", function()
   -- После этого перезагружаем файл или применяем форматирование через LSP (если нужно)
   vim.lsp.buf.format({ async = false })
 end, { desc = "Format current file with ruff" })
+
+map("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Quick Fix" })
