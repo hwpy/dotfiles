@@ -69,7 +69,7 @@ return {
       python = function()
         local envrc = vim.fn.findfile(".envrc", ".;")
         local python_file = vim.fn.expand("%:p")
-        
+
         if envrc ~= "" then
           -- 1. Разрешаем .envrc если нужно
           vim.cmd('silent !cd ' .. vim.fn.shellescape(vim.fn.fnamemodify(envrc, ":h")) .. ' && direnv allow')
@@ -85,7 +85,7 @@ return {
     },
     term = {
       position = "bot",
-      size = 10
+      size = 15
     }
   },
   keys = {
@@ -148,7 +148,7 @@ return {
       integrations = { diffview = {lazy_load = false} }
     }
   },
-  
+
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
