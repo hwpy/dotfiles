@@ -62,7 +62,7 @@ lspconfig.ruff.setup {
       },
       lint = {
         select = {"ALL"},
-        ignore = {"D400", "D415", "RUF", "COM812", "S608", "ERA001"}
+        ignore = {"D400", "D415", "RUF", "COM812", "S608", "ERA001", "PTH123"}
       },
       line_length = 100,
       per_file_ignores = {

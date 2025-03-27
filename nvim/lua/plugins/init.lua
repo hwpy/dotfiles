@@ -198,6 +198,16 @@ return {
     end,
   },
 
+  {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("configs.luasnip").config()
+    end,
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
+  },
+
   require('gitsigns').setup {
     current_line_blame = true,
     current_line_blame_opts = {

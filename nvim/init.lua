@@ -35,3 +35,18 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- Путь к LuaSnip сниппетам
+vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/snippets"
+
+-- Загрузка сниппетов
+require("luasnip.loaders.from_lua").lazy_load({
+  paths = vim.g.lua_snippets_path,
+})
+
+-- Преобразовывать CRLF -> LF при вставке
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.fn.setreg('"', vim.fn.substitute(vim.fn.getreg('"'), '\r\n', '\n', 'g'))
+  end
+})

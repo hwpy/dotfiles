@@ -20,4 +20,13 @@ map("n", "<leader>rf", function()
   vim.lsp.buf.format({ async = false })
 end, { desc = "Format current file with ruff" })
 
+-- Альтернативный вариант с проверкой LSP (более безопасный)
+map("n", "<F2>", function()
+  if vim.lsp.buf.rename then
+    vim.lsp.buf.rename()
+  else
+    vim.notify("LSP rename not available", vim.log.levels.WARN)
+  end
+end, { desc = "Rename symbol (F2 hotkey)" })
+
 map("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Quick Fix" })
