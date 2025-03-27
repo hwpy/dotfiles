@@ -20,7 +20,7 @@ map("n", "<leader>rf", function()
   vim.lsp.buf.format({ async = false })
 end, { desc = "Format current file with ruff" })
 
--- Альтернативный вариант с проверкой LSP (более безопасный)
+-- Рефакторинг через LSP
 map("n", "<F2>", function()
   if vim.lsp.buf.rename then
     vim.lsp.buf.rename()
@@ -30,3 +30,6 @@ map("n", "<F2>", function()
 end, { desc = "Rename symbol (F2 hotkey)" })
 
 map("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Quick Fix" })
+
+map('n', '<leader>tc', ':tabclose<CR>', { desc = 'Close current tab' })
+map('n', '<leader>tn', ':tabnew<CR>', { desc = 'Open new tab' })
