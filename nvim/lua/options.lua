@@ -9,3 +9,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   command = ":%s/\\s\\+$//e",
 })
+
+-- Преобразовывать CRLF -> LF при вставке
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.fn.setreg('"', vim.fn.substitute(vim.fn.getreg('"'), '\r\n', '\n', 'g'))
+  end
+})

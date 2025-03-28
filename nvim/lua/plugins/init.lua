@@ -157,6 +157,7 @@ return {
       },
       filters = {
         dotfiles = false,  -- Показывать скрытые файлы (начинающиеся с .)
+        custom = { "^onedrive$", "^icloud$" },
       },
       git = {
         ignore = false,     -- Показывать файлы, игнорируемые git
@@ -220,5 +221,4 @@ return {
     },
     current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
   },
-
 }
