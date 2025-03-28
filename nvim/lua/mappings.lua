@@ -33,3 +33,35 @@ map("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Quick Fix" })
 
 map('n', '<leader>tc', ':tabclose<CR>', { desc = 'Close current tab' })
 map('n', '<leader>tn', ':tabnew<CR>', { desc = 'Open new tab' })
+
+local function setup_instant_resize()
+  local function resize_notify(direction, step)
+    return function()
+      local cmd = direction == "vertical"
+        and "vertical resize " .. (vim.fn.winwidth(0) + step)
+        or "resize " .. (vim.fn.winheight(0) + step)
+
+      vim.cmd(cmd)
+      vim.notify(
+        direction == "vertical"
+          and ("Ширина: " .. vim.fn.winwidth(0))
+          or ("Высота: " .. vim.fn.winheight(0)),
+        vim.log.levels.INFO,
+        { title = "Размер окна", timeout = 500 }
+      )
+    end
+  end
+
+  -- Вертикальный ресайз (ширина)
+  vim.keymap.set("n", "<A-S-h>", resize_notify("vertical", -5), { desc = "Уменьшить ширину на 10" })
+  vim.keymap.set("n", "<A-S-l>", resize_notify("vertical", 5), { desc = "Увеличить ширину на 10" })
+
+  -- Горизонтальный ресайз (высота)
+  vim.keymap.set("n", "<A-S-j>", resize_notify("horizontal", -5), { desc = "Уменьшить высоту на 10" })
+  vim.keymap.set("n", "<A-S-k>", resize_notify("horizontal", 5), { desc = "Увеличить высоту на 10" })
+end
+
+setup_instant_resize()
+
+-- Alt+Shift+h/l - ширина
+-- Alt+Shift+j/k - высота
