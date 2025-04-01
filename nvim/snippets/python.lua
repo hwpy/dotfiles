@@ -126,6 +126,7 @@ return {
 
   Returns:
       {}
+
   """
   ]], {
     i(1, "Function description"),
