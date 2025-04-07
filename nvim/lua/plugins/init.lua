@@ -153,7 +153,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     opts = {
       view = {
-        width = 30,
+        width = 50,
       },
       filters = {
         dotfiles = false,  -- Показывать скрытые файлы (начинающиеся с .)
