@@ -169,3 +169,4 @@ cython_debug/
 /ruff/
 /nvim/lazy-lock.json
 QtProject.conf
+/htop/
