@@ -209,6 +209,15 @@ return {
     },
   },
 
+  -- markdown
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    name = "render-markdown",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = "markdown",
+    opts = {}
+  },
+
   require('gitsigns').setup {
     current_line_blame = true,
     current_line_blame_opts = {

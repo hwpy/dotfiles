@@ -65,3 +65,8 @@ setup_instant_resize()
 
 -- Alt+Shift+h/l - ширина
 -- Alt+Shift+j/k - высота
+
+-- Markdown-специфичные маппинги
+map("n", "<leader>mt", function()
+  require("render-markdown").toggle()
+end, { desc = "Toggle Markdown Render" })
