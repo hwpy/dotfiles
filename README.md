@@ -1,10 +1,13 @@
-# Configuration files for Shell
+# Configuration files for nvim / alacritty / tmux / user shell
+
 
 ## Files:
 - alacritty/alactirry.toml: config for Alacritty terminal emulator
-- lf/lfrc: config for lf file manager
-- starship.toml: config for Starship shell prompt
+- nvim: lua config files for neovim
+- ruff/pyproject.toml: ruff config
+- user: config files for user dir (tmux, zsh)
 
 ## Requirements:
-- npm for python lsp
+- npm / fnm pyright
     * npm install -g pyright
+- ruff (optional)
