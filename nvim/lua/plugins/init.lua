@@ -22,6 +22,8 @@ return {
   -- 		},
   -- 	},
   -- },
+
+  -- Выбор venv
     {
     "linux-cultist/venv-selector.nvim",
     dependencies = {
