@@ -33,6 +33,7 @@ map("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Quick Fix" })
 
 map('n', '<leader>tc', ':tabclose<CR>', { desc = 'Close current tab' })
 map('n', '<leader>tn', ':tabnew<CR>', { desc = 'Open new tab' })
+map('n', '<leader>cp', ':let @+ = expand("%:p")<CR>>', { desc = 'Copy file path' })
 
 local function setup_instant_resize()
   local function resize_notify(direction, step)
