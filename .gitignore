@@ -123,6 +123,8 @@ celerybeat.pid
 
 # Environments
 .env
+.env.*
+.env_*
 .venv
 env/
 venv/
@@ -170,3 +172,4 @@ cython_debug/
 /nvim/lazy-lock.json
 QtProject.conf
 /htop/
+/uv/
