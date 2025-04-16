@@ -1,0 +1,100 @@
+[general]
+
+
+## Reload config on changes
+live_config_reload = true
+
+# (Github Dark Tritanopia) Colors for Alacritty
+
+# Default colors
+[colors.primary]
+background = '#0d1117'
+foreground = '#c9d1d9'
+
+# Cursor colors
+[colors.cursor]
+text = '#0d1117'
+
+cursor = '#c9d1d9'
+
+# Normal colors
+[colors.normal]
+black = '#484f58'
+red = '#ff7b72'
+green = '#58a6ff'
+yellow = '#d29922'
+blue = '#58a6ff'
+magenta = '#bc8cff'
+cyan = '#39c5cf'
+white = '#b1bac4'
+
+# Bright colors
+[colors.bright]
+black = '#6e7681'
+red = '#ffa198'
+green = '#79c0ff'
+yellow = '#e3b341'
+blue = '#79c0ff'
+magenta = '#bc8cff'
+cyan = '#39c5cf'
+white = '#b1bac4'
+
+
+[terminal.shell]
+program = "C:\\Windows\\System32\\wsl.exe"
+args = ["--cd", "~", "-d", "Ubuntu"]
+
+
+[env]
+TERM = "alacritty"
+
+
+[window]
+dynamic_title = false
+title = "Alacritty"
+
+dimensions = { columns = 135, lines = 40 }
+decorations = "Full" # Full
+
+startup_mode = "Windowed"
+padding.x = 10
+
+padding.y = 10
+opacity = 0.9
+blur = true
+option_as_alt = "Both"
+
+
+
+[selection]
+save_to_clipboard = true
+
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 12
+builtin_box_drawing = true
+
+
+[font.offset]
+x = 0
+y = -1
+
+
+
+[font.glyph_offset]
+x = -1
+y = 0
+
+
+[keyboard]
+bindings = [
+
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+
+]
+
