@@ -23,6 +23,18 @@ return {
   -- 	},
   -- },
 
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      vim.schedule(function()
+        vim.api.nvim_set_hl(0, "TelescopeSelection", {
+          bg = "#746DFE",  -- 👈 можешь сюда вставить свой цвет
+          bold = true,
+        })
+      end)
+    end,
+  },
   -- Выбор venv
     {
     "linux-cultist/venv-selector.nvim",
