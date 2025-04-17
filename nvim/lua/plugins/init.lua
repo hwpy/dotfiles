@@ -29,7 +29,7 @@ return {
     config = function()
       vim.schedule(function()
         vim.api.nvim_set_hl(0, "TelescopeSelection", {
-          bg = "#746DFE",  -- 👈 можешь сюда вставить свой цвет
+          bg = "#746DFE",
           bold = true,
         })
       end)
