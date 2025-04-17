@@ -8,6 +8,29 @@ local M = {}
 M.base46 = {
 	theme = "chadracula-evondev",
   transparency = true,
+  -- настройки конкретно для statusline theme = "vscode_colored"
+  hl_override = {
+    St_cwd = {},
+    St_NormalMode = {},
+    St_VisualMode = {},
+    St_InsertMode = {},
+    St_TerminalMode = {},
+    St_NTerminalMode = {},
+    St_ReplaceMode = {},
+    St_ConfirmMode = {},
+    St_CommandMode = {},
+
+    TbCloseAllBufsBtn = {fg="#fb3ece"},
+    TbThemeToggleBtn = {fg="#fb3ece"},
+
+    TBTabTitle = {fg="#746dfe"},
+    TbTabCloseBtn = {fg="#746dfe"},
+    TbTabOff = {},
+    TbTabOn = {fg="#fb3ece"},
+    TbTabNewBtn = {},
+  },
+  -- настройки конкретно для statusline theme = "vscode_colored"
+
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
@@ -21,9 +44,17 @@ M.base46 = {
 --      }
 --}
 
+
+-- настройки конкретно для statusline theme = "vscode_colored"
+-- Устанавливаем прозрачность для всех элементов
+for _, hl in pairs(M.base46.hl_override) do
+  hl.bg = "none"
+end
+-- настройки конкретно для statusline theme = "vscode_colored"
+
 M.ui = {
   statusline = {
-    theme = "minimal",  -- Доступные темы: "default", "vscode_colored", "minimal"
+    theme = "vscode_colored",  -- Доступные темы: "default", "vscode_colored", "minimal"
     separator_style = "block",  -- Стили разделителей: "round", "block", "arrow", "slant"
     -- Опционально: кастомизация модулей
     overriden_modules = nil     -- Можно добавить свою логику при необходимости
