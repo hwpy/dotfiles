@@ -9,7 +9,7 @@ decorations = "Buttonless" # Full
 startup_mode = "Maximized"
 padding.x = 10
 padding.y = 10
-opacity = 0.85
+opacity = 0.9
 blur = true
 option_as_alt = "Both"
 
