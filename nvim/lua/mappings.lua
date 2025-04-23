@@ -71,3 +71,5 @@ setup_instant_resize()
 map("n", "<leader>mt", function()
   require("render-markdown").toggle()
 end, { desc = "Toggle Markdown Render" })
+
+map('n', '<leader>mf', ':lua require("nabla").popup()<CR>', { desc = 'Markdown Formula' })

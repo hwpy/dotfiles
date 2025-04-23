@@ -239,6 +239,23 @@ return {
     opts = {}
   },
 
+  {
+      "jbyuki/nabla.nvim",
+      dependencies = {
+          "nvim-neo-tree/neo-tree.nvim",
+          "williamboman/mason.nvim",
+      },
+      lazy = true,
+
+      config = function()
+          require("nvim-treesitter.configs").setup({
+              ensure_installed = { "latex" },
+              auto_install = true,
+              sync_install = false,
+          })
+      end,
+  },
+
   require('gitsigns').setup {
     current_line_blame = true,
     current_line_blame_opts = {
