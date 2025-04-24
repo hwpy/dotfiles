@@ -239,21 +239,36 @@ return {
     opts = {}
   },
 
+  -- markdown math
   {
-      "jbyuki/nabla.nvim",
-      dependencies = {
-          "nvim-neo-tree/neo-tree.nvim",
-          "williamboman/mason.nvim",
-      },
-      lazy = true,
+    "jbyuki/nabla.nvim",
+    dependencies = {
+        "nvim-neo-tree/neo-tree.nvim",
+        "williamboman/mason.nvim",
+    },
+    lazy = true,
 
-      config = function()
-          require("nvim-treesitter.configs").setup({
-              ensure_installed = { "latex" },
-              auto_install = true,
-              sync_install = false,
-          })
-      end,
+    config = function()
+        require("nvim-treesitter.configs").setup({
+            ensure_installed = { "latex" },
+            auto_install = true,
+            sync_install = false,
+        })
+    end,
+  },
+
+  -- для подключения инструментов диагностики кода
+  {
+    "nvimtools/none-ls.nvim",
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.ruff,
+          null_ls.builtins.diagnostics.ruff,
+        },
+      })
+    end,
   },
 
   require('gitsigns').setup {

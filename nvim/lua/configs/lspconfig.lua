@@ -32,6 +32,7 @@ lspconfig.pyright.setup {
     python = {
       analysis = {
         typeCheckingMode = "basic",
+        diagnosticMode = "openFilesOnly",
         autoSearchPaths = true,
         useLibraryCodeForTypes = true
       }
@@ -46,27 +47,11 @@ lspconfig.ruff.setup {
     nvlsp.on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-  root_dir = lspconfig.util.root_pattern(
-    "pyproject.toml",
-    "ruff.toml",
-    "settings/pyproject.toml",  -- если конфиг лежит в settings/
-    ".git"
-  ),
+  root_dir = lspconfig.util.root_pattern(".git"),
   init_options = {
     settings = {
-      args = { "--ignore=E501" }, -- Пример игнорирования ошибок
-      format = {
-      enabled = true,
-      organizeImports = true,
-        groupBy = "type" -- Группировка импортов
-      },
-      lint = {
-        select = {"ALL"},
-        ignore = {"D400", "D415", "RUF", "COM812", "S608", "ERA001", "PTH109", "INP001"}
-      },
-      line_length = 100,
-      per_file_ignores = {
-        ["test.py"] = {"ALL"}
+      args = {
+        "--config", "~/.config/ruff/pyproject.toml"  -- путь по умолчанию
       }
     }
   }

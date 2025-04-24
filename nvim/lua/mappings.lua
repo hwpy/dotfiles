@@ -9,18 +9,16 @@ map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+-- выбор venv
 map("n", "<leader>pv", "<cmd>VenvSelect<cr>", { desc = "Select Python Venv" })
 
+-- форматирование через LSP
 map("n", "<leader>rf", function()
-  -- Запускаем ruff для форматирования текущего файла через команду консоли
-  vim.cmd("!ruff check --select I --fix %")
-  vim.cmd("!ruff format %")
-  vim.cmd("edit")  -- Перезагружает текущий файл в буфере
-  -- После этого перезагружаем файл или применяем форматирование через LSP (если нужно)
-  vim.lsp.buf.format({ async = false })
-end, { desc = "Format current file with ruff" })
+  vim.lsp.buf.format { filter = function(client) return client.name == "ruff" end }
+end, { desc = "Format current file with Ruff" })
+map("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Quick Fix" })
 
--- Рефакторинг через LSP
+-- рефакторинг через LSP
 map("n", "<F2>", function()
   if vim.lsp.buf.rename then
     vim.lsp.buf.rename()
@@ -29,12 +27,12 @@ map("n", "<F2>", function()
   end
 end, { desc = "Rename symbol (F2 hotkey)" })
 
-map("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Quick Fix" })
-
+-- управление вкладками
 map('n', '<leader>tc', ':tabclose<CR>', { desc = 'Close current tab' })
 map('n', '<leader>tn', ':tabnew<CR>', { desc = 'Open new tab' })
 map('n', '<leader>cp', ':let @+ = expand("%:p")<CR>>', { desc = 'Copy file path' })
 
+-- изменение размеров терминала
 local function setup_instant_resize()
   local function resize_notify(direction, step)
     return function()
@@ -53,13 +51,13 @@ local function setup_instant_resize()
     end
   end
 
-  -- Вертикальный ресайз (ширина)
-  vim.keymap.set("n", "<A-S-h>", resize_notify("vertical", -5), { desc = "Уменьшить ширину на 10" })
-  vim.keymap.set("n", "<A-S-l>", resize_notify("vertical", 5), { desc = "Увеличить ширину на 10" })
+  -- вертикальный ресайз (ширина)
+  vim.keymap.set("n", "<A-S-h>", resize_notify("vertical", -5), { desc = "Уменьшить ширину на 5" })
+  vim.keymap.set("n", "<A-S-l>", resize_notify("vertical", 5), { desc = "Увеличить ширину на 5" })
 
-  -- Горизонтальный ресайз (высота)
-  vim.keymap.set("n", "<A-S-j>", resize_notify("horizontal", -5), { desc = "Уменьшить высоту на 10" })
-  vim.keymap.set("n", "<A-S-k>", resize_notify("horizontal", 5), { desc = "Увеличить высоту на 10" })
+  -- горизонтальный ресайз (высота)
+  vim.keymap.set("n", "<A-S-j>", resize_notify("horizontal", -5), { desc = "Уменьшить высоту на 5" })
+  vim.keymap.set("n", "<A-S-k>", resize_notify("horizontal", 5), { desc = "Увеличить высоту на 5" })
 end
 
 setup_instant_resize()
@@ -67,9 +65,8 @@ setup_instant_resize()
 -- Alt+Shift+h/l - ширина
 -- Alt+Shift+j/k - высота
 
--- Markdown-специфичные маппинги
+-- markdown маппинги
 map("n", "<leader>mt", function()
   require("render-markdown").toggle()
 end, { desc = "Toggle Markdown Render" })
-
 map('n', '<leader>mf', ':lua require("nabla").popup()<CR>', { desc = 'Markdown Formula' })
