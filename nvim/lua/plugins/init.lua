@@ -48,7 +48,7 @@ return {
     dependencies = {
       "neovim/nvim-lspconfig",
       "nvim-telescope/telescope.nvim",
-      "mfussenegger/nvim-dap-python",
+      -- "mfussenegger/nvim-dap-python",
     },
     opts = {
       post_hook = function()

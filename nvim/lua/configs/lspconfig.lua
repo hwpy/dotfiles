@@ -58,4 +58,4 @@ lspconfig.ruff.setup {
 }
 
 -- Setup DAP for Python
-require('dap-python').setup(vim.fn.exepath('python'))
+-- require('dap-python').setup(vim.fn.exepath('python'))
