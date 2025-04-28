@@ -271,6 +271,61 @@ return {
     end,
   },
 
+  -- AI
+  {
+    "robitx/gp.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      -- 1) Провайдеры: отключаем OpenAI, включаем Ollama
+      require("gp").setup({
+        providers = {
+          openai = { disable = true },  -- :contentReference[oaicite:0]{index=0}
+          ollama = {
+            endpoint = "http://localhost:11434/v1/chat/completions",
+            -- Ollama Serve OpenAI-совместимый, API-ключи не требуются :contentReference[oaicite:1]{index=1}
+          },
+        },
+
+        -- 2) Определяем агентов
+        agents = {
+          {
+            name          = "gemma3:12b",
+            provider      = "ollama",
+            model         = { model = "gemma3:12b", temperature = 0.7 },
+            chat          = true,    -- чат-сессии (:GpChatNew)
+            command       = true,    -- операции над кодом (:GpRewrite и т.д.)
+            -- system_prompt = require("gp.defaults").code_system_prompt,
+            system_prompt = "Ты русскоязычный эксперт в языках программирования и технических науках. Всегда отвечай по делу, старайся писать чистый код, комментируй его и отвечай всегда только на русском языке."
+          },
+          {
+            name          = "mistral:7b-instruct",
+            provider      = "ollama",
+            model         = { model = "mistral:7b-instruct", temperature = 0.7 },
+            chat          = true,    -- чат-сессии (:GpChatNew)
+            command       = true,    -- операции над кодом (:GpRewrite и т.д.)
+            -- system_prompt = require("gp.defaults").code_system_prompt,
+            system_prompt = "Ты русскоязычный эксперт в языках программирования и технических науках. Всегда отвечай по делу, старайся писать чистый код, комментируй его и отвечай всегда только на русском языке."
+          },
+          {
+            name          = "codestral:22b-v0.1-q2_K",
+            provider      = "ollama",
+            model         = { model = "codestral:22b-v0.1-q2_K", temperature = 0.7 },
+            chat          = true,    -- чат-сессии (:GpChatNew)
+            command       = true,    -- операции над кодом (:GpRewrite и т.д.)
+            -- system_prompt = require("gp.defaults").code_system_prompt,
+            system_prompt = "Ты русскоязычный эксперт в языках программирования и технических науках. Всегда отвечай по делу, старайся писать чистый код, комментируй его и отвечай всегда только на русском языке."
+          },
+
+        },
+
+      default_chat_agent    = "gemma3:12b",
+      default_command_agent = "codestral:22b-v0.1-q2_K",
+
+      })
+    end,
+  },
+
   require('gitsigns').setup {
     current_line_blame = true,
     current_line_blame_opts = {
