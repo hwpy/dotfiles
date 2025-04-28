@@ -174,3 +174,4 @@ QtProject.conf
 /htop/
 /uv/
 /mc/
+/nvim/lua/configs/gpagents.lua
