@@ -177,6 +177,7 @@ return {
     opts = {
       view = {
         width = 50,
+        number = true,
       },
       filters = {
         dotfiles = false,  -- Показывать скрытые файлы (начинающиеся с .)

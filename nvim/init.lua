@@ -36,10 +36,10 @@ vim.schedule(function()
   require "mappings"
 end)
 
--- Путь к LuaSnip сниппетам
+-- путь к LuaSnip сниппетам
 vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/snippets"
 
--- Загрузка сниппетов
+-- загрузка сниппетов
 require("luasnip.loaders.from_lua").lazy_load({
   paths = vim.g.lua_snippets_path,
 })
