@@ -42,4 +42,4 @@ local agents = {
   },
 }
 
-return agents, default_chat_agent, default_command_agent
+return agents

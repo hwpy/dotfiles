@@ -1,4 +1,4 @@
-local agents, default_chat_agent, default_command_agent = require("configs.gpagents")
+local agents = require("configs.gpagents")
 
 return {
   {
