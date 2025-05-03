@@ -16,7 +16,11 @@ map("n", "<leader>pv", "<cmd>VenvSelect<cr>", { desc = "Select Python Venv" })
 map("n", "<leader>rf", function()
   vim.lsp.buf.format { filter = function(client) return client.name == "ruff" end }
 end, { desc = "Format current file with Ruff" })
-map("n", "<leader>q", vim.lsp.buf.code_action, { desc = "Quick Fix" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+map("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Show Diagnostics" })
+map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Next Diagnostic" })
+map("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Previous Diagnostic" })
+map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format Buffer" })
 
 -- рефакторинг через LSP
 map("n", "<F2>", function()
@@ -26,6 +30,7 @@ map("n", "<F2>", function()
     vim.notify("LSP rename not available", vim.log.levels.WARN)
   end
 end, { desc = "Rename symbol (F2 hotkey)" })
+
 
 -- управление вкладками
 map('n', '<leader>tc', ':tabclose<CR>', { desc = 'Close current tab' })

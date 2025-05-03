@@ -61,4 +61,14 @@ M.ui = {
   },
 }
 
+M.mason = {
+  pkgs = {
+    "gopls",
+    "golangci-lint",
+    "golangci-lint-langserver",
+    "goimports",
+    "gofumpt",
+  }
+}
+
 return M

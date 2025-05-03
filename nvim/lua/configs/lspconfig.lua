@@ -57,5 +57,21 @@ lspconfig.ruff.setup {
   }
 }
 
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls"},
+  filetypes = {"go", "gomod", "gowork", "gotmpl"},
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
+}
+
 -- Setup DAP for Python
 -- require('dap-python').setup(vim.fn.exepath('python'))
