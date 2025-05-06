@@ -25,7 +25,7 @@ local agents = {
   {
     name = default_chat_agent,
     provider = provider,
-    chat = true, -- Добавлено двоеточие
+    chat = true,
     command = false,
     model = { model = chat_model, temperature = 0.7 },
     -- system_prompt = require("gp.defaults").code_system_prompt,
@@ -34,7 +34,7 @@ local agents = {
   {
     name = default_command_agent,
     provider = provider,
-    chat = false, -- Добавлено двоеточие
+    chat = false,
     command = true,
     model = { model = code_model, temperature = 0.7 },
     -- system_prompt = require("gp.defaults").code_system_prompt,
