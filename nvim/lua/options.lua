@@ -29,3 +29,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.fn.setreg('"', fixed_reg)  -- Возвращаем исправленный текст в системный буфер
   end
 })
+
+vim.opt.relativenumber = true
