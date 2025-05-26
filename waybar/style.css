@@ -1,0 +1,239 @@
+/* Colors */
+@define-color text #7DCFFF;
+@define-color alert #FB3ECE;
+@define-color transparent-black rgba(0, 0, 0, 0);
+@define-color modules-bg rgba(0, 0, 0, 0);
+/* @define-color modules-bg rgba(116, 109, 254, 0.3); */
+
+/* General */
+* {
+    font-family: "JetBrains Mono";
+    border: none;
+    border-radius: 5px;
+}
+
+window#waybar {
+    background-color: @transparent-black;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 8px;
+}
+
+/* Modules containers with pill background and uniform spacing */
+.modules-left, .modules-center, .modules-right {
+    background-color: @modules-bg;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+/* Margin units */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 10px;
+}
+
+.modules-center {
+    margin: 0 10px;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* Workspaces */
+#workspaces {
+    margin: 4px 1px;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    color: @text;
+    opacity: 0.9;
+    background: transparent;
+}
+
+#workspaces button {
+    margin: 0 2px;
+    padding: 0 5px;
+    color: @text;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @alert;
+    background: transparent;
+    opacity: 0.9;
+}
+
+#workspaces button:hover {
+    color: @text;
+    background: transparent;
+    opacity: 0.9;
+    border: none;
+    box-shadow: none;
+}
+
+/* Taskbar */
+#taskbar {
+    margin: 4px 15px 4px 1px;
+    padding: 0;
+}
+
+#taskbar button {
+    margin: 0 1px;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+#taskbar button:hover {
+    background: rgba(116, 109, 254, 0.5);
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+}
+
+/* Clock */
+#clock {
+    background-color: transparent;
+    font-size: 16px;
+    color: @text;
+    border-radius: 5px;
+    padding: 1px 10px 0 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
+    border: none;
+}
+
+/* Hardware group modules */
+#cpu, #custom-temperature, #disk, #memory {
+    padding: 1px 10px 0 10px;
+    margin: 4px 1px;
+    font-size: 16px;
+    color: @text;
+}
+
+/* Language */
+#language {
+    padding: 1px 10px 0 10px;
+    margin: 4px 1px;
+    font-size: 16px;
+    color: @text;
+}
+
+/* Audio */
+#pulseaudio {
+    font-size: 16px;
+    color: @text;
+    border-radius: 5px;
+    padding: 1px 10px 0 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
+}
+
+/* Network */
+#network, #network.ethernet, #network.wifi {
+    font-size: 16px;
+    color: @text;
+    border-radius: 5px;
+    padding: 1px 10px 0 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
+}
+
+/* Bluetooth */
+#bluetooth, #bluetooth.on, #bluetooth.connected, #bluetooth.off {
+    font-size: 16px;
+    color: @text;
+    border-radius: 5px;
+    padding: 1px 10px 0 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
+}
+
+/* Battery */
+#battery, #battery.charging, #battery.plugged {
+    font-size: 16px;
+    color: @text;
+    border-radius: 5px;
+    padding: 1px 10px 0 10px;
+    margin: 4px 1px;
+    opacity: 0.9;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: @text;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @modules-bg;
+        color: @text;
+    }
+}
+
+/* Tray */
+#tray {
+    padding: 0 15px 0 0;
+    color: @text;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* Custom modules */
+#custom-exit {
+    margin-right: 10px;
+    padding: 1px 10px 0 10px;
+    font-size: 16px;
+    opacity: 0.95;
+    color: @alert;
+}
+
+#custom-system, #custom-settings {
+    padding: 1px 10px 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.95;
+    color: @text;
+}
+
+#custom-temperature {
+    font-size: 16px;
+    color: @text;
+}
+
+#custom-updates {
+    background-color: @modules-bg;
+    font-size: 16px;
+    color: @text;
+    border-radius: 5px;
+    padding: 2px 10px 0 10px;
+    margin: 8px 15px 8px 0;
+    opacity: 0.95;
+}
+
+/* #custom-updates.green { */
+/*     background-color: @modules-bg; */
+/* } */
+/**/
+/* #custom-updates.yellow { */
+/*     background-color: #ff9a3c; */
+/*     color: #FFFFFF; */
+/* } */
+/**/
+/* #custom-updates.red { */
+/*     background-color: #dc2f2f; */
+/*     color: #FFFFFF; */
+/* } */
+/**/

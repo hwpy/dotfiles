@@ -1,0 +1,33 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus";
+    font: "monospace 20";
+    background:     #222222cc;
+    foreground:     #ddddddff;
+    border:         1;
+    border-color:   #555555ff;
+    border-radius:  8;
+    padding:        10;
+    element-padding: 5;
+    scrollbar-width: 8;
+    scrollbar-handle-color: #888888ff;
+    selected-background: #005577ff;
+    selected-foreground: #ffffffcc;
+    window {
+        width: 400px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+}
+
+
+//@theme "/home/alexey/.local/share/rofi/themes/spotlight-dark.rasi"
+
+//@theme "/home/alexey/.local/share/rofi/themes/rounded-purple-dark.rasi"
+
+//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
+
+//@theme "/home/alexey/.local/share/rofi/themes/rounded-purple-dark.rasi"
+
+@theme "/home/alexey/.local/share/rofi/themes/dracula-evondev.rasi"

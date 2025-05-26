@@ -1,0 +1,9 @@
+1password 8.10.76-34
+auto-cpufreq 2.5.0-1
+fnm 1.38.1-1
+kbdlight 1.3-1
+light 1.2.2-5
+networkmanager-dmenu-git r225.641a7c0-1
+ttf-icomoon-feather 1.0-2
+yay 12.5.0-1
+yay-debug 12.5.0-1

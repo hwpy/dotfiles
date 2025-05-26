@@ -1,0 +1,4 @@
+export LOCKSCREEN_IMAGE="/home/alexey/Wallpapers/arch_wallpaper.png"
+export PATH="$HOME/.local/bin:$PATH"
+
+xss-lock -- slock &

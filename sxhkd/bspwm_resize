@@ -1,0 +1,15 @@
+#!/bin/sh
+SIZE=30
+
+if [ "$1" = "expand" ]; then
+  bspc node -z left -$SIZE*3 0
+  bspc node -z right $SIZE*3 0
+  bspc node -z top 0 -$SIZE
+  bspc node -z bottom 0 $SIZE
+elif [ "$1" = "contract" ]; then
+  bspc node -z left $SIZE*3 0
+  bspc node -z right -$SIZE*3 0
+  bspc node -z top 0 $SIZE
+  bspc node -z bottom 0 -$SIZE
+fi
+

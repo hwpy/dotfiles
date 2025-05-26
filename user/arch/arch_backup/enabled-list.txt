@@ -1,0 +1,17 @@
+acpid.service
+auto-cpufreq.service
+bluetooth.service
+cpupower.service
+cups.service
+getty@.service
+lm_sensors.service
+ly.service
+NetworkManager-dispatcher.service
+NetworkManager-wait-online.service
+NetworkManager.service
+root-suspend.service
+systemd-timesyncd.service
+tlp.service
+touchegg.service
+udisks2.service
+ufw.service
