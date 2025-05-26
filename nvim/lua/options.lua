@@ -30,4 +30,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end
 })
 
+-- Замена табуляции на 4 пробела
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    vim.cmd([[%s/\t/    /ge]])
+  end,
+})
+
 vim.opt.relativenumber = true
