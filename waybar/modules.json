@@ -77,7 +77,7 @@
 
   "disk": {
     "interval": 30,
-    "format": "󰋊 {percentage_used}%",
+    "format": "󰋊 {free}",
     "path": "/",
     "on-click": "alacritty -e htop"
   },
@@ -102,34 +102,33 @@
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
-      "headphone": "",
+      "headphone": " ",
       "phone": "",
-      "car": "",
-      "default": ["", "", ""]
+      "car": " ",
+      "default": ["", " ", " "]
     },
     "on-click": "pavucontrol"
   },
 
   "bluetooth": {
-    "format": " {status}",
-    "format-disabled": " {status}",
-    "format-off": " {status}",
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
     "interval": 30,
     "on-click": "blueman-manager",
     "format-no-controller": ""
   },
 
   "network": {
-    "format": "{ifname}",
-    "format-wifi": "  {signalStrength}%",
-    "format-ethernet": "󰌘 {ifname}",
-    "format-disconnected": "disconnected",
-    "tooltip-format": "󰌘 {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
-    "tooltip-format-ethernet": "󰌘 {ifname}\nIP: {ipaddr}\n  {bandwidthUpBits}  {bandwidthDownBits}",
-    "tooltip-format-disconnected": "disconnected",
-    "max-length": 50,
-    "on-click": "nm-connection-editor"
+    "format": "",
+    "format-wifi": "",
+    "format-ethernet": "󰌘",
+    "format-disconnected": "⚠",
+    "tooltip-format": "",
+    "tooltip-format-wifi": "",
+    "tooltip-format-ethernet": "",
+    "tooltip-format-disconnected": "",
+    "on-click": "alacritty -e nmtui"
   },
 
   "battery": {
@@ -141,7 +140,7 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [" ", " ", " ", " ", " "]
   },
 
   "custom/exit": {

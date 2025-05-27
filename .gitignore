@@ -8,6 +8,7 @@
 !/mpv/
 !/networkmanager-dmenu/
 !/nvim/
+nvim/lazy-lock.json
 !/picom/
 !/polybar/
 !/ranger/

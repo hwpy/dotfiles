@@ -1,6 +1,7 @@
 {
   "include": "~/.config/waybar/modules.json",
 
+  "font-family": "JetBrains Mono",
   "position": "top",
   "margin-top": 0,
   "margin-bottom": 0,

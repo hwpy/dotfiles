@@ -1,13 +1,3 @@
-/*   _ _ _ _____ _____ _
-    | | | |     |   __|_|
-    | | | |  |  |   __| |
-    |_____|_____|__|  |_|
-
-*/
-
-
-/* @import ".cache/wal/colors-waybar.css"; */
-
 @define-color background #1e1e2e;
 @define-color color0 #FFFFFF;
 @define-color color4 #7DCFFF;
@@ -42,7 +32,7 @@ window {
 
 #entry {
   padding: 5px 10px;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 #entry #text {
