@@ -1,4 +1,4 @@
-export LOCKSCREEN_IMAGE="/home/alexey/Wallpapers/arch_wallpaper.png"
+export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/arch2.webp"
 export PATH="$HOME/.local/bin:$PATH"
 
 xss-lock -- slock &

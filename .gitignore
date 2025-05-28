@@ -20,6 +20,7 @@ nvim/lazy-lock.json
 !/touchegg/touchegg.conf
 !/user/
 !/waybar/
+!/wlppr/
 !/wofi/
 !LICENSE
 !README.md

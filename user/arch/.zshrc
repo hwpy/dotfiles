@@ -1,12 +1,13 @@
 export PATH=$HOME/.local/bin:$PATH
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export XDG_DATA_DIRS=/usr/share:/usr/local/share:$XDG_DATA_DIRS
 export EDITOR=nvim
 export VISUAL=nvim
 
-
 # fast node manager
-eval "$(fnm env)"
+#eval "$(fnm env)"
+source /usr/share/nvm/init-nvm.sh &&
 # start reading .envrc in dir
 eval "$(direnv hook zsh)"
 
