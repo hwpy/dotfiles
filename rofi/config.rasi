@@ -2,7 +2,7 @@ configuration {
     modi: "drun,run";
     show-icons: true;
     icon-theme: "Papirus";
-    font: "monospace 20";
+    font: "JetBrains Mono Nerd Font 30";
     background:     #222222cc;
     foreground:     #ddddddff;
     border:         1;
@@ -15,19 +15,11 @@ configuration {
     selected-background: #005577ff;
     selected-foreground: #ffffffcc;
     window {
-        width: 400px;
+        width: 800px;
         border-radius: 10px;
         padding: 10px;
     }
 }
 
 
-//@theme "/home/alexey/.local/share/rofi/themes/spotlight-dark.rasi"
-
-//@theme "/home/alexey/.local/share/rofi/themes/rounded-purple-dark.rasi"
-
-//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
-
-//@theme "/home/alexey/.local/share/rofi/themes/rounded-purple-dark.rasi"
-
-@theme "/home/alexey/.local/share/rofi/themes/dracula-evondev.rasi"
+@theme "~/.config/rofi/themes/rounded-purple-dark.rasi"

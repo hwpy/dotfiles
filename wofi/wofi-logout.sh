@@ -4,7 +4,7 @@
 menu="Logout\nReboot\nShutdown\nSuspend\nCancel"
 
 # Запуск wofi с меню и выбор пункта
-selected=$(echo -e "$menu" | wofi --dmenu --width 200 --height 180 -p "Power Menu")
+selected=$(echo -e "$menu" | wofi --dmenu --width 480 --height 180 -p "Power Menu")
 
 # Обработка выбора
 case "$selected" in

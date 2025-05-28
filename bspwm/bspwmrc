@@ -42,7 +42,7 @@ esac
 systemctl --user restart picom polybar &> /dev/null
 pkill -USR1 picom &> /dev/null
 
-bspc config window_gap           12
+bspc config window_gap           5
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
@@ -66,6 +66,7 @@ bspc config pointer_action3 resize_corner   # ПКМ - изменение раз
 
 $HOME/.config/polybar/launch.sh &
 # xsettingsd &
+xss-lock -- slock &
 touchegg &
 udiskie -a -n -t &
 dunst &

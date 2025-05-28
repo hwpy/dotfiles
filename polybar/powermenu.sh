@@ -1,29 +1,21 @@
 #!/bin/sh
 
-chosen=$(echo -e " Блокировка\n⏾ Сон\n Перезагрузка\n Выключение\n Выход" | rofi -dmenu -i -p "Выберите действие:")
+chosen=$(echo -e " Блокировка\n󰤄 Сон\n Перезагрузка\n󰐥 Выключение\n󰗼 Выход" | rofi -dmenu -i -p "Выберите действие:")
 
 case "$chosen" in
-    " Блокировка")
+    " Блокировка")
         slock
         ;;
-    "⏾ Сон")
+    "󰤄 Сон")
         systemctl suspend
         ;;
-    " Перезагрузка")
+    " Перезагрузка")
         systemctl reboot
         ;;
-    " Выключение")
+    "󰐥 Выключение")
         systemctl poweroff
         ;;
-    " Выход")
-        # Команда выхода из сессии зависит от используемого окружения
-        # Например, для Xfce:
-        # xfce4-session-logout --logout
-        # Для i3:
-        # i3-msg exit
-        # Для GNOME:
-        # gnome-session-quit --logout --no-prompt
-        # Здесь пример для generic X session:
+    "󰗼 Выход")
         pkill -KILL -u $USER
         ;;
 esac
