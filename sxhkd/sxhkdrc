@@ -46,6 +46,8 @@ super + y
 super + g
     bspc node -s biggest.window
 
+super + shift + s
+    flameshot gui
 #
 # state/flags
 #

@@ -14,6 +14,7 @@ nvim/lazy-lock.json
 !/ranger/
 !/rofi/
 !/ruff/
+!/screenshots/
 !/sxhkd/
 !/touchegg/
 /touchegg/*

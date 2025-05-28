@@ -67,6 +67,7 @@ bspc config pointer_action3 resize_corner   # ПКМ - изменение раз
 $HOME/.config/polybar/launch.sh &
 # xsettingsd &
 xss-lock -- slock &
+flameshot &
 touchegg &
 udiskie -a -n -t &
 dunst &
