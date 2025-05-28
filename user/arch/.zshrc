@@ -10,6 +10,8 @@ export VISUAL=nvim
 source /usr/share/nvm/init-nvm.sh &&
 # start reading .envrc in dir
 eval "$(direnv hook zsh)"
+# ssh agent
+eval "$(ssh-agent -s)"
 
 # aliases
 # alias pclean="sh ~/Documents/macports_clean.sh"
@@ -140,3 +142,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias l="eza --tree --icons --long --header --group --git --time-style=long-iso --color=always --level=1 --sort=name --all" # в самый конец после oh-my-zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

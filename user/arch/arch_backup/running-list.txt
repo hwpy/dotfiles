@@ -1,11 +1,7 @@
-acpid.service
-auto-cpufreq.service
 bluetooth.service
 cups.service
 dbus-broker.service
-dirmngr@etc-pacman.d-gnupg.service
 getty@tty1.service
-gpg-agent@etc-pacman.d-gnupg.service
 ly.service
 NetworkManager.service
 polkit.service
@@ -16,7 +12,5 @@ systemd-timesyncd.service
 systemd-udevd.service
 systemd-userdbd.service
 touchegg.service
-udisks2.service
-upower.service
 user@1001.service
 wpa_supplicant.service

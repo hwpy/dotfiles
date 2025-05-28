@@ -21,7 +21,7 @@ tar czvf home-bin-backup.tar.gz ~/.local/bin
 ## конфиги драйверов
 
 ```Shell
-sudo tar czvf etc-backup.tar.gz /etc
+sudo tar czvf drivers-xorg-backup.tar.gz /etc/X11/xorg.conf.d
 ```
 
 ## сами драйвера

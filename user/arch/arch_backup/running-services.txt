@@ -1,29 +1,23 @@
-  UNIT                                 LOAD   ACTIVE SUB     DESCRIPTION
-  acpid.service                        loaded active running ACPI event daemon
-  auto-cpufreq.service                 loaded active running auto-cpufreq - Automatic CPU speed & power optimizer for Linux
-  bluetooth.service                    loaded active running Bluetooth service
-  cups.service                         loaded active running CUPS Scheduler
-  dbus-broker.service                  loaded active running D-Bus System Message Bus
-  dirmngr@etc-pacman.d-gnupg.service   loaded active running GnuPG network certificate management daemon for /etc/pacman.d/gnupg
-  getty@tty1.service                   loaded active running Getty on tty1
-  gpg-agent@etc-pacman.d-gnupg.service loaded active running GnuPG cryptographic agent and passphrase cache for /etc/pacman.d/gnupg
-  ly.service                           loaded active running TUI display manager
-  NetworkManager.service               loaded active running Network Manager
-  polkit.service                       loaded active running Authorization Manager
-  rtkit-daemon.service                 loaded active running RealtimeKit Scheduling Policy Service
-  systemd-journald.service             loaded active running Journal Service
-  systemd-logind.service               loaded active running User Login Management
-  systemd-timesyncd.service            loaded active running Network Time Synchronization
-  systemd-udevd.service                loaded active running Rule-based Manager for Device Events and Files
-  systemd-userdbd.service              loaded active running User Database Manager
-  touchegg.service                     loaded active running Touchégg Daemon
-  udisks2.service                      loaded active running Disk Manager
-  upower.service                       loaded active running Daemon for power management
-  user@1001.service                    loaded active running User Manager for UID 1001
-  wpa_supplicant.service               loaded active running WPA supplicant
+  UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
+  bluetooth.service         loaded active running Bluetooth service
+  cups.service              loaded active running CUPS Scheduler
+  dbus-broker.service       loaded active running D-Bus System Message Bus
+  getty@tty1.service        loaded active running Getty on tty1
+  ly.service                loaded active running TUI display manager
+  NetworkManager.service    loaded active running Network Manager
+  polkit.service            loaded active running Authorization Manager
+  rtkit-daemon.service      loaded active running RealtimeKit Scheduling Policy Service
+  systemd-journald.service  loaded active running Journal Service
+  systemd-logind.service    loaded active running User Login Management
+  systemd-timesyncd.service loaded active running Network Time Synchronization
+  systemd-udevd.service     loaded active running Rule-based Manager for Device Events and Files
+  systemd-userdbd.service   loaded active running User Database Manager
+  touchegg.service          loaded active running Touchégg Daemon
+  user@1001.service         loaded active running User Manager for UID 1001
+  wpa_supplicant.service    loaded active running WPA supplicant
 
 Legend: LOAD   → Reflects whether the unit definition was properly loaded.
         ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
         SUB    → The low-level unit activation state, values depend on unit type.
 
-22 loaded units listed.
+16 loaded units listed.

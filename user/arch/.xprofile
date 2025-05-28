@@ -1,3 +1,6 @@
+export LANG=ru_RU.UTF-8
+export LC_ALL=ru_RU.UTF-8
+export XCURSOR_SIZE=40
 export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/arch2.webp"
 export PATH="$HOME/.local/bin:$PATH"
 
