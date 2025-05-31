@@ -7,6 +7,7 @@ for desktop in $(bspc query -D); do
     bspc desktop "$desktop" --remove
 done
 
+xrandr --output "$INTERNAL_MONITOR" --scale 0.75x0.75
 if xrandr | grep "^${EXTERNAL_MONITOR} connected" >/dev/null; then
     xrandr --output "$EXTERNAL_MONITOR" --scale 1.8x1.8 --auto --right-of "$INTERNAL_MONITOR"
     bspc monitor "$EXTERNAL_MONITOR" -d 1 2 3 4 5
@@ -42,7 +43,7 @@ esac
 systemctl --user restart picom polybar &> /dev/null
 pkill -USR1 picom &> /dev/null
 
-bspc config window_gap           5
+bspc config window_gap           2
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true

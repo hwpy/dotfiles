@@ -14,6 +14,10 @@ super + Return
 super + b
         firefox
 
+# files
+super + e
+        thunar
+
 # powermenu
 super + shift + q
         ~/.config/polybar/powermenu.sh
@@ -128,10 +132,10 @@ super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
 super + alt + equal
-    ~/.config/sxhkd/bspwm_resize expand
+    ~/.config/sxhkd/bin/bspwm_resize expand
 
 super + alt + minus
-    ~/.config/sxhkd/bspwm_resize contract
+    ~/.config/sxhkd/bin/bspwm_resize contract
 
 # Модификатор клавиши для управления мышью (обычно Super/Mod4)
 bspc config pointer_modifier mod4

@@ -2,7 +2,7 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    font:   "JetBrains Mono Nerd Font 18";
+    font:   "JetBrains Mono Nerd Font 14";
 
     background-color:   transparent;
     text-color:         @fg0;
@@ -15,7 +15,7 @@
 window {
     location:       north;
     y-offset:       calc(50% - 176px);
-    width:          800;
+    width:          600;
     border-radius:  16px;
 
     background-color:   @bg0;
