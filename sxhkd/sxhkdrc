@@ -121,6 +121,7 @@ super + ctrl + shift + space
 #
 # move/resize
 #
+
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
@@ -146,7 +147,10 @@ bspc config pointer_action2 resize_side
 # ПКМ + модификатор - изменение размера по углам окна
 bspc config pointer_action3 resize_corner
 
+#
 # brightness
+#
+
 # Увеличить яркость
 XF86MonBrightnessUp
     brightnessctl set +10%
@@ -155,7 +159,9 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     brightnessctl set 10%-
 
+#
 # Подсветка клавиатуры
+#
 
 # Увеличить яркость подсветки клавиатуры
 XF86KbdBrightnessUp
@@ -165,7 +171,9 @@ XF86KbdBrightnessUp
 XF86KbdBrightnessDown
     brightnessctl --device='smc::kbd_backlight' set 10%-
 
+#
 # Громкость звука
+#
 
 # Увеличить громкость на 5%
 XF86AudioRaiseVolume
@@ -179,5 +187,5 @@ XF86AudioLowerVolume
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-super + d
+ctrl + space
     rofi -show drun -config ~/.config/rofi/config.rasi
