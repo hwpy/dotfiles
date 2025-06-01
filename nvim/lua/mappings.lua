@@ -57,12 +57,12 @@ local function setup_instant_resize()
   end
 
   -- вертикальный ресайз (ширина)
-  vim.keymap.set("n", "<A-S-h>", resize_notify("vertical", -5), { desc = "Уменьшить ширину на 5" })
-  vim.keymap.set("n", "<A-S-l>", resize_notify("vertical", 5), { desc = "Увеличить ширину на 5" })
+  map("n", "<A-S-h>", resize_notify("vertical", -5), { desc = "Уменьшить ширину на 5" })
+  map("n", "<A-S-l>", resize_notify("vertical", 5), { desc = "Увеличить ширину на 5" })
 
   -- горизонтальный ресайз (высота)
-  vim.keymap.set("n", "<A-S-j>", resize_notify("horizontal", -5), { desc = "Уменьшить высоту на 5" })
-  vim.keymap.set("n", "<A-S-k>", resize_notify("horizontal", 5), { desc = "Увеличить высоту на 5" })
+  map("n", "<A-S-j>", resize_notify("horizontal", -5), { desc = "Уменьшить высоту на 5" })
+  map("n", "<A-S-k>", resize_notify("horizontal", 5), { desc = "Увеличить высоту на 5" })
 end
 
 setup_instant_resize()
@@ -75,3 +75,5 @@ map("n", "<leader>mt", function()
   require("render-markdown").toggle()
 end, { desc = "Toggle Markdown Render" })
 map('n', '<leader>mf', ':lua require("nabla").popup()<CR>', { desc = 'Markdown Formula' })
+-- terminal exit
+map('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })

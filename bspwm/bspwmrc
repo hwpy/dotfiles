@@ -7,7 +7,7 @@ for desktop in $(bspc query -D); do
     bspc desktop "$desktop" --remove
 done
 
-xrandr --output "$INTERNAL_MONITOR" --scale 0.75x0.75
+xrandr --output "$INTERNAL_MONITOR" --scale 1x1
 if xrandr | grep "^${EXTERNAL_MONITOR} connected" >/dev/null; then
     xrandr --output "$EXTERNAL_MONITOR" --scale 1.8x1.8 --auto --right-of "$INTERNAL_MONITOR"
     bspc monitor "$EXTERNAL_MONITOR" -d 1 2 3 4 5
