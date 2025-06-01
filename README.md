@@ -56,6 +56,9 @@ wayland:
 - [cmatrix](https://github.com/abishekvashok/cmatrix) - matrix screensaver
 - [htop](https://github.com/htop-dev/htop) - process viewer
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - system information tool
+- [calcurse](https://github.com/lfos/calcurse) - text-based calendar
+- [blueman-manager](https://github.com/blueman-project/blueman) - bluetooth manager GUI
+- [NetworkManager](https://networkmanager.dev/) - network manager
 
 ## 📝 Neovim (under construction)
 
