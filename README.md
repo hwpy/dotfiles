@@ -6,10 +6,44 @@ bspwm / hyprland / nvim / alacritty / tmux / user shell etc ...
 ## Arch Linux
 
 <p align="center">
-    <img src="screenshots/arch_bspwm.png">
+  <figure>
+    <img src="screenshots/arch_bspwm.png" alt="arch bspwm">
+    <figcaption>Desktop</figcaption>
+  </figure>
 </p>
 
-## Neovim
+![Rofi](screenshots/rofi_drun.gif)
+
+![Custom powermenu](screenshots/rofi_powermenu.gif)
+
+### Based on:
+xorg:
+- [bspwm](https://github.com/baskerville/bspwm) - tiling
+- [sxhkd](https://github.com/baskerville/sxhkd) - hotkey deamon
+- [picom](https://github.com/yshui/picom) - compositor
+- [polybar](https://github.com/polybar/polybar) - status bar
+- [rofi](https://github.com/davatorium/rofi) - menu
+
+### Tried:
+wayland:
+- [hyprland](https://github.com/hyprwm/Hyprland) - tiling / compositor
+- [waybar](https://github.com/Alexays/Waybar) - status bar
+- [wofi](https://man.archlinux.org/man/wofi.1.en) - menu
+
+### Soft
+- [alacritty](https://github.com/alacritty/alacritty) - terminal emulator
+- [tmux](https://github.com/tmux/tmux) - terminal multiplexer
+- [neovim](https://github.com/neovim/neovim) - for all things
+- [nvchad](https://github.com/NvChad/NvChad) - neovim framework
+- [thunar](https://gitlab.xfce.org/xfce/thunar) - file manager GUI
+- [ranger](https://github.com/ranger/ranger) - file manager TUI
+- [firefox](https://www.mozilla.org/ru/firefox/new/) - main web browser
+- [flameshot](https://github.com/flameshot-org/flameshot) - screenshot software
+- [cmatrix](https://github.com/abishekvashok/cmatrix) - matrix screensaver
+- [htop](https://github.com/htop-dev/htop) - process viewer
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch) - system information tool
+
+## Neovim (under construction)
 
 <p align="center">
     <img src="screenshots/nvim.png">
