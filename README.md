@@ -7,19 +7,19 @@ bspwm / hyprland / nvim / alacritty / tmux / user shell etc ...
 
 <div style="text-align: center;">
 
+  <p align="center">Desktop</p>
   <figure style="display: inline-block; text-align: center; margin: 1em;">
     <img src="screenshots/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
-    <figcaption>Desktop</figcaption>
   </figure>
 
+  <p align="center">Rofi</p>
   <figure style="display: inline-block; text-align: center; margin: 1em;">
     <img src="screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
-    <figcaption>Rofi</figcaption>
   </figure>
 
+  <p align="center">Custom powermenu</p>
   <figure style="display: inline-block; text-align: center; margin: 1em;">
     <img src="screenshots/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
-    <figcaption>Custom powermenu</figcaption>
   </figure>
 
 </div>
