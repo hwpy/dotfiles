@@ -187,5 +187,5 @@ XF86AudioLowerVolume
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-ctrl + space
+super + d
     rofi -show drun -config ~/.config/rofi/config.rasi
