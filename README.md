@@ -1,20 +1,30 @@
-# Configuration files for Arch Linux and soft
+#  Configuration files for Arch Linux and soft
 
 Soft:
 bspwm / hyprland / nvim / alacritty / tmux / user shell etc ...
 
-## Arch Linux
+## 󰣇 Arch Linux
 
 <p align="center">
-  <figure>
+  <figure style="display: inline-block; text-align: center;">
     <img src="screenshots/arch_bspwm.png" alt="arch bspwm">
     <figcaption>Desktop</figcaption>
   </figure>
 </p>
 
-![Rofi](screenshots/rofi_drun.gif)
+<div style="display: flex; justify-content: center; gap: 40px;">
 
-![Custom powermenu](screenshots/rofi_powermenu.gif)
+  <figure style="text-align: center; margin: 0;">
+    <img src="screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
+    <figcaption>Rofi</figcaption>
+  </figure>
+
+  <figure style="text-align: center; margin: 0;">
+    <img src="screenshots/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
+    <figcaption>Custom powermenu</figcaption>
+  </figure>
+
+</div>
 
 ### Based on:
 xorg:
@@ -43,7 +53,7 @@ wayland:
 - [htop](https://github.com/htop-dev/htop) - process viewer
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - system information tool
 
-## Neovim (under construction)
+##  Neovim (under construction)
 
 <p align="center">
     <img src="screenshots/nvim.png">
@@ -60,3 +70,11 @@ wayland:
     * npm install -g pyright
 - lua
 - ruff (optional)
+
+##  Inspired by:
+- [1](https://github.com/gh0stzk/dotfiles)
+- [2](https://github.com/Zproger/bspwm-dotfiles)
+
+## 󰸉 Wallpapers by:
+- [1](https://github.com/gh0stzk/dotfiles)
+- [2](https://github.com/connorslade/ArchPapers)
