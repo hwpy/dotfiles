@@ -1,25 +1,23 @@
-#  Configuration files for Arch Linux and soft
+# ⚙️ Configuration files for Arch Linux and soft
 
 Soft:
 bspwm / hyprland / nvim / alacritty / tmux / user shell etc ...
 
-## 󰣇 Arch Linux
+## 🐧 Arch Linux
 
-<p align="center">
-  <figure style="display: inline-block; text-align: center;">
-    <img src="screenshots/arch_bspwm.png" alt="arch bspwm">
+<div style="text-align: center;">
+
+  <figure style="display: inline-block; text-align: center; margin: 1em;">
+    <img src="screenshots/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
     <figcaption>Desktop</figcaption>
   </figure>
-</p>
 
-<div style="display: flex; justify-content: center; gap: 40px;">
-
-  <figure style="text-align: center; margin: 0;">
+  <figure style="display: inline-block; text-align: center; margin: 1em;">
     <img src="screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
     <figcaption>Rofi</figcaption>
   </figure>
 
-  <figure style="text-align: center; margin: 0;">
+  <figure style="display: inline-block; text-align: center; margin: 1em;">
     <img src="screenshots/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
     <figcaption>Custom powermenu</figcaption>
   </figure>
@@ -29,10 +27,16 @@ bspwm / hyprland / nvim / alacritty / tmux / user shell etc ...
 ### Based on:
 xorg:
 - [bspwm](https://github.com/baskerville/bspwm) - tiling
-- [sxhkd](https://github.com/baskerville/sxhkd) - hotkey deamon
+- [sxhkd](https://github.com/baskerville/sxhkd) - hotkey daemon
 - [picom](https://github.com/yshui/picom) - compositor
 - [polybar](https://github.com/polybar/polybar) - status bar
 - [rofi](https://github.com/davatorium/rofi) - menu
+
+appearance:
+- [breeze](https://archlinux.org/packages/extra/x86_64/breeze/) - cursor theme
+- [materia-gtk-theme](https://archlinux.org/packages/extra/any/materia-gtk-theme/) - theme
+- [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) - icons
+- [ttf-jetbrains-mono-nerd](https://archlinux.org/packages/extra/any/ttf-jetbrains-mono-nerd/) - font
 
 ### Tried:
 wayland:
@@ -53,14 +57,14 @@ wayland:
 - [htop](https://github.com/htop-dev/htop) - process viewer
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch) - system information tool
 
-##  Neovim (under construction)
+## 📝 Neovim (under construction)
 
 <p align="center">
     <img src="screenshots/nvim.png">
 </p>
 
 ### Files:
-- alacritty/alactirry.toml: config for Alacritty terminal emulator
+- alacritty/alacritty.toml: config for Alacritty terminal emulator
 - nvim: lua config files for neovim
 - ruff/pyproject.toml: ruff config
 - user: config files for user dir (tmux, zsh)
@@ -71,10 +75,11 @@ wayland:
 - lua
 - ruff (optional)
 
-##  Inspired by:
+## 💡 Inspired by:
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/Zproger/bspwm-dotfiles)
 
-## 󰸉 Wallpapers by:
+## 🖼 Wallpapers by:
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/connorslade/ArchPapers)
+
