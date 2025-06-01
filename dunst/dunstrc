@@ -1,9 +1,14 @@
 [global]
-frame_color = "#7DCFFF"
-font = "JetBrains Mono Nerd Font"
+background = "#746DFE"
+frame_color = "#00000000"
+font = "JetBrains Mono Nerd Font 10"
 width = 300
 origin = top-right
-offset = 9x40
+offset = 9x33
+
+[urgency_normal]
+background = "#746DFE"
+timeout = 3
 
 [urgency_low]
 background = "#424868"
