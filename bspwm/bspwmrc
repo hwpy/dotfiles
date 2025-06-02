@@ -24,9 +24,9 @@ picom --config ~/.config/picom/picom.conf &
 
 xrdb ~/.Xresources
 bspc config focus_follows_pointer true
-bspc config focused_border_color "#746DFE"  # цвет рамки у активного окна
-bspc config normal_border_color "#7DCFFF"   # цвет рамки у неактивного окна
-bspc config presel_border_color "#1AD29F"   # цвет рамки при предварительном выборе
+bspc config focused_border_color "#1AD29F"  # цвет рамки у активного окна
+bspc config normal_border_color "#BD93F9"   # цвет рамки у неактивного окна
+bspc config presel_border_color "#FF79C6"   # цвет рамки при предварительном выборе
 bspc config urgent_border_color "#F8F8F2"   # цвет рамки для окна с urgent-состоянием
 # модальные окна
 bspc rule -a Xdialog state=floating center=on
@@ -60,13 +60,13 @@ xsetroot -cursor_name left_ptr &
 # xsetroot -solid "#222222" &
 
 # mouse
-bspc config pointer_modifier mod4          # Обычно mod4 - клавиша Super (Win)
+bspc config pointer_modifier mod4           # Обычно mod4 - клавиша Super (Win)
 bspc config pointer_action1 move            # ЛКМ - перемещение окна
 bspc config pointer_action2 resize_side     # СКМ - изменение размера с боков
 bspc config pointer_action3 resize_corner   # ПКМ - изменение размера с углов
 
 
-$HOME/.config/polybar/launch.sh &
+$HOME/.config/polybar/launch_separate.sh &
 # xsettingsd &
 xss-lock -- slock &
 flameshot &
