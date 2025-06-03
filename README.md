@@ -1,7 +1,16 @@
 # ⚙️ Configuration files for Arch Linux and soft
 
-Soft:
-bspwm / hyprland / nvim / alacritty / tmux / zsh etc ...
+## Key features
+
+- 🧩 Uses minimalist and lightweight software that follows the Unix philosophy — programs that do one thing well and are easily composable.
+- 📦 Only packages from the official Arch repositories are used, ensuring stability and security.
+- ⚙️ The configuration emphasizes simplicity and transparency, without unnecessary automation or graphical shells, adhering to the KISS (Keep It Simple, Stupid) principle.
+- 🔧 Focuses on flexibility and user control — all components and programs are manually selected and configured.
+- 🖥️ Preference is given to terminal and text-based tools (bspwm, nvim, tmux, zsh, etc.), enhancing efficiency and speed of work.
+- 🌐 Supports both Xorg and Wayland (via Hyprland), providing a modern and flexible graphical environment.
+- 🎨 Employs tools for customizing appearance and functionality (polybar, rofi, picom, themes, and icons).
+- ⚡ The system is oriented towards lightness, resource efficiency, and maximum performance.
+
 
 ## 🐧 Arch Linux
 
