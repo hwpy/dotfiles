@@ -1,165 +1,89 @@
-// Load with --load-config examples/2.jsonc
-// Note that you must replace the image path to an existing image to display it.
-
+// Inspired by Catnap
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small"
+    },
     "display": {
-        "separator": " "
+        "separator": "",
+        "key": {
+            "width": 15
+        }
     },
     "modules": [
         {
-            "type": "host",
-            "key": "╭─󰌢",
-            "keyColor": "green"
-        },
-        {
-            "type": "cpu",
-            "key": "├─󰻠",
-            "keyColor": "green"
-        },
-        {
-            "type": "gpu",
-            "key": "├─󰍛",
-            "keyColor": "green"
-        },
-        {
-            "type": "disk",
-            "key": "├─",
-            "keyColor": "green"
-        },
-        {
-            "type": "memory",
-            "key": "├─󰑭",
-            "keyColor": "green"
-        },
-        {
-            "type": "swap",
-            "key": "├─󰓡",
-            "keyColor": "green"
-        },
-        {
-            "type": "display",
-            "key": "├─󰍹",
-            "keyColor": "green"
-        },
-        {
-            "type": "brightness",
-            "key": "├─󰃞",
-            "keyColor": "green"
-        },
-        {
-            "type": "battery",
-            "key": "├─",
-            "keyColor": "green"
-        },
-        {
-            "type": "poweradapter",
-            "key": "├─",
-            "keyColor": "green"
-        },
-        {
-            "type": "gamepad",
-            "key": "├─",
-            "keyColor": "green"
-        },
-        {
-            "type": "bluetooth",
-            "key": "├─",
-            "keyColor": "green"
-        },
-        {
-            "type": "sound",
-            "key": "╰─",
-            "keyColor": "green"
-        },
-        "break",
-
-        {
-            "type": "shell",
-            "key": "╭─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "terminal",
-            "key": "├─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "terminalfont",
-            "key": "├─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "lm",
-            "key": "├─󰧨",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "de",
-            "key": "├─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "wm",
-            "key": "├─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "theme",
-            "key": "├─󰉼",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "icons",
-            "key": "╰─󰸉",
-            "keyColor": "yellow"
-        },
-        "break",
-
-        {
+            // draw borders first to make colors of left and right border consistant
+            "key": " user",
             "type": "title",
-            "key": "╭─",
-            "format": "{user-name}@{host-name}",
-            "keyColor": "blue"
+            "format": "{user-name}",
+            "keyColor": "31"
         },
         {
-            "type": "os",
-            "key": "├─{icon}", // Just get your distro's logo off nerdfonts.com
-            "keyColor": "blue"
+            "key": "󰇅 hname",
+            "type": "title",
+            "format": "{host-name}",
+            "keyColor": "32"
+
         },
         {
-            "type": "kernel",
-            "key": "├─",
-            "keyColor": "blue"
-        },
-        {
-            "type": "packages",
-            "key": "├─󰏖",
-            "keyColor": "blue"
-        },
-        {
+            "key": "󰅐 uptime",
             "type": "uptime",
-            "key": "├─󰅐",
-            "keyColor": "blue"
+            "keyColor": "33"
         },
         {
-            "type": "media",
-            "key": "├─󰝚",
-            "keyColor": "blue"
+            "key": "{icon} distro",
+            "type": "os",
+            "keyColor": "34"
         },
         {
+            "key": " kernel",
+            "type": "kernel",
+            "keyColor": "35"
+        },
+        {
+            "key": "󰇄 desktop",
+            "type": "de",
+            "keyColor": "36"
+        },
+        {
+            "key": " term",
+            "type": "terminal",
+            "keyColor": "31"
+        },
+        {
+            "key": " shell",
+            "type": "shell",
+            "keyColor": "32"
+        },
+        {
+            "key": "󰍛 cpu",
+            "type": "cpu",
+            "showPeCoreCount": true,
+            "keyColor": "33"
+        },
+        {
+            "key": "󰉉 disk",
+            "type": "disk",
+            "folders": "/",
+            "keyColor": "34"
+        },
+        {
+            "key": " memory",
+            "type": "memory",
+            "keyColor": "35"
+        },
+        {
+            "key": "󰖩 wifi",
             "type": "wifi",
-            "key": "├─",
             "format": "{ssid}",
-            "keyColor": "blue"
+            "keyColor": "36"
         },
         {
-            "type": "locale",
-            "key": "╰─",
-            "keyColor": "blue"
+            "key": " colors",
+            "type": "colors",
+            "symbol": "circle",
+            "keyColor": "39"
         }
     ]
 }
-
-
 
