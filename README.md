@@ -1,7 +1,7 @@
 # ⚙️ Configuration files for Arch Linux and soft
 
 Soft:
-bspwm / hyprland / nvim / alacritty / tmux / user shell etc ...
+bspwm / hyprland / nvim / alacritty / tmux / zsh etc ...
 
 ## 🐧 Arch Linux
 
@@ -81,8 +81,12 @@ wayland:
 ## 💡 Inspired by:
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/Zproger/bspwm-dotfiles)
+- [3](https://github.com/raexera/tokyo)
 
 ## 🖼 Wallpapers by:
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/connorslade/ArchPapers)
+- [3](https://github.com/LagrangianLad/arch-minimal-wallpapers)
+- [4](https://github.com/archcraft-os/archcraft-wallpapers)
+- [5](https://github.com/raexera/tokyo)
 

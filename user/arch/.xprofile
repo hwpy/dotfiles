@@ -1,6 +1,6 @@
 export LANG=ru_RU.UTF-8
 export LC_ALL=ru_RU.UTF-8
-export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/arch2.webp"
+export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/lines.png"
 export PATH="$HOME/.local/bin:$PATH"
 
 xss-lock -- slock &
