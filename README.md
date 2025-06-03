@@ -1,4 +1,4 @@
-# ⚙️ Configuration files for Arch Linux and soft
+# 💻 Configuration files for Arch Linux and software
 
 ## Key features
 
@@ -10,6 +10,8 @@
 - 🌐 Supports both Xorg and Wayland (via Hyprland), providing a modern and flexible graphical environment.
 - 🎨 Employs tools for customizing appearance and functionality (polybar, rofi, picom, themes, and icons).
 - ⚡ The system is oriented towards lightness, resource efficiency, and maximum performance.
+
+_At the moment, the system is set up to use the Dracula color scheme._
 
 
 ## 🐧 Arch Linux
@@ -33,27 +35,29 @@
 
 </div>
 
-### Based on:
-xorg:
+### Display servers:
+
+_Supports Xorg or Wayland, by choice_
+
+#### Xorg components:
 - [bspwm](https://github.com/baskerville/bspwm) - tiling
 - [sxhkd](https://github.com/baskerville/sxhkd) - hotkey daemon
 - [picom](https://github.com/yshui/picom) - compositor
 - [polybar](https://github.com/polybar/polybar) - status bar
 - [rofi](https://github.com/davatorium/rofi) - menu
 
-appearance:
+#### Wayland components:
+- [hyprland](https://github.com/hyprwm/Hyprland) - tiling / compositor
+- [waybar](https://github.com/Alexays/Waybar) - status bar
+- [wofi](https://man.archlinux.org/man/wofi.1.en) - menu
+
+#### Appearance:
 - [breeze](https://archlinux.org/packages/extra/x86_64/breeze/) - cursor theme
 - [materia-gtk-theme](https://archlinux.org/packages/extra/any/materia-gtk-theme/) - theme
 - [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) - icons
 - [ttf-jetbrains-mono-nerd](https://archlinux.org/packages/extra/any/ttf-jetbrains-mono-nerd/) - font
 
-### Tried:
-wayland:
-- [hyprland](https://github.com/hyprwm/Hyprland) - tiling / compositor
-- [waybar](https://github.com/Alexays/Waybar) - status bar
-- [wofi](https://man.archlinux.org/man/wofi.1.en) - menu
-
-### Soft
+### Software
 - [alacritty](https://github.com/alacritty/alacritty) - terminal emulator
 - [tmux](https://github.com/tmux/tmux) - terminal multiplexer
 - [neovim](https://github.com/neovim/neovim) - for all things
@@ -69,7 +73,14 @@ wayland:
 - [blueman-manager](https://github.com/blueman-project/blueman) - bluetooth manager GUI
 - [NetworkManager](https://networkmanager.dev/) - network manager
 
-## 📝 Neovim (under construction)
+## 📝 Neovim
+
+_Based on NvChad_
+
+```Shell
+:MasonInstallAll
+:Lazy sync
+```
 
 <p align="center">
     <img src="screenshots/nvim.png">
@@ -79,13 +90,13 @@ wayland:
 - alacritty/alacritty.toml: config for Alacritty terminal emulator
 - nvim: lua config files for neovim
 - ruff/pyproject.toml: ruff config
-- user: config files for user dir (tmux, zsh)
+- user: config files for user dir (tmux, zsh, .X*, drivers configuration)
 
 ### Requirements:
 - npm / fnm pyright
     * npm install -g pyright
 - lua
-- ruff (optional)
+- unzip
 
 ## 💡 Inspired by:
 - [1](https://github.com/gh0stzk/dotfiles)
@@ -99,3 +110,4 @@ wayland:
 - [4](https://github.com/archcraft-os/archcraft-wallpapers)
 - [5](https://github.com/raexera/tokyo)
 
+---
