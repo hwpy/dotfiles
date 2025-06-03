@@ -1,15 +1,18 @@
 # 💻 Configuration files for Arch Linux and software
 
+<details open>
+<summary>EN</summary>
+
 ## Key features
 
-- 🧩 Uses minimalist and lightweight software that follows the Unix philosophy — programs that do one thing well and are easily composable.
-- 📦 Only packages from the official Arch repositories are used, ensuring stability and security.
-- ⚙️ The configuration emphasizes simplicity and transparency, without unnecessary automation or graphical shells, adhering to the KISS (Keep It Simple, Stupid) principle.
-- 🔧 Focuses on flexibility and user control — all components and programs are manually selected and configured.
-- 🖥️ Preference is given to terminal and text-based tools (bspwm, nvim, tmux, zsh, etc.), enhancing efficiency and speed of work.
-- 🌐 Supports both Xorg and Wayland (via Hyprland), providing a modern and flexible graphical environment.
-- 🎨 Employs tools for customizing appearance and functionality (polybar, rofi, picom, themes, and icons).
-- ⚡ The system is oriented towards lightness, resource efficiency, and maximum performance.
+- 🧩 Minimalist, lightweight software following the Unix philosophy — doing one thing well.
+- 📦 Only official Arch packages for stability and security.
+- ⚙️ Simple, transparent config, no unnecessary automation or GUIs, follows KISS.
+- 🔧 Full user control — manual selection and setup.
+- 🖥️ Focus on terminal/text tools (bspwm, nvim, tmux, zsh) for efficiency.
+- 🌐 Supports Xorg and Wayland (Hyprland) for a flexible GUI.
+- 🎨 Customizable appearance (polybar, rofi, picom, themes, icons).
+- ⚡ Prioritizes lightness, resource efficiency, and performance.
 
 _At the moment, the system is set up to use the Dracula color scheme._
 
@@ -110,4 +113,5 @@ _Based on NvChad_
 - [4](https://github.com/archcraft-os/archcraft-wallpapers)
 - [5](https://github.com/raexera/tokyo)
 
+</details>
 ---
