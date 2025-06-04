@@ -1,0 +1,3 @@
+#!/bin/sh
+# i3lock -c 282A36
+i3lock -i $HOME/.config/wlppr/lines.png

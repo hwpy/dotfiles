@@ -2,17 +2,20 @@ UNIT FILE                          STATE   PRESET
 cups.path                          enabled disabled
 bluetooth.service                  enabled disabled
 cups.service                       enabled disabled
+docker.service                     enabled disabled
 getty@.service                     enabled enabled
 ly.service                         enabled disabled
 NetworkManager-dispatcher.service  enabled disabled
 NetworkManager-wait-online.service enabled disabled
 NetworkManager.service             enabled disabled
+rtkit-daemon.service               enabled disabled
 systemd-timesyncd.service          enabled enabled
 tlp.service                        enabled disabled
 touchegg.service                   enabled disabled
+ufw.service                        enabled disabled
 cups.socket                        enabled disabled
 systemd-userdbd.socket             enabled enabled
 remote-fs.target                   enabled enabled
 fstrim.timer                       enabled disabled
 
-15 unit files listed.
+18 unit files listed.

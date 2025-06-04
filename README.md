@@ -50,11 +50,13 @@ _Supports Xorg or Wayland, by choice_
 - [picom](https://github.com/yshui/picom) - compositor
 - [polybar](https://github.com/polybar/polybar) - status bar
 - [rofi](https://github.com/davatorium/rofi) - menu
+- [i3lock](https://archlinux.org/packages/extra/x86_64/i3lock/) - screen locker for X
 
 #### Wayland components:
 - [hyprland](https://github.com/hyprwm/Hyprland) - tiling / compositor
 - [waybar](https://github.com/Alexays/Waybar) - status bar
 - [wofi](https://man.archlinux.org/man/wofi.1.en) - menu
+- [swaylock](https://github.com/swaywm/swaylock) - screen locker for Wayland
 
 #### Appearance:
 - [breeze](https://archlinux.org/packages/extra/x86_64/breeze/) - cursor theme
@@ -166,11 +168,13 @@ _Поддержка Xorg или Wayland, по выбору_
 - [picom](https://github.com/yshui/picom) — композитор
 - [polybar](https://github.com/polybar/polybar) — статус-бар
 - [rofi](https://github.com/davatorium/rofi) — меню
+- [i3lock](https://archlinux.org/packages/extra/x86_64/i3lock/) - блокировщик экрана для X
 
 #### Компоненты Wayland:
 - [hyprland](https://github.com/hyprwm/Hyprland) — тайлинг / композитор
 - [waybar](https://github.com/Alexays/Waybar) — статус-бар
 - [wofi](https://man.archlinux.org/man/wofi.1.en) — меню
+- [swaylock](https://github.com/swaywm/swaylock) - блокировщик экрана для Wayland
 
 #### Оформление:
 - [breeze](https://archlinux.org/packages/extra/x86_64/breeze/) — тема курсора

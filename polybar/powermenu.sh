@@ -4,7 +4,7 @@ chosen=$(echo -e " Блокировка\n󰤄 Сон\n Перезагру�
 
 case "$chosen" in
     " Блокировка")
-        slock
+        $HOME/.config/bspwm/bin/lock
         ;;
     "󰤄 Сон")
         systemctl suspend

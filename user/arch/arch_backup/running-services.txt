@@ -1,7 +1,9 @@
   UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
   bluetooth.service         loaded active running Bluetooth service
+  containerd.service        loaded active running containerd container runtime
   cups.service              loaded active running CUPS Scheduler
   dbus-broker.service       loaded active running D-Bus System Message Bus
+  docker.service            loaded active running Docker Application Container Engine
   getty@tty1.service        loaded active running Getty on tty1
   ly.service                loaded active running TUI display manager
   NetworkManager.service    loaded active running Network Manager
@@ -13,6 +15,7 @@
   systemd-udevd.service     loaded active running Rule-based Manager for Device Events and Files
   systemd-userdbd.service   loaded active running User Database Manager
   touchegg.service          loaded active running Touchégg Daemon
+  upower.service            loaded active running Daemon for power management
   user@1001.service         loaded active running User Manager for UID 1001
   wpa_supplicant.service    loaded active running WPA supplicant
 
@@ -20,4 +23,4 @@ Legend: LOAD   → Reflects whether the unit definition was properly loaded.
         ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
         SUB    → The low-level unit activation state, values depend on unit type.
 
-16 loaded units listed.
+19 loaded units listed.
