@@ -1,22 +1,39 @@
 #!/bin/sh
 
-chosen=$(echo -e " Блокировка\n󰤄 Сон\n Перезагрузка\n󰐥 Выключение\n󰗼 Выход" | rofi -dmenu -i -p "Выберите действие:")
+if echo "$LANG" | grep -q "^ru"; then
+    MENU=" Блокировка\n󰤄 Сон\n Перезагрузка\n󰐥 Выключение\n󰗼 Выход"
+    LOCK="Блокировка"
+    SUSPEND="Сон"
+    REBOOT="Перезагрузка"
+    POWEROFF="Выключение"
+    LOGOUT="Выход"
+    PROMPT="Выберите действие:"
+else
+    MENU=" Lock\n󰤄 Suspend\n Reboot\n󰐥 Poweroff\n󰗼 Logout"
+    LOCK="Lock"
+    SUSPEND="Suspend"
+    REBOOT="Reboot"
+    POWEROFF="Poweroff"
+    LOGOUT="Logout"
+    PROMPT="Choose action:"
+fi
+
+chosen=$(echo -e "$MENU" | rofi -dmenu -i -p "$PROMPT")
 
 case "$chosen" in
-    " Блокировка")
+    *"$LOCK"*)
         $HOME/.config/bspwm/bin/lock
         ;;
-    "󰤄 Сон")
+    *"$SUSPEND"*)
         systemctl suspend
         ;;
-    " Перезагрузка")
+    *"$REBOOT"*)
         systemctl reboot
         ;;
-    "󰐥 Выключение")
+    *"$POWEROFF"*)
         systemctl poweroff
         ;;
-    "󰗼 Выход")
+    *"$LOGOUT"*)
         pkill -KILL -u $USER
         ;;
 esac
-
