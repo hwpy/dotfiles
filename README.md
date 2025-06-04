@@ -18,7 +18,6 @@
 
 _At the moment, the system is set up to use the Dracula color scheme._
 
-
 ## 🐧 Arch Linux
 
 <div style="text-align: center;">
@@ -106,11 +105,13 @@ _Based on NvChad_
 - unzip
 
 ## 💡 Inspired by:
+
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/Zproger/bspwm-dotfiles)
 - [3](https://github.com/raexera/tokyo)
 
 ## 🖼 Wallpapers by:
+
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/connorslade/ArchPapers)
 - [3](https://github.com/LagrangianLad/arch-minimal-wallpapers)
@@ -225,11 +226,13 @@ _Основан на NvChad_
 - unzip
 
 ## 💡 Вдохновлено:
+
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/Zproger/bspwm-dotfiles)
 - [3](https://github.com/raexera/tokyo)
 
 ## 🖼 Обои:
+
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/connorslade/ArchPapers)
 - [3](https://github.com/LagrangianLad/arch-minimal-wallpapers)
