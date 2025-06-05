@@ -8,7 +8,7 @@ offset = 9x33
 
 [urgency_normal]
 background = "#746DFE"
-timeout = 3
+timeout = 5
 
 [urgency_low]
 background = "#424868"
