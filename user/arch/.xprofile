@@ -4,3 +4,13 @@ export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/lines.png"
 export PATH="$HOME/.local/bin:$PATH"
 
 xss-lock -- $HOME/.config/bspwm/bin/lock &
+
+# keyring settings
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+  eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+dbus-update-activation-environment --all
+if command -v gnome-keyring-daemon >/dev/null 2>&1; then
+  eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+  export SSH_AUTH_SOCK
+fi
