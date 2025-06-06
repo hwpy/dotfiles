@@ -75,3 +75,11 @@ map("n", "<leader>mt", function()
   require("render-markdown").toggle()
 end, { desc = "Toggle Markdown Render" })
 map('n', '<leader>mf', ':lua require("nabla").popup()<CR>', { desc = 'Markdown Formula' })
+
+-- DAP keymaps
+map("n", "<leader>db", function() require("dap").toggle_breakpoint() end, { desc = "Toggle Breakpoint" })
+map("n", "<leader>dc", function() require("dap").continue() end, { desc = "Continue" })
+map("n", "<leader>ds", function() require("dap").step_over() end, { desc = "Step Over" })
+map("n", "<leader>di", function() require("dap").step_into() end, { desc = "Step Into" })
+map("n", "<leader>do", function() require("dap").step_out() end, { desc = "Step Out" })
+map("n", "<leader>du", function() require("dapui").toggle() end, { desc = "Toggle DAP UI" })
