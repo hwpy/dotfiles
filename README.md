@@ -79,6 +79,44 @@ _Supports Xorg or Wayland, by choice_
 - [blueman-manager](https://github.com/blueman-project/blueman) - bluetooth manager GUI
 - [NetworkManager](https://networkmanager.dev/) - network manager
 
+## 🖍️ Themes
+
+- To switch the color scheme, use Super + Alt + T
+- Colors for tmux are set separately in the .tmux.conf file
+- Colors for Alacritty and NvChad are configured separately in their respective config files and switched using Leader + T + H respectively
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/ayu_dark.png" width="150"><br/>
+      <sub>Ayu Dark</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/catppuccin_mocha.png" width="150"><br/>
+      <sub>Catppuccin Mocha</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/dracula.png" width="150"><br/>
+      <sub>Dracula</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/github_dark.png" width="150"><br/>
+      <sub>GitHub Dark</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/nord.png" width="150"><br/>
+      <sub>Nord</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/one_dark.png" width="150"><br/>
+      <sub>One Dark</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/tokyo_night.png" width="150"><br/>
+      <sub>Tokyo Night</sub>
+    </td>
+</table>
+
 ## 📝 Neovim
 
 _Based on NvChad_
@@ -198,6 +236,44 @@ _Поддержка Xorg или Wayland, по выбору_
 - [calcurse](https://github.com/lfos/calcurse) — календарь TUI
 - [blueman-manager](https://github.com/blueman-project/blueman) — менеджер Bluetooth GUI
 - [NetworkManager](https://networkmanager.dev/) — менеджер сети
+
+## 🖍️ Цветовые схемы
+
+- Для смены цветовой схемы используйте Super + Alt + T
+- Цвета для tmux настраиваются отдельно в файле .tmux.conf
+- Цвета для Alacritty и NvChad настраиваются отдельно в их конфигурационных файлах и переключаются с помощью сочетания Leader + T + H соответственно
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/ayu_dark.png" width="150"><br/>
+      <sub>Ayu Dark</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/catppuccin_mocha.png" width="150"><br/>
+      <sub>Catppuccin Mocha</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/dracula.png" width="150"><br/>
+      <sub>Dracula</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/github_dark.png" width="150"><br/>
+      <sub>GitHub Dark</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/nord.png" width="150"><br/>
+      <sub>Nord</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/one_dark.png" width="150"><br/>
+      <sub>One Dark</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/tokyo_night.png" width="150"><br/>
+      <sub>Tokyo Night</sub>
+    </td>
+</table>
 
 ## 📝 Neovim
 
