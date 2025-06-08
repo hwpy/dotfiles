@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Загружаем текущую схему
+CURRENT_SCHEME=$(cat ~/.config/colors/current_scheme)
+SCHEME_FILE="$HOME/.config/colors/schemes/$CURRENT_SCHEME.conf"
+
+# Парсим цвета
+background=$(grep '^background\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+foreground=$(grep '^foreground\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+primary=$(grep '^primary\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+secondary=$(grep '^secondary\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+disabled=$(grep '^disabled\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+green=$(grep '^green\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+background_alt=$(grep '^background-alt\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+purple=$(grep '^purple\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+
+# Устанавливаем значения по умолчанию
+background=${background:-#0F1419}
+foreground=${foreground:-#FFFFFF}
+primary=${primary:-#7DCFFF}
+secondary=${secondary:-#746DFE}
+disabled=${disabled:-#5C5A57}
+green=${green:-#A6E3A1}
+background_alt=${background_alt:-#1A1F26}
+purple=${purple:-#C792EA}
+
+# Обновляем конфиг rofi
+CONFIG_FILE=~/.config/rofi/config.rasi
+
+# Удаляем старую тему
+sed -i '/@theme/d' "$CONFIG_FILE"
+
+# Добавляем обновлённую тему с правильными цветами
+cat > "$CONFIG_FILE" <<EOF
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus";
+    font: "JetBrains Mono Nerd Font 14";
+    background:     ${background};
+    foreground:     ${foreground};
+    border:         1;
+    border-color:   ${disabled};
+    border-radius:  8;
+    padding:        10;
+    element-padding: 5;
+    scrollbar-width: 8;
+    scrollbar-handle-color: ${green};
+    selected-background: ${primary};
+    selected-foreground: ${foreground};
+    window {
+        width: 800px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+}
+
+
+* {
+    bg0:    ${background};
+    bg1:    ${background_alt};
+    bg2:    ${primary};
+    bg3:    ${primary};
+    fg0:    ${foreground};
+    fg1:    ${foreground};
+    fg2:    ${disabled};
+    fg3:    ${foreground};
+}
+@import "~/.config/rofi/themes/template/rounded-template.rasi"
+EOF

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Загружаем текущую схему
+CURRENT_SCHEME=$(cat $HOME/.config/colors/current_scheme)
+SCHEME_FILE="$HOME/.config/colors/schemes/$CURRENT_SCHEME.conf"
+
+# Парсим цвета из файла схемы
+background=$(grep '^background\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+primary=$(grep '^primary\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+secondary=$(grep '^secondary\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+disabled=$(grep '^disabled\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+pink=$(grep '^pink\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+white=$(grep '^white\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+
+# Устанавливаем значения по умолчанию, если цвета не найдены
+background=${background:-#0F1419}
+primary=${primary:-#1AD29F}
+secondary=${secondary:-#BD93F9}
+disabled=${disabled:-#424868}
+pink=${pink:-#FF79C6}
+white=${white:-#F8F8F2}
+
+# Обновляем цвета границ
+bspc config focused_border_color "$primary"
+bspc config normal_border_color "$disabled"
+bspc config presel_border_color "$pink"
+bspc config urgent_border_color "$white"
+
+# Обновляем фон корневого окна (опционально)
+xsetroot -solid "$background"# Обновляем цвета границ
+

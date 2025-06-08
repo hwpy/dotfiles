@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Пути
+CURRENT_SCHEME=$(cat ~/.config/colors/current_scheme)
+SCHEME_FILE="$HOME/.config/colors/schemes/$CURRENT_SCHEME.conf"
+
+# Парсим цвета из схемы
+background=$(grep '^background\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+foreground=$(grep '^foreground\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+primary=$(grep '^primary\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+disabled=$(grep '^disabled\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+alert=$(grep '^alert\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+
+# Значения по умолчанию
+background=${background:-#0F1419}
+foreground=${foreground:-#FFFFFF}
+disabled=${disabled:-#5C5A57}
+alert=${alert:-#FB3ECE}
+
+# Пути к шаблону и итоговому конфигу dunst
+TEMPLATE="$HOME/.config/dunst/dunst-template.conf"
+CONFIG="$HOME/.config/dunst/dunstrc"
+
+# Генерируем конфиг dunst из шаблона с подстановкой цветов
+sed -e "s|{{background}}|$background|g" \
+    -e "s|{{foreground}}|$foreground|g" \
+    -e "s|{{primary}}|$primary|g" \
+    -e "s|{{disabled}}|$disabled|g" \
+    -e "s|{{alert}}|$alert|g" \
+    "$TEMPLATE" > "$CONFIG"
+
+# Перезапускаем dunst, чтобы применить новый конфиг
+killall dunst
+dunst &
+
+

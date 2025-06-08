@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Загружаем текущую цветовую схему
+CURRENT_SCHEME=$(cat $HOME/.config/colors/current_scheme)
+
+# Создаем символическую ссылку на текущую схему
+ln -sf "$HOME/.config/colors/schemes/$CURRENT_SCHEME.conf" "$HOME/.config/colors/current.conf"
+
 # Убить все старые бары
 killall -q polybar
 

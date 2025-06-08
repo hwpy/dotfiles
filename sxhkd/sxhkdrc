@@ -189,3 +189,7 @@ XF86AudioMute
 
 super + d
     rofi -show drun -config ~/.config/rofi/config.rasi
+
+# Переключение цветовой схемы
+super + alt + t
+    ~/.config/rofi/src/switch-theme

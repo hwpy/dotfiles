@@ -23,7 +23,6 @@ alias q="exit"
 alias n="nvim"
 alias ht="htop"
 alias ra="ranger"
-alias gdu="gdu-go"
 # alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --height 40% --reverse --prompt='Выберите сессию tmux: ') || echo 'Нет активных сессий tmux'"
 alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --height 40% --reverse --prompt='Выберите сессию tmux: ' --preview='tmux capture-pane -pt {} -S -300 -E -300 | bat --language=sh --style=numbers,changes --color=always --pager=\"less -R\"' --preview-window='right:60%') || echo 'Нет активных сессий tmux'"
 

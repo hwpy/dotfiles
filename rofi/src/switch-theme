@@ -1,0 +1,40 @@
+#!/bin/bash
+export PATH=/usr/local/bin:/usr/bin:/bin
+
+SCHEMES_DIR="$HOME/.config/colors/schemes"
+CURRENT_SCHEME_FILE="$HOME/.config/colors/current_scheme"
+
+# Получаем список доступных схем
+schemes=()
+for scheme in "$SCHEMES_DIR"/*.conf; do
+    schemes+=("$(basename "$scheme" .conf)")
+done
+
+# Выбор схемы через rofi
+selected=$(printf "%s\n" "${schemes[@]}" | rofi -dmenu -p "Select color scheme" -config ~/.config/rofi/config.rasi)
+
+if [[ -n "$selected" && -f "$SCHEMES_DIR/$selected.conf" ]]; then
+    # Сохраняем выбранную схему
+    echo "$selected" > "$CURRENT_SCHEME_FILE"
+
+    # Обновляем символическую ссылку
+    ln -sf "$SCHEMES_DIR/$selected.conf" "$HOME/.config/colors/current.conf"
+
+    # Обновляем BSPWM
+    ~/.config/bspwm/bin/update-colors
+
+    # Перезапускаем polybar
+    killall -q polybar
+    while pgrep -u $UID -x polybar >/dev/null; do sleep 0.1; done
+    ~/.config/polybar/launch_separate.sh &
+
+    # Даём время для применения изменений
+    sleep 0.5
+
+    # Обновляем Rofi
+    $HOME/.config/rofi/src/update-colors
+    # Обновляем dunst
+    $HOME/.config/dunst/src/update-dunst-colors
+
+    notify-send "Color scheme changed" "Selected: $selected"
+fi
