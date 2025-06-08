@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Загружаем текущую цветовую схему
 CURRENT_SCHEME=$(cat ~/.config/colors/current_scheme)
 
