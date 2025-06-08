@@ -16,8 +16,6 @@
 - 🎨 Customizable appearance (polybar, rofi, picom, themes, icons).
 - ⚡ Prioritizes lightness, resource efficiency, and performance.
 
-_At the moment, the system is set up to use the Dracula color scheme._
-
 ## 🐧 Arch Linux
 
 <div style="text-align: center;">
@@ -88,31 +86,31 @@ _Supports Xorg or Wayland, by choice_
 <table>
   <tr>
     <td align="center">
-      <img src="screenshots/ayu_dark.png" width="150"><br/>
+      <img src="screenshots/themes/ayu_dark.png" width="150"><br/>
       <sub>Ayu Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/catppuccin_mocha.png" width="150"><br/>
+      <img src="screenshots/themes/catppuccin_mocha.png" width="150"><br/>
       <sub>Catppuccin Mocha</sub>
     </td>
     <td align="center">
-      <img src="screenshots/dracula.png" width="150"><br/>
+      <img src="screenshots/themes/dracula.png" width="150"><br/>
       <sub>Dracula</sub>
     </td>
     <td align="center">
-      <img src="screenshots/github_dark.png" width="150"><br/>
+      <img src="screenshots/themes/github_dark.png" width="150"><br/>
       <sub>GitHub Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/nord.png" width="150"><br/>
+      <img src="screenshots/themes/nord.png" width="150"><br/>
       <sub>Nord</sub>
     </td>
     <td align="center">
-      <img src="screenshots/one_dark.png" width="150"><br/>
+      <img src="screenshots/themes/one_dark.png" width="150"><br/>
       <sub>One Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/tokyo_night.png" width="150"><br/>
+      <img src="screenshots/themes/tokyo_night.png" width="150"><br/>
       <sub>Tokyo Night</sub>
     </td>
 </table>
@@ -156,6 +154,58 @@ _Based on NvChad_
 - [4](https://github.com/archcraft-os/archcraft-wallpapers)
 - [5](https://github.com/raexera/tokyo)
 
+## F.A.Q
+
+<details>
+<summary>Appearance</summary>
+
+1. How to set up the wallpaper?
+Answer:
+In **~/.xprofile** add the line:
+
+```Shell
+export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"
+
+```
+
+2. How to set up bspwm / rofi / polybar / dunst consistent theme?
+Answer:
+
+```Shell
+SUPER + ALT + T
+
+```
+
+3. How to set up NvChad theme?
+Answer:
+
+```Shell
+Leader + T + H
+
+```
+
+4. How to set up Alacritty theme?
+Answer:
+In **~/.config/alacritty/alacritty.toml** change:
+
+```Shell
+import = [
+  "~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"
+]
+
+```
+
+5. How to set tmux theme?
+Answer:
+In **~/.tmux.conf** change:
+
+```Shell
+source-file $HOME/.config/tmux/themes/ayu_dark.conf
+
+```
+
+</details>
+
 </details>
 
 ---
@@ -167,14 +217,12 @@ _Based on NvChad_
 
 - 🧩 Минималистичный, лёгкий софт, следующий философии Unix — программы, которые делают одну вещь хорошо.
 - 📦 Используются только официальные пакеты Arch для стабильности и безопасности.
-- ⚙️ Простая, прозрачная конфигурация, без лишней автоматизации и графических оболочек, соблюдается принцип KISS.
-- 🔧 Полный контроль пользователя — ручной выбор и настройка.
-- 🖥️ Акцент на терминальные и текстовые инструменты (bspwm, nvim, tmux, zsh) для эффективности.
-- 🌐 Поддержка Xorg либо Wayland (Hyprland) для гибкой графической среды.
+- ⚙️ Простая, прозрачная конфигурация, без лишней автоматизации и графических оболочек, соблюдающая принцип KISS.
+- 🔧 Пользователь сам контролирует настройки своей системы через конфигурационные файлы.
+- 🖥️ Акцент на терминальные и текстовые инструменты (bspwm, nvim, tmux, zsh).
+- 🌐 Поддержка графической среды Xorg либо Wayland (Hyprland).
 - 🎨 Настраиваемый внешний вид (polybar, rofi, picom, темы, иконки).
-- ⚡ Приоритет лёгкости, экономии ресурсов и производительности.
-
-_В данный момент система настроена под цветовую схему Dracula._
+- ⚡ В приоритете лёгкость, экономия ресурсов и производительность.
 
 ## 🐧 Arch Linux
 
@@ -246,31 +294,31 @@ _Поддержка Xorg или Wayland, по выбору_
 <table>
   <tr>
     <td align="center">
-      <img src="screenshots/ayu_dark.png" width="150"><br/>
+      <img src="screenshots/themes/ayu_dark.png" width="150"><br/>
       <sub>Ayu Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/catppuccin_mocha.png" width="150"><br/>
+      <img src="screenshots/themes/catppuccin_mocha.png" width="150"><br/>
       <sub>Catppuccin Mocha</sub>
     </td>
     <td align="center">
-      <img src="screenshots/dracula.png" width="150"><br/>
+      <img src="screenshots/themes/dracula.png" width="150"><br/>
       <sub>Dracula</sub>
     </td>
     <td align="center">
-      <img src="screenshots/github_dark.png" width="150"><br/>
+      <img src="screenshots/themes/github_dark.png" width="150"><br/>
       <sub>GitHub Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/nord.png" width="150"><br/>
+      <img src="screenshots/themes/nord.png" width="150"><br/>
       <sub>Nord</sub>
     </td>
     <td align="center">
-      <img src="screenshots/one_dark.png" width="150"><br/>
+      <img src="screenshots/themes/one_dark.png" width="150"><br/>
       <sub>One Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/tokyo_night.png" width="150"><br/>
+      <img src="screenshots/themes/tokyo_night.png" width="150"><br/>
       <sub>Tokyo Night</sub>
     </td>
 </table>
@@ -314,6 +362,58 @@ _Основан на NvChad_
 - [3](https://github.com/LagrangianLad/arch-minimal-wallpapers)
 - [4](https://github.com/archcraft-os/archcraft-wallpapers)
 - [5](https://github.com/raexera/tokyo)
+
+## F.A.Q
+
+<details>
+<summary>Внешний вид</summary>
+
+1. Как установить обои рабочего стола?
+Ответ:
+В файле **~/.xprofile** добавьте строку:
+
+```Shell
+export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"
+
+```
+
+2. Как установить bspwm / rofi / polybar / dunst консистентную цветовую схему?
+Ответ:
+
+```Shell
+SUPER + ALT + T
+
+```
+
+3. Как установить цветовую схему NvChad?
+Ответ:
+
+```Shell
+Leader + T + H
+
+```
+
+4. Как установить цветовую схему Alacritty?
+Ответ:
+В файле **~/.config/alacritty/alacritty.toml** измените:
+
+```Shell
+import = [
+  "~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"
+]
+
+```
+
+5. Как установить цветовую схему tmux?
+Ответ:
+В файле **~/.tmux.conf** измените:
+
+```Shell
+source-file $HOME/.config/tmux/themes/ayu_dark.conf
+
+```
+
+</details>
 
 </details>
 
