@@ -1,6 +1,9 @@
 [general]
+# import = [
+#   "~/.config/alacritty/alacritty-theme/themes/github_dark_custom.toml"
+# ]
 import = [
-  "~/.config/alacritty/alacritty-theme/themes/github_dark_custom.toml"
+  "~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"
 ]
 
 [window]

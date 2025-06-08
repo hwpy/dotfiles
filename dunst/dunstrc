@@ -1,19 +1,26 @@
 [global]
-background = "#746DFE"
-frame_color = "#00000000"
+background = "#0B0E14"
+frame_color = "#ff9445"
+frame_width = 2
+corner_radius = 10
+foreground = "#FFFFFF"
 font = "JetBrains Mono Nerd Font 10"
 width = 300
 origin = top-right
-offset = 9x33
+offset = (9, 42)
 
 [urgency_normal]
-background = "#746DFE"
+background = "#0B0E14"
+foreground = "#FFFFFF"
 timeout = 5
 
 [urgency_low]
-background = "#424868"
+background = "#686868"
+foreground = "#FFFFFF"
 timeout = 3
 
 [urgency_critical]
-background = "#FB3ECE"
+background = "#F07178"
+foreground = "#FFFFFF"
 timeout = 0
+

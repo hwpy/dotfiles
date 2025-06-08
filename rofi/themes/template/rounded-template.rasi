@@ -1,9 +1,8 @@
 /* ROUNDED THEME FOR ROFI */
-/* Author: Newman Sanchez (https://github.com/newmanls) */
+/* Modified for dynamic color schemes */
 
 * {
-    // font:   "JetBrains Mono Nerd Font 16";
-
+    // Эти значения будут переопределены в основном конфиге
     background-color:   transparent;
     text-color:         @fg0;
 
@@ -13,12 +12,12 @@
 }
 
 window {
-    location:       north;
-    y-offset:       calc(50% - 176px);
+    location:       center;
     width:          600;
     border-radius:  16px;
-
     background-color:   @bg0;
+    border: 2px;                  /* толщина рамки */
+    border-color: @bg2;
 }
 
 mainbox {
@@ -28,13 +27,15 @@ mainbox {
 inputbar {
     background-color:   @bg1;
     border-color:       @bg3;
-
     border:         2px;
     border-radius:  10px;
-
     padding:    8px 16px;
     spacing:    8px;
     children:   [ prompt, entry ];
+}
+
+scrollbar {
+    handle-color: @bg2;  /* <-- цвет "ползунка" */
 }
 
 prompt {
@@ -42,6 +43,7 @@ prompt {
 }
 
 entry {
+    text-color:         @fg0;
     placeholder:        "Search";
     placeholder-color:  @fg3;
 }
@@ -59,15 +61,15 @@ textbox {
 
 listview {
     background-color:   transparent;
-
     margin:     12px 0 0;
     lines:      8;
     columns:    1;
-
     fixed-height: false;
+    border: 0px;
 }
 
 element {
+    background-color:   transparent;
     padding:        8px 16px;
     spacing:        8px;
     border-radius:  10px;
@@ -93,3 +95,14 @@ element-icon {
 element-text {
     text-color: inherit;
 }
+
+element.normal.normal {
+    background-color: inherit;    /* фон невыделенных элементов */
+    text-color:       inherit;
+}
+
+element.alternate.normal {
+    background-color: inherit;    /* тот же фон, что и для обычных элементов */
+    text-color:       inherit;
+}
+

@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "chadracula-evondev",
+    theme = "ayu_dark",
   transparency = true,
   -- настройки конкретно для statusline theme = "vscode_colored"
   hl_override = {
@@ -20,21 +20,20 @@ M.base46 = {
     St_ConfirmMode = {},
     St_CommandMode = {},
 
-    TbCloseAllBufsBtn = {fg="#fb3ece"},
-    TbThemeToggleBtn = {fg="#fb3ece"},
-
-    TBTabTitle = {fg="#746dfe"},
-    TbTabCloseBtn = {fg="#746dfe"},
+    TbCloseAllBufsBtn = {fg="pink"},
+    TbThemeToggleBtn = {fg="pink"},
+    TBTabTitle = {fg="purple"},
+    TbTabCloseBtn = {fg="purple"},
     TbTabOff = {},
-    TbTabOn = {fg="#fb3ece"},
+    TbTabOn = {fg="pink"},
     TbTabNewBtn = {},
   },
   -- настройки конкретно для statusline theme = "vscode_colored"
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+    -- hl_override = {
+    --     Comment = { italic = true },
+    --     ["@comment"] = { italic = true },
+    -- },
 }
 
 -- M.nvdash = { load_on_startup = true }

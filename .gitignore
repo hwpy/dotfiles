@@ -2,6 +2,7 @@
 !/.git/
 !/alacritty/
 !/bspwm/
+!/colors/
 !/dunst/
 !/fastfetch/
 !/gtk*/
@@ -17,6 +18,7 @@ nvim/lazy-lock.json
 !/ruff/
 !/screenshots/
 !/sxhkd/
+!/tmux/
 !/touchegg/
 /touchegg/*
 !/touchegg/touchegg.conf
