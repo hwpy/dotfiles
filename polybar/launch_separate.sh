@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Загружаем текущую цветовую схему
-CURRENT_SCHEME=$(cat ~/.config/colors/current_scheme)
+CURRENT_SCHEME=$(cat $HOME/.config/colors/current_scheme)
 
 # Создаем символическую ссылку на текущую схему
 ln -sf "$HOME/.config/colors/schemes/$CURRENT_SCHEME.conf" "$HOME/.config/colors/current.conf"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Загружаем текущую схему
-CURRENT_SCHEME=$(cat ~/.config/colors/current_scheme)
+CURRENT_SCHEME=$(cat $HOME/.config/colors/current_scheme)
 SCHEME_FILE="$HOME/.config/colors/schemes/$CURRENT_SCHEME.conf"
 
 # Парсим цвета из файла схемы
