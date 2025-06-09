@@ -79,6 +79,8 @@ _Supports Xorg or Wayland, by choice_
 
 ## 🖍️ Themes
 
+*supports consistent bspwm / polybar / rofi / dunst appearance*
+
 - To switch the color scheme, use Super + Alt + T
 - Colors for tmux are set separately in the .tmux.conf file
 - Colors for Alacritty and NvChad are configured separately in their respective config files and switched using Leader + T + H respectively
@@ -286,6 +288,8 @@ _Поддержка Xorg или Wayland, по выбору_
 - [NetworkManager](https://networkmanager.dev/) — менеджер сети
 
 ## 🖍️ Цветовые схемы
+
+*поддержка консистентного внешнего вида bspwm / polybar / rofi / dunst*
 
 - Для смены цветовой схемы используйте Super + Alt + T
 - Цвета для tmux настраиваются отдельно в файле .tmux.conf
