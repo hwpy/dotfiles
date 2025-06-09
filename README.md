@@ -7,14 +7,14 @@
 
 ## Key features
 
-- 🧩 Minimalist, lightweight software following the Unix philosophy — doing one thing well.
-- 📦 Only official Arch packages for stability and security.
-- ⚙️ Simple, transparent config, no unnecessary automation or GUIs, follows KISS.
-- 🔧 Full user control — manual selection and setup.
-- 🖥️ Focus on terminal/text tools (bspwm, nvim, tmux, zsh) for efficiency.
-- 🌐 Supports Xorg and Wayland (Hyprland) for a flexible GUI.
-- 🎨 Customizable appearance (polybar, rofi, picom, themes, icons).
-- ⚡ Prioritizes lightness, resource efficiency, and performance.
+- Minimalist, lightweight software following the Unix philosophy — doing one thing well.
+- Only official Arch packages for stability and security.
+- Simple, transparent config, no unnecessary automation or GUIs, follows KISS.
+- Full user control — manual selection and setup.
+- Focus on terminal/text tools (bspwm, nvim, tmux, zsh) for efficiency.
+- Supports Xorg and Wayland (Hyprland) for a flexible GUI.
+- Customizable appearance (polybar, rofi, picom, themes, icons).
+- Prioritizes lightness, resource efficiency, and performance.
 
 ## 🐧 Arch Linux
 
@@ -215,14 +215,14 @@ source-file $HOME/.config/tmux/themes/ayu_dark.conf
 
 ## Ключевые особенности
 
-- 🧩 Минималистичный, лёгкий софт, следующий философии Unix — программы, которые делают одну вещь хорошо.
-- 📦 Используются только официальные пакеты Arch для стабильности и безопасности.
-- ⚙️ Простая, прозрачная конфигурация, без лишней автоматизации и графических оболочек, соблюдающая принцип KISS.
-- 🔧 Пользователь сам контролирует настройки своей системы через конфигурационные файлы.
-- 🖥️ Акцент на терминальные и текстовые инструменты (bspwm, nvim, tmux, zsh).
-- 🌐 Поддержка графической среды Xorg либо Wayland (Hyprland).
-- 🎨 Настраиваемый внешний вид (polybar, rofi, picom, темы, иконки).
-- ⚡ В приоритете лёгкость, экономия ресурсов и производительность.
+- Минималистичный, лёгкий софт, следующий философии Unix — программы, которые делают одну вещь хорошо.
+- Используются только официальные пакеты Arch для стабильности и безопасности.
+- Простая, прозрачная конфигурация, без лишней автоматизации и графических оболочек, соблюдающая принцип KISS.
+- Пользователь сам контролирует настройки своей системы через конфигурационные файлы.
+- Акцент на терминальные и текстовые инструменты (bspwm, nvim, tmux, zsh).
+- Поддержка графической среды Xorg либо Wayland (Hyprland).
+- Настраиваемый внешний вид (polybar, rofi, picom, темы, иконки).
+- В приоритете лёгкость, экономия ресурсов и производительность.
 
 ## 🐧 Arch Linux
 
