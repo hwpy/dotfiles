@@ -1,0 +1,6 @@
+#!/bin/sh
+# Воспроизвести звук уведомления из темы freedesktop
+if command -v canberra-gtk-play >/dev/null; then
+    canberra-gtk-play -i message -d "dunst"
+fi
+
