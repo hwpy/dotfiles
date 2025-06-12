@@ -142,6 +142,9 @@ _Based on NvChad_
 - lua
 - unzip
 
+## Documentation
+- [Initial setup](/docs/en/initial_setup.md)
+
 ## 💡 Inspired by:
 
 - [1](https://github.com/gh0stzk/dotfiles)
@@ -352,6 +355,9 @@ _Основан на NvChad_
   * `npm install -g pyright`
 - lua
 - unzip
+
+## Документация
+- [Первоначальная настройка](/docs/ru/initial_setup.md)
 
 ## 💡 Вдохновлено:
 
