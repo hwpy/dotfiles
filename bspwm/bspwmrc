@@ -19,7 +19,7 @@ done
 
 xrandr --output "$INTERNAL_MONITOR" --scale 0.75x0.75
 if xrandr | grep "^${EXTERNAL_MONITOR} connected" >/dev/null; then
-    xrandr --output "$EXTERNAL_MONITOR" --scale 1.8x1.8 --auto --right-of "$INTERNAL_MONITOR"
+    xrandr --output "$EXTERNAL_MONITOR" --scale 1.5x1.5 --auto --right-of "$INTERNAL_MONITOR"
     bspc monitor "$EXTERNAL_MONITOR" -d 1 2 3 4 5
     bspc monitor "$INTERNAL_MONITOR" -d 6 7 8 9 10
     bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
@@ -41,6 +41,9 @@ case $(ps -p 1 -o comm=) in
 esac
 systemctl --user restart picom polybar &> /dev/null
 pkill -USR1 picom &> /dev/null
+
+# звук при запуске
+canberra-gtk-play -i service-login
 
 bspc config focus_follows_pointer true
 bspc config window_gap           2
