@@ -11,7 +11,8 @@ source /usr/share/nvm/init-nvm.sh &&
 # start reading .envrc in dir
 eval "$(direnv hook zsh)"
 # ssh agent
-eval "$(ssh-agent -s)"
+# отключить если используется keyring
+# eval "$(ssh-agent -s)"
 
 # aliases
 # alias pclean="sh ~/Documents/macports_clean.sh"
