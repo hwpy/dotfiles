@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-    theme = "ayu_dark",
+    theme = "chadracula-evondev",
   transparency = true,
   -- настройки конкретно для statusline theme = "vscode_colored"
   hl_override = {
