@@ -11,12 +11,13 @@ source /usr/share/nvm/init-nvm.sh &&
 # start reading .envrc in dir
 eval "$(direnv hook zsh)"
 # ssh agent
-eval "$(ssh-agent -s)"
+# отключить если используется keyring
+# eval "$(ssh-agent -s)"
 
 # aliases
 # alias pclean="sh ~/Documents/macports_clean.sh"
 alias c="clear && exec zsh"
-alias cm="cmatrix"
+alias cm="cmatrix -u 20"
 alias h="history"
 # alias l="ls -lah"
 alias q="exit"

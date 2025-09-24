@@ -7,14 +7,14 @@
 
 ## Key features
 
-- 🧩 Minimalist, lightweight software following the Unix philosophy — doing one thing well.
-- 📦 Only official Arch packages for stability and security.
-- ⚙️ Simple, transparent config, no unnecessary automation or GUIs, follows KISS.
-- 🔧 Full user control — manual selection and setup.
-- 🖥️ Focus on terminal/text tools (bspwm, nvim, tmux, zsh) for efficiency.
-- 🌐 Supports Xorg and Wayland (Hyprland) for a flexible GUI.
-- 🎨 Customizable appearance (polybar, rofi, picom, themes, icons).
-- ⚡ Prioritizes lightness, resource efficiency, and performance.
+- Minimalist, lightweight software following the Unix philosophy — doing one thing well.
+- Only official Arch packages for stability and security.
+- Simple, transparent config, no unnecessary automation or GUIs, follows KISS.
+- Full user control — manual selection and setup.
+- Focus on terminal/text tools (bspwm, nvim, tmux, zsh) for efficiency.
+- Supports Xorg and Wayland (Hyprland) for a flexible GUI.
+- Customizable appearance (polybar, rofi, picom, themes, icons).
+- Prioritizes lightness, resource efficiency, and performance.
 
 ## 🐧 Arch Linux
 
@@ -79,6 +79,8 @@ _Supports Xorg or Wayland, by choice_
 
 ## 🖍️ Themes
 
+*supports consistent bspwm / polybar / rofi / dunst appearance*
+
 - To switch the color scheme, use Super + Alt + T
 - Colors for tmux are set separately in the .tmux.conf file
 - Colors for Alacritty and NvChad are configured separately in their respective config files and switched using Leader + T + H respectively
@@ -139,6 +141,9 @@ _Based on NvChad_
     * npm install -g pyright
 - lua
 - unzip
+
+## Documentation
+- [Initial setup](/docs/en/initial_setup.md)
 
 ## 💡 Inspired by:
 
@@ -215,14 +220,14 @@ source-file $HOME/.config/tmux/themes/ayu_dark.conf
 
 ## Ключевые особенности
 
-- 🧩 Минималистичный, лёгкий софт, следующий философии Unix — программы, которые делают одну вещь хорошо.
-- 📦 Используются только официальные пакеты Arch для стабильности и безопасности.
-- ⚙️ Простая, прозрачная конфигурация, без лишней автоматизации и графических оболочек, соблюдающая принцип KISS.
-- 🔧 Пользователь сам контролирует настройки своей системы через конфигурационные файлы.
-- 🖥️ Акцент на терминальные и текстовые инструменты (bspwm, nvim, tmux, zsh).
-- 🌐 Поддержка графической среды Xorg либо Wayland (Hyprland).
-- 🎨 Настраиваемый внешний вид (polybar, rofi, picom, темы, иконки).
-- ⚡ В приоритете лёгкость, экономия ресурсов и производительность.
+- Минималистичный, лёгкий софт, следующий философии Unix — программы, которые делают одну вещь хорошо.
+- Используются только официальные пакеты Arch для стабильности и безопасности.
+- Простая, прозрачная конфигурация, без лишней автоматизации и графических оболочек, соблюдающая принцип KISS.
+- Пользователь сам контролирует настройки своей системы через конфигурационные файлы.
+- Акцент на терминальные и текстовые инструменты (bspwm, nvim, tmux, zsh).
+- Поддержка графической среды Xorg либо Wayland (Hyprland).
+- Настраиваемый внешний вид (polybar, rofi, picom, темы, иконки).
+- В приоритете лёгкость, экономия ресурсов и производительность.
 
 ## 🐧 Arch Linux
 
@@ -287,6 +292,8 @@ _Поддержка Xorg или Wayland, по выбору_
 
 ## 🖍️ Цветовые схемы
 
+*поддержка консистентного внешнего вида bspwm / polybar / rofi / dunst*
+
 - Для смены цветовой схемы используйте Super + Alt + T
 - Цвета для tmux настраиваются отдельно в файле .tmux.conf
 - Цвета для Alacritty и NvChad настраиваются отдельно в их конфигурационных файлах и переключаются с помощью сочетания Leader + T + H соответственно
@@ -348,6 +355,9 @@ _Основан на NvChad_
   * `npm install -g pyright`
 - lua
 - unzip
+
+## Документация
+- [Первоначальная настройка](/docs/ru/initial_setup.md)
 
 ## 💡 Вдохновлено:
 

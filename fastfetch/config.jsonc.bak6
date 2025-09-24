@@ -31,20 +31,25 @@
             "keyColor": "33"
         },
         {
+            "key": "󰁹 battery",
+            "type": "battery",
+            "keyColor": "34"
+        },
+        {
             "key": "{icon} distro",
             "type": "os",
-            "keyColor": "34"
+            "keyColor": "35"
         },
         {
             "key": " kernel",
             "type": "kernel",
-            "keyColor": "35"
-        },
-        {
-            "key": "󰇄 desktop",
-            "type": "de",
             "keyColor": "36"
         },
+        // {
+        //     "key": "󰇄 desktop",
+        //     "type": "de",
+        //     "keyColor": "37"
+        // },
         {
             "key": " term",
             "type": "terminal",
@@ -82,7 +87,7 @@
             "key": " colors",
             "type": "colors",
             "symbol": "circle",
-            "keyColor": "39"
+            "keyColor": "31"
         }
     ]
 }

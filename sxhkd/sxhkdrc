@@ -177,16 +177,38 @@ XF86KbdBrightnessDown
 
 # Увеличить громкость на 5%
 XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    pactl set-sink-volume @DEFAULT_SINK@ +5% && canberra-gtk-play -i audio-volume-change
 
 # Уменьшить громкость на 5%
 XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    pactl set-sink-volume @DEFAULT_SINK@ -5% && canberra-gtk-play -i audio-volume-change
 
 # Выключить/включить звук (mute toggle)
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Предыдущий трек
+XF86AudioPrev
+    playerctl previous
+
+# Воспроизведение/пауза
+XF86AudioPlay
+    playerctl play-pause
+
+# Следующий трек
+XF86AudioNext
+    playerctl next
+
+# F3 - следующий рабочий стол
+XF86LaunchA
+  bspc desktop -f next
+# F3 + shift - предыдущий рабочий стол
+XF86LaunchA + shift
+  bspc desktop -f prev
+
+# F4 / super + d - список приложений
+XF86LaunchB
+    rofi -show drun -config ~/.config/rofi/config.rasi
 super + d
     rofi -show drun -config ~/.config/rofi/config.rasi
 

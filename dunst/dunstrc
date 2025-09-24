@@ -24,3 +24,6 @@ background = "#F07178"
 foreground = "#FFFFFF"
 timeout = 0
 
+[play_sound]
+summary = "*"
+script = $HOME/.config/dunst/src/dunst-sound
