@@ -1,19 +1,17 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
-
 -- EXAMPLE
 local servers = { "html", "cssls", "lua_ls", "pyright", "ruff" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config(lsp, {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
-  }
+  })
 end
 
 -- configuring single server, example: typescript
@@ -24,9 +22,9 @@ end
 -- }
 
 -- Pyright config
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
+vim.lsp.config("pyright", {
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
   filetypes = {"python"},
   settings = {
     python = {
@@ -35,31 +33,31 @@ lspconfig.pyright.setup {
         diagnosticMode = "openFilesOnly",
         autoSearchPaths = true,
         useLibraryCodeForTypes = true
-      }
-    }
-  }
-}
+      },
+    },
+  },
+})
 
 -- Ruff config
-lspconfig.ruff.setup {
+vim.lsp.config("ruff", {
   on_attach = function(client, bufnr)
     client.server_capabilities.hoverProvider = false
     nvlsp.on_attach(client, bufnr)
   end,
-  capabilities = capabilities,
-  root_dir = lspconfig.util.root_pattern(".git"),
+  capabilities = nvlsp.capabilities,
+  root_dir = require("lspconfig.util").root_pattern(".git"),
   init_options = {
     settings = {
       args = {
-        "--config", "~/.config/ruff/pyproject.toml"  -- путь по умолчанию
-      }
-    }
-  }
-}
+        "--config", vim.fn.expand("~/.config/ruff/pyproject.toml"),
+      },
+    },
+  },
+})
 
-lspconfig.gopls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
+vim.lsp.config("gopls", {
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
   cmd = {"gopls"},
   filetypes = {"go", "gomod", "gowork", "gotmpl"},
   settings = {
@@ -71,7 +69,7 @@ lspconfig.gopls.setup {
       },
     },
   },
-}
+})
 
 -- Setup DAP for Python
 -- require('dap-python').setup(vim.fn.exepath('python'))

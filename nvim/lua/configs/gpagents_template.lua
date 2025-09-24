@@ -10,17 +10,17 @@ local provider = "ollama"
 
 local agents = {
   {
-			name = "ChatOllamaLlama3.1-8B",
-			disable = true,
+    name = "ChatOllamaLlama3.1-8B",
+    disable = true,
   },
   {
-			name = "CodeOllamaLlama3.1-8B",
-			disable = true,
+    name = "CodeOllamaLlama3.1-8B",
+    disable = true,
   },
 
   {
-			name = "ChatGPT3-5",
-			disable = true,
+    name = "ChatGPT3-5",
+    disable = true,
   },
   {
     name = default_chat_agent,

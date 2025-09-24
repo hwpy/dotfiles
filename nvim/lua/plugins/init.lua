@@ -16,13 +16,13 @@ return {
   },
 
   -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
+  --     "nvim-treesitter/nvim-treesitter",
+  --     opts = {
+  --         ensure_installed = {
+  --             "vim", "lua", "vimdoc",
   --      "html", "css"
-  -- 		},
-  -- 	},
+  --         },
+  --     },
   -- },
 
   -- цвета для telestope
@@ -59,7 +59,6 @@ return {
         end
       end
     },
-    branch = "regexp",
     event = "BufEnter *.py",  -- Загружать при открытии Python-файлов
     config = function()
       require("venv-selector").setup({
@@ -291,27 +290,27 @@ return {
   },
 
   -- gp.nvim
-  {
-    "robitx/gp.nvim",
-    event = "VeryLazy",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("gp").setup({
-        agents = agents,
-        providers = {
-          openai = { disable = true },
-          azure = { disable = true },
-          copilot = { disable = true },
-          pplx = { disable = true },
-          googleai = { disable = true },
-          anthropic = { disable = true },
-          ollama = {
-            endpoint = "http://localhost:11434/v1/chat/completions",
-          }
-        }
-      })
-    end
-  },
+  -- {
+  --   "robitx/gp.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  --   config = function()
+  --     require("gp").setup({
+  --       agents = agents,
+  --       providers = {
+  --         openai = { disable = true },
+  --         azure = { disable = true },
+  --         copilot = { disable = true },
+  --         pplx = { disable = true },
+  --         googleai = { disable = true },
+  --         anthropic = { disable = true },
+  --         ollama = {
+  --           endpoint = "http://localhost:11434/v1/chat/completions",
+  --         }
+  --       }
+  --     })
+  --   end
+  -- },
 
   -- avante.nvim
   -- {

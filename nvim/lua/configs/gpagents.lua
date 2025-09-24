@@ -1,8 +1,8 @@
 -- ollama pull chat_model
 -- ollama pull code_model
 
-local chat_model = ""
-local code_model = ""
+local chat_model = "gemma3:4b"
+local code_model = "gemma3:4b"
 
 local default_chat_agent = chat_model
 local default_command_agent = code_model
@@ -10,17 +10,17 @@ local provider = "ollama"
 
 local agents = {
   {
-			name = "ChatOllamaLlama3.1-8B",
-			disable = true,
+    name = "ChatOllamaLlama3.1-8B",
+    disable = true,
   },
   {
-			name = "CodeOllamaLlama3.1-8B",
-			disable = true,
+    name = "CodeOllamaLlama3.1-8B",
+    disable = true,
   },
 
   {
-			name = "ChatGPT3-5",
-			disable = true,
+    name = "ChatGPT3-5",
+    disable = true,
   },
   {
     name = default_chat_agent,
