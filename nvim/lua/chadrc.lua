@@ -67,6 +67,8 @@ M.mason = {
     "golangci-lint-langserver",
     "goimports",
     "gofumpt",
+    "debugpy",
+    "delve"
   }
 }
 
