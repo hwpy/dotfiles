@@ -5,7 +5,7 @@ import = [
 
 [window]
 dimensions = { columns = 135, lines = 40 }
-decorations = "Buttonless" # Full
+decorations = "Full"
 startup_mode = "Maximized"
 padding.x = 10
 padding.y = 10
@@ -21,7 +21,7 @@ normal = { family = "JetBrainsMono Nerd Font", style = "Light" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
-size = 11
+size = 13
 [font.offset]
 x = 0
 y = -1
