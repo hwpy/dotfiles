@@ -1,4 +1,5 @@
 require "nvchad.mappings"
+require "plugins.nvim-dap"
 
 -- add yours here
 
