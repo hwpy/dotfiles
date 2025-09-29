@@ -1,3 +1,4 @@
+-- требуется установка debugpy через Mason
 return {
   "mfussenegger/nvim-dap-python",
   ft = "python",
