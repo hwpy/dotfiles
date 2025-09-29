@@ -7,10 +7,9 @@ import = [
 dimensions = { columns = 135, lines = 40 }
 decorations = "Full"
 startup_mode = "Maximized"
+dynamic_title = false
 padding.x = 10
 padding.y = 10
-opacity = 0.9
-blur = true
 option_as_alt = "Both"
 
 [selection]
@@ -21,7 +20,7 @@ normal = { family = "JetBrainsMono Nerd Font", style = "Light" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
-size = 13
+size = 12
 [font.offset]
 x = 0
 y = -1
@@ -31,3 +30,4 @@ bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },
   { key = "Left",  mods = "Alt", chars = "\u001BB" },
 ]
+
