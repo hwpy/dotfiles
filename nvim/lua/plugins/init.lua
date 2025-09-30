@@ -75,46 +75,18 @@ return {
       end)
     end,
   },
-  -- 1. Автозагрузка .env через direnv (универсально для всех языков)
-  -- {
-  --   "direnv/direnv.vim",
-  --   config = function()
-  --     vim.g.direnv_auto = 1       -- Автозагрузка при входе в директорию
-  --     vim.g.direnv_silent = 1     -- Без уведомлений
-  --   end
-  -- },
-  -- 2.1 Запуск кода с поддержкий .env (через direnv)
+
   {
     "CRAG666/code_runner.nvim",
     opts = {
       filetype = {
         python = function()
-          local envrc = vim.fn.findfile(".envrc", ".;")
           local python_file = vim.fn.expand("%:p")
-
-          if envrc ~= "" then
-            -- 1. Разрешаем .envrc если нужно
-            vim.cmd('silent !cd ' .. vim.fn.shellescape(vim.fn.fnamemodify(envrc, ":h")) .. ' && direnv allow')
-            -- 2. Запускаем через direnv
-            return string.format(
-              'bash -c "cd %s && direnv exec . python -u %s"',
-              vim.fn.shellescape(vim.fn.fnamemodify(envrc, ":h")),
-              vim.fn.shellescape(python_file)
-            )
-          end
           return 'python -u ' .. vim.fn.shellescape(python_file)
         end,
         go = function()
-          local envrc = vim.fn.findfile(".envrc", ".;")
           local dir = vim.fn.expand("%:p:h")
-          if envrc ~= "" then
-            vim.cmd('silent !cd ' .. vim.fn.shellescape(vim.fn.fnamemodify(envrc, ":h")) .. ' && direnv allow')
-            return string.format(
-              'bash -c "cd %s && direnv exec . go run ."',
-              vim.fn.shellescape(dir)
-            )
-          end
-          return "go run ."
+          return "go run " .. vim.fn.shellescape(dir)
         end,
       },
       term = {
@@ -123,7 +95,7 @@ return {
       }
     },
     keys = {
-      { "<leader>rr", "<cmd>RunCode<CR>", desc = "Run Code (.envrc)" }
+      { "<leader>rr", "<cmd>RunCode<CR>", desc = "Run Code" }
     }
   },
 

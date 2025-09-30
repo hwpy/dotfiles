@@ -15,7 +15,6 @@ chromium
 cmatrix
 cups
 dbeaver
-direnv
 dmenu
 docker
 docker-compose
