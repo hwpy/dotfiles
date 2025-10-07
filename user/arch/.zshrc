@@ -8,8 +8,6 @@ export VISUAL=nvim
 # fast node manager
 #eval "$(fnm env)"
 source /usr/share/nvm/init-nvm.sh &&
-# start reading .envrc in dir
-eval "$(direnv hook zsh)"
 # ssh agent
 # отключить если используется keyring
 # eval "$(ssh-agent -s)"
