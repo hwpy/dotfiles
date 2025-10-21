@@ -1,15 +1,17 @@
+# поиск от команды
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+
 export PATH=$HOME/.local/bin:$PATH
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export XDG_DATA_DIRS=/usr/share:/usr/local/share:$XDG_DATA_DIRS
-export EDITOR=nvim
-export VISUAL=nvim
+# редактор по умолчанию
+export EDITOR=VISUAL=nvim
 
 # fast node manager
 #eval "$(fnm env)"
 source /usr/share/nvm/init-nvm.sh &&
-# start reading .envrc in dir
-eval "$(direnv hook zsh)"
 # ssh agent
 # отключить если используется keyring
 # eval "$(ssh-agent -s)"
@@ -19,19 +21,17 @@ eval "$(direnv hook zsh)"
 alias c="clear && exec zsh"
 alias cm="cmatrix -u 20"
 alias h="history"
-# alias l="ls -lah"
 alias q="exit"
 alias n="nvim"
 alias ht="htop"
 alias ra="ranger"
-# alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --height 40% --reverse --prompt='Выберите сессию tmux: ') || echo 'Нет активных сессий tmux'"
-alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --height 40% --reverse --prompt='Выберите сессию tmux: ' --preview='tmux capture-pane -pt {} -S -300 -E -300 | bat --language=sh --style=numbers,changes --color=always --pager=\"less -R\"' --preview-window='right:60%') || echo 'Нет активных сессий tmux'"
+alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --no-preview --height 40% --reverse --prompt='Выберите сессию tmux: ') || echo 'Нет активных сессий tmux'"
 
 export VIMRUNTIME="/usr/share/nvim/runtime/"
 export LUA_LS="/sbin/lua-language-server"
 
 # Настройки fzf
-export FZF_DEFAULT_OPTS="--border=none --style minimal --preview 'bat --color=always --style=numbers --line-range :500 {}'"
+export FZF_DEFAULT_OPTS="--height 40% --reverse --prompt='> ' --preview 'cat {} | head -n 200'"
 
 # Вывод системной информации
 fastfetch
@@ -142,7 +142,3 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias l="eza --tree --icons --long --header --group --git --time-style=long-iso --color=always --level=1 --sort=name --all" # в самый конец после oh-my-zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

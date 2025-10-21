@@ -1,30 +1,62 @@
-# запуск ssh agent в ubuntu
-eval "$(ssh-agent -s)"
+# переменные
+GITHUB_KEY="$HOME/.ssh/id_ed25519_github"
 
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export PATH=$PATH:/snap/bin
-export LUA_LS="/home/alexey/.local/share/nvim/mason/bin/lua-language-server"
+# поиск от команды
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+
+# source /opt/local/share/nvm/init-nvm.sh # optional for nvm
+#
+# zsh boost
+source /opt/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# интерактивный старт tmux
+source /opt/local/share/fzf/shell/key-bindings.zsh
+source /opt/local/share/fzf/shell/completion.zsh
+
+# fast node manager
+eval "$(fnm env)"
+# ssh keys
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    eval "$(ssh-agent -s)" > /dev/null
+fi
+ssh-add --apple-use-keychain "$GITHUB_KEY" 2>/dev/null
+# ssh-add -K ~/.ssh/id_ed25519_github 2>/dev/null # для macOS Catalina
 
 # aliases
-alias c="clear"
+alias pclean="sh ~/Documents/macports_clean.sh"
+alias c="clear && fastfetch"
 alias h="history"
-alias l="ls -lah"
 alias q="exit"
 alias n="nvim"
+# alias ra="ranger"
+alias ht="htop"
+alias cm="cmatrix -u 20"
+alias gdu="gdu-go"
+alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --no-preview --height 40% --reverse --prompt='Выберите сессию tmux: ') || echo 'Нет активных сессий tmux'"
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=500
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/alexey/.zshrc'
+export VIMRUNTIME="/opt/local/share/nvim/runtime"
+export LUA_LS="/opt/local/bin/lua-language-server"
+export CC="/opt/local/bin/clang"
+export CXX="/opt/local/bin/clang++"
+# настройки fzf
+export FZF_DEFAULT_OPTS="--height 40% --reverse --prompt='> ' --preview 'cat {} | head -n 200'"
+# редактор по умолчанию
+export EDITOR=VISUAL=nvim
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# компиляторы
+#export CC="/opt/local/bin/gcc"
+#export CXX="/opt/local/bin/g++"
+
+#export CC="$(brew --prefix gcc@14)/bin/gcc-14"
+#export CXX="$(brew --prefix gcc@14)/bin/g++-14"
+
+#PROMPT='%n@%m %~$ '
 
 
+# вывод системной информации
+fastfetch
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -98,7 +130,7 @@ ZSH_THEME="refined"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,10 +163,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline
-ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
-
-
-
-. "$HOME/.local/bin/env"
+alias l="eza --tree --icons --long --header --group --git --time-style=long-iso --color=always --level=1 --sort=name --all" # в самый конец после oh-my-zsh
