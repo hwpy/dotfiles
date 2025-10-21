@@ -1,7 +1,5 @@
-# переменные
 GITHUB_KEY="$HOME/.ssh/id_ed25519_github"
 
-# поиск от команды
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
