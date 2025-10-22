@@ -23,21 +23,17 @@ ssh-add --apple-use-keychain "$GITHUB_KEY" 2>/dev/null
 # ssh-add -K ~/.ssh/id_ed25519_github 2>/dev/null # для macOS Catalina
 
 # aliases
-alias pclean="sh ~/Documents/macports_clean.sh"
 alias c="clear && fastfetch"
 alias h="history"
 alias q="exit"
 alias n="nvim"
-# alias ra="ranger"
 alias ht="htop"
 alias cm="cmatrix -u 20"
 alias gdu="gdu-go"
 alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --no-preview --height 40% --reverse --prompt='Выберите сессию tmux: ') || echo 'Нет активных сессий tmux'"
 
 export VIMRUNTIME="/opt/local/share/nvim/runtime"
-export LUA_LS="/opt/local/bin/lua-language-server"
-export CC="/opt/local/bin/clang"
-export CXX="/opt/local/bin/clang++"
+
 # настройки fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --prompt='> ' --preview 'cat {} | head -n 200'"
 # редактор по умолчанию
