@@ -1,0 +1,24 @@
+-- local agents = require("configs.gpagents")
+return {}
+-- llm агент
+-- return {
+--   "robitx/gp.nvim",
+--   event = "VeryLazy",
+--   dependencies = { "nvim-lua/plenary.nvim" },
+--   config = function()
+--     require("gp").setup({
+--       agents = agents,
+--       providers = {
+--         openai = { disable = true },
+--         azure = { disable = true },
+--         copilot = { disable = true },
+--         pplx = { disable = true },
+--         googleai = { disable = true },
+--         anthropic = { disable = true },
+--         ollama = {
+--           endpoint = "http://localhost:11434/v1/chat/completions",
+--         }
+--       }
+--     })
+--   end
+-- }
