@@ -3,15 +3,10 @@ bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
 export PATH=$HOME/.local/bin:$PATH
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export XDG_DATA_DIRS=/usr/share:/usr/local/share:$XDG_DATA_DIRS
 # редактор по умолчанию
 export EDITOR=VISUAL=nvim
 
-# fast node manager
-#eval "$(fnm env)"
-source /usr/share/nvm/init-nvm.sh &&
 # ssh agent
 # отключить если используется keyring
 # eval "$(ssh-agent -s)"
@@ -142,3 +137,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias l="eza --tree --icons --long --header --group --git --time-style=long-iso --color=always --level=1 --sort=name --all" # в самый конец после oh-my-zsh
+
+# go version manager
+# [[ -s "/home/alexey/.gvm/scripts/gvm" ]] && source "/home/alexey/.gvm/scripts/gvm"
+
+# . "$HOME/.local/share/../bin/env"
+
+# fnm
+FNM_PATH="/home/alexey/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
