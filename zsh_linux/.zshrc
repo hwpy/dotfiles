@@ -1,6 +1,7 @@
 # поиск от команды
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+bindkey "^[^?" backward-kill-word
 
 export PATH=$HOME/.local/bin:$PATH
 export XDG_DATA_DIRS=/usr/share:/usr/local/share:$XDG_DATA_DIRS
