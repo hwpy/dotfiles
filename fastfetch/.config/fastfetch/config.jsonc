@@ -1,4 +1,3 @@
-// Inspired by Catnap
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
@@ -12,16 +11,9 @@
     },
     "modules": [
         {
-            // draw borders first to make colors of left and right border consistant
-            "key": " user",
+            "key": "󰇅 user@host",
             "type": "title",
-            "format": "{user-name}",
-            "keyColor": "31"
-        },
-        {
-            "key": "󰇅 hname",
-            "type": "title",
-            "format": "{host-name}",
+            "format": "{user-name}@{host-name}",
             "keyColor": "32"
 
         },
