@@ -1,7 +1,7 @@
 /*
 !/.git/
 !/alacritty/
-alacritty/alacritty-local.toml
+alacritty/.config/alacritty/alacritty-local.toml
 !/bspwm/
 !/colors/
 !/docs/
@@ -12,7 +12,7 @@ alacritty/alacritty-local.toml
 !/mpv/
 !/networkmanager-dmenu/
 !/nvim/
-nvim/lazy-lock.json
+nvim/.config/nvim/lazy-lock.json
 !/picom/
 !/polybar/
 !/ranger/
@@ -22,11 +22,14 @@ nvim/lazy-lock.json
 !/sxhkd/
 !/tmux/
 !/touchegg/
-/touchegg/*
-!/touchegg/touchegg.conf
+/touchegg/.config/touchegg/*
+!/touchegg/.config/touchegg/touchegg.conf
 !/user/
 !/waybar/
 !/wlppr/
 !/wofi/
+!/x11/
+!/zsh_linux/
+!/zsh_mac/
 !LICENSE
 !README.md

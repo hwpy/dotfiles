@@ -1,0 +1,29 @@
+[general]
+import = [
+  "~/.config/alacritty/alacritty-theme/themes/github_dark_custom.toml",
+  "~/.config/alacritty/alacritty-local.toml"
+]
+
+[window]
+dimensions = { columns = 135, lines = 40 }
+decorations = "Full"
+decorations_theme_variant = "Dark"
+startup_mode = "Maximized"
+dynamic_title = false
+option_as_alt = "Both"
+
+[selection]
+save_to_clipboard = true
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Light" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+# size = 13 # default
+
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+]

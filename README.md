@@ -15,6 +15,7 @@
 - Supports Xorg and Wayland (Hyprland) for a flexible GUI.
 - Customizable appearance (polybar, rofi, picom, themes, icons).
 - Prioritizes lightness, resource efficiency, and performance.
+- Installation via GNU Stow
 
 ## 🐧 Arch Linux
 
@@ -228,6 +229,7 @@ source-file $HOME/.config/tmux/themes/ayu_dark.conf
 - Поддержка графической среды Xorg либо Wayland (Hyprland).
 - Настраиваемый внешний вид (polybar, rofi, picom, темы, иконки).
 - В приоритете лёгкость, экономия ресурсов и производительность.
+- Установка через GNU Stow
 
 ## 🐧 Arch Linux
 
