@@ -23,7 +23,6 @@ alias bt="btop"
 alias ra="ranger"
 alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --no-preview --height 40% --reverse --prompt='Выберите сессию tmux: ') || echo 'Нет активных сессий tmux'"
 
-export VIMRUNTIME="/usr/share/nvim/runtime/"
 export LUA_LS="/sbin/lua-language-server"
 
 # Настройки fzf
