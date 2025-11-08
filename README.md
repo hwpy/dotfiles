@@ -3,6 +3,25 @@
 ---
 
 <details open>
+<summary>GNOME</summary>
+
+[GNOME configuration](docs/gnome.md).
+
+<div style="text-align: center;">
+
+  <figure style="display: inline-block; text-align: center; margin: 1em;">
+    <img src="screenshots/gnome/desktop.png" alt="arch gnome" style="max-width: 300px;">
+  </figure>
+  <p align="center"><strong>Desktop</strong></p>
+
+  <figure style="display: inline-block; text-align: center; margin: 1em;">
+    <img src="screenshots/gnome/nvim.png" alt="nvim" style="max-width: 300px;">
+  </figure>
+  <p align="center"><strong>nvim</strong></p>
+
+</details>
+
+<details open>
 <summary>BSPWM</summary>
 
 [BSPWM configuration](docs/bspwm.md).
