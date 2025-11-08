@@ -3,6 +3,9 @@
 ---
 
 <details open>
+<summary>BSPWM</summary>
+
+<details open>
 <summary>EN</summary>
 
 ## Key features
@@ -144,7 +147,7 @@ _Based on NvChad_
 - unzip
 
 ## Documentation
-- [Initial setup](/docs/en/initial_setup.md)
+- [Initial setup](/docs/en/bspwm/initial_setup.md)
 
 ## 💡 Inspired by:
 
@@ -359,7 +362,7 @@ _Основан на NvChad_
 - unzip
 
 ## Документация
-- [Первоначальная настройка](/docs/ru/initial_setup.md)
+- [Первоначальная настройка](/docs/ru/bspwm/initial_setup.md)
 
 ## 💡 Вдохновлено:
 
@@ -424,6 +427,8 @@ import = [
 source-file $HOME/.config/tmux/themes/ayu_dark.conf
 
 ```
+
+</details>
 
 </details>
 
