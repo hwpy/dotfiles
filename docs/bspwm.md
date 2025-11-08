@@ -19,17 +19,17 @@
 <div style="text-align: center;">
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
+    <img src="../screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Desktop</strong></p>
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
+    <img src="../screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Rofi</strong></p>
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
+    <img src="../screenshots/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Custom powermenu</strong></p>
 
@@ -86,31 +86,31 @@ _Supports Xorg or Wayland, by choice_
 <table>
   <tr>
     <td align="center">
-      <img src="screenshots/bspwm/themes/ayu_dark.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/ayu_dark.png" width="150"><br/>
       <sub>Ayu Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/catppuccin_mocha.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/catppuccin_mocha.png" width="150"><br/>
       <sub>Catppuccin Mocha</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/dracula.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/dracula.png" width="150"><br/>
       <sub>Dracula</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/github_dark.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/github_dark.png" width="150"><br/>
       <sub>GitHub Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/nord.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/nord.png" width="150"><br/>
       <sub>Nord</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/one_dark.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/one_dark.png" width="150"><br/>
       <sub>One Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/tokyo_night.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/tokyo_night.png" width="150"><br/>
       <sub>Tokyo Night</sub>
     </td>
 </table>
@@ -125,7 +125,7 @@ _Based on NvChad_
 ```
 
 <p align="center">
-    <img src="screenshots/bspwm/nvim.png">
+    <img src="../screenshots/bspwm/nvim.png">
 </p>
 
 ### Files:
@@ -235,17 +235,17 @@ source-file $HOME/.config/tmux/themes/ayu_dark.conf
 <div style="text-align: center;">
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
+    <img src="../screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Рабочий стол</strong></p>
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
+    <img src="../screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Список приложений</strong></p>
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/rofi_powermenu.gif" alt="rofi powermenu" style="max-width: 300px;">
+    <img src="../screenshots/rofi_powermenu.gif" alt="rofi powermenu" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Меню выключения / перезагрузки / сна и т.д.</strong></p>
 
@@ -302,31 +302,31 @@ _Поддержка Xorg или Wayland, по выбору_
 <table>
   <tr>
     <td align="center">
-      <img src="screenshots/bspwm/themes/ayu_dark.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/ayu_dark.png" width="150"><br/>
       <sub>Ayu Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/catppuccin_mocha.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/catppuccin_mocha.png" width="150"><br/>
       <sub>Catppuccin Mocha</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/dracula.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/dracula.png" width="150"><br/>
       <sub>Dracula</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/github_dark.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/github_dark.png" width="150"><br/>
       <sub>GitHub Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/nord.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/nord.png" width="150"><br/>
       <sub>Nord</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/one_dark.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/one_dark.png" width="150"><br/>
       <sub>One Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/bspwm/themes/tokyo_night.png" width="150"><br/>
+      <img src="../screenshots/bspwm/themes/tokyo_night.png" width="150"><br/>
       <sub>Tokyo Night</sub>
     </td>
 </table>
@@ -342,7 +342,7 @@ _Основан на NvChad_
 
 
 <p align="center">
-    <img src="screenshots/bspwm/nvim.png">
+    <img src="../screenshots/bspwm/nvim.png">
 </p>
 
 ### Файлы:
