@@ -21,6 +21,10 @@ italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 # size = 13 # default
 
+[cursor]
+style = { shape = "Underline", blinking = "Always" }
+vi_mode_style = { shape = "Underline", blinking = "Always" }
+
 [keyboard]
 bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },

@@ -39,3 +39,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.opt.relativenumber = true
+
+-- underline cursor
+-- vim.opt.guicursor = "a:hor20"
