@@ -10,6 +10,6 @@
 
 ### Extensions:
 
-[Setup extensions](docs/en/gnome/README.md).
+[Setup extensions](en/gnome/README.md).
 
 </details>
