@@ -25,7 +25,7 @@
 <div style="text-align: center;">
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
+    <img src="screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Desktop</strong></p>
 
@@ -92,31 +92,31 @@ _Supports Xorg or Wayland, by choice_
 <table>
   <tr>
     <td align="center">
-      <img src="screenshots/themes/ayu_dark.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/ayu_dark.png" width="150"><br/>
       <sub>Ayu Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/catppuccin_mocha.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/catppuccin_mocha.png" width="150"><br/>
       <sub>Catppuccin Mocha</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/dracula.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/dracula.png" width="150"><br/>
       <sub>Dracula</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/github_dark.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/github_dark.png" width="150"><br/>
       <sub>GitHub Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/nord.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/nord.png" width="150"><br/>
       <sub>Nord</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/one_dark.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/one_dark.png" width="150"><br/>
       <sub>One Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/tokyo_night.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/tokyo_night.png" width="150"><br/>
       <sub>Tokyo Night</sub>
     </td>
 </table>
@@ -131,7 +131,7 @@ _Based on NvChad_
 ```
 
 <p align="center">
-    <img src="screenshots/nvim.png">
+    <img src="screenshots/bspwm/nvim.png">
 </p>
 
 ### Files:
@@ -239,7 +239,7 @@ source-file $HOME/.config/tmux/themes/ayu_dark.conf
 <div style="text-align: center;">
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
+    <img src="screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Рабочий стол</strong></p>
 
@@ -306,31 +306,31 @@ _Поддержка Xorg или Wayland, по выбору_
 <table>
   <tr>
     <td align="center">
-      <img src="screenshots/themes/ayu_dark.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/ayu_dark.png" width="150"><br/>
       <sub>Ayu Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/catppuccin_mocha.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/catppuccin_mocha.png" width="150"><br/>
       <sub>Catppuccin Mocha</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/dracula.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/dracula.png" width="150"><br/>
       <sub>Dracula</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/github_dark.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/github_dark.png" width="150"><br/>
       <sub>GitHub Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/nord.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/nord.png" width="150"><br/>
       <sub>Nord</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/one_dark.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/one_dark.png" width="150"><br/>
       <sub>One Dark</sub>
     </td>
     <td align="center">
-      <img src="screenshots/themes/tokyo_night.png" width="150"><br/>
+      <img src="screenshots/bspwm/themes/tokyo_night.png" width="150"><br/>
       <sub>Tokyo Night</sub>
     </td>
 </table>
@@ -346,7 +346,7 @@ _Основан на NvChad_
 
 
 <p align="center">
-    <img src="screenshots/nvim.png">
+    <img src="screenshots/bspwm/nvim.png">
 </p>
 
 ### Файлы:
