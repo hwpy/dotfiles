@@ -154,6 +154,7 @@ _Based on NvChad_
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/Zproger/bspwm-dotfiles)
 - [3](https://github.com/raexera/tokyo)
+- [4](https://github.com/basecamp/omarchy)
 
 ## 🖼 Wallpapers by:
 
@@ -162,6 +163,7 @@ _Based on NvChad_
 - [3](https://github.com/LagrangianLad/arch-minimal-wallpapers)
 - [4](https://github.com/archcraft-os/archcraft-wallpapers)
 - [5](https://github.com/raexera/tokyo)
+- [6](https://github.com/basecamp/omarchy)
 
 ## F.A.Q
 
@@ -369,6 +371,7 @@ _Основан на NvChad_
 - [1](https://github.com/gh0stzk/dotfiles)
 - [2](https://github.com/Zproger/bspwm-dotfiles)
 - [3](https://github.com/raexera/tokyo)
+- [4](https://github.com/basecamp/omarchy)
 
 ## 🖼 Обои:
 
@@ -377,6 +380,7 @@ _Основан на NvChad_
 - [3](https://github.com/LagrangianLad/arch-minimal-wallpapers)
 - [4](https://github.com/archcraft-os/archcraft-wallpapers)
 - [5](https://github.com/raexera/tokyo)
+- [6](https://github.com/basecamp/omarchy)
 
 ## F.A.Q
 
