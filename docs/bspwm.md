@@ -24,12 +24,12 @@
   <p align="center"><strong>Desktop</strong></p>
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
+    <img src="../screenshots/bspwm/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Rofi</strong></p>
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
+    <img src="../screenshots/bspwm/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Custom powermenu</strong></p>
 
@@ -240,12 +240,12 @@ source-file $HOME/.config/tmux/themes/ayu_dark.conf
   <p align="center"><strong>Рабочий стол</strong></p>
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
+    <img src="../screenshots/bspwm/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Список приложений</strong></p>
 
   <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/rofi_powermenu.gif" alt="rofi powermenu" style="max-width: 300px;">
+    <img src="../screenshots/bspwm/rofi_powermenu.gif" alt="rofi powermenu" style="max-width: 300px;">
   </figure>
   <p align="center"><strong>Меню выключения / перезагрузки / сна и т.д.</strong></p>
 
