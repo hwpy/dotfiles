@@ -10,6 +10,7 @@ alacritty/.config/alacritty/alacritty-local.toml
 !/gnome/
 !/gtk*/
 !/hypr/
+!/kitty/
 !/mpv/
 !/networkmanager-dmenu/
 !/nvim/
