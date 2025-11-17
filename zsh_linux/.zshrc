@@ -5,7 +5,8 @@ bindkey "^[[B" history-search-forward
 export PATH=$HOME/.local/bin:$PATH
 export XDG_DATA_DIRS=/usr/share:/usr/local/share:$XDG_DATA_DIRS
 # редактор по умолчанию
-export EDITOR=VISUAL=nvim
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # ssh agent
 # отключить если используется keyring

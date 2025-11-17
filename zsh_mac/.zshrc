@@ -36,7 +36,8 @@ alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux li
 # настройки fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --prompt='> ' --preview 'cat {} | head -n 200'"
 # редактор по умолчанию
-export EDITOR=VISUAL=nvim
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # компиляторы
 #export CC="/opt/local/bin/gcc"

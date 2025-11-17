@@ -31,6 +31,7 @@ nvim/.config/nvim/lazy-lock.json
 !/wlppr/
 !/wofi/
 !/x11/
+!/yazi/
 !/zsh_linux/
 !/zsh_mac/
 !LICENSE
