@@ -1,4 +1,5 @@
 just-perfection-desktop@just-perfection
+Rounded_Corners@lennart-k
 caffeine@patapon.info
 rounded-window-corners@fxgn
 gsconnect@andyholmes.github.io

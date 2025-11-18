@@ -7,7 +7,8 @@ symbolic-icon=true
 use-custom-icon=false
 
 [caffeine]
-indicator-position-max=1
+cli-toggle=false
+indicator-position-max=2
 
 [dash-to-dock]
 animation-time=1.3877787807814457e-17
@@ -49,7 +50,7 @@ window-maximized=false
 window-size=(785, 550)
 
 [just-perfection]
-accent-color-icon=false
+accent-color-icon=true
 accessibility-menu=true
 activities-button=true
 animation=0
@@ -81,6 +82,9 @@ workspace-peek=true
 workspace-popup=false
 workspace-switcher-should-show=true
 workspaces-in-app-grid=true
+
+[lennart-k/rounded_corners]
+corner-radius=8
 
 [rounded-window-corners-reborn]
 settings-version=uint32 7
