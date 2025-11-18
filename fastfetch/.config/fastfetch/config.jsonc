@@ -17,7 +17,7 @@
     "modules": [
         {
             "type": "title",
-            "format": "{#36}{user-name}@{host-name}{#}"
+            "format": "{#32}{user-name}@{host-name}{#}"
         },
         {
             "key": "󰅐 uptime",
