@@ -8,7 +8,7 @@ use-custom-icon=false
 
 [caffeine]
 cli-toggle=false
-indicator-position-max=2
+indicator-position-max=3
 
 [dash-to-dock]
 animation-time=1.3877787807814457e-17
@@ -39,8 +39,19 @@ panel-sizes='{}'
 prefs-opened=false
 window-preview-title-position='TOP'
 
+[display-brightness-ddcutil]
+button-location=1
+ddcutil-binary-path='/usr/bin/ddcutil'
+ddcutil-sleep-multiplier=40.0
+decrease-brightness-shortcut=['']
+increase-brightness-shortcut=['']
+position-system-menu=3.0
+show-display-name=true
+show-osd=true
+step-change-keyboard=5.0
+
 [gsconnect]
-enabled=true
+enabled=false
 keep-alive-when-locked=true
 missing-openssl=false
 name='mbp-13-arch'
@@ -94,6 +105,7 @@ application-styles='.space-bar {\n  -natural-hpadding: 12px;\n}\n\n.space-bar-wo
 
 [space-bar/behavior]
 always-show-numbers=false
+enable-custom-label=false
 indicator-style='workspaces-bar'
 toggle-overview=true
 
