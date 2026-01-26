@@ -1,3 +1,5 @@
+GITHUB_KEY="$HOME/.ssh/id_rsa_github"
+
 # поиск от команды
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
@@ -10,7 +12,10 @@ export VISUAL="nvim"
 
 # ssh agent
 # отключить если используется keyring
-# eval "$(ssh-agent -s)"
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    eval "$(ssh-agent -s)" > /dev/null
+    ssh-add "$GITHUB_KEY" > /dev/null 2>&1
+fi
 
 # aliases
 # alias pclean="sh ~/Documents/macports_clean.sh"
