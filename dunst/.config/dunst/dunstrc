@@ -1,27 +1,27 @@
 [global]
-background = "#0B0E14"
-frame_color = "#ff9445"
+background = "#0F1419"
+frame_color = "#746DFE"
 frame_width = 2
 corner_radius = 10
-foreground = "#FFFFFF"
+foreground = "#E6E6E6"
 font = "JetBrains Mono Nerd Font 10"
 width = 300
 origin = top-right
 offset = (9, 42)
 
 [urgency_normal]
-background = "#0B0E14"
-foreground = "#FFFFFF"
+background = "#0F1419"
+foreground = "#E6E6E6"
 timeout = 5
 
 [urgency_low]
-background = "#686868"
-foreground = "#FFFFFF"
+background = "#424868"
+foreground = "#E6E6E6"
 timeout = 3
 
 [urgency_critical]
-background = "#F07178"
-foreground = "#FFFFFF"
+background = "#FB3ECE"
+foreground = "#E6E6E6"
 timeout = 0
 
 [play_sound]

@@ -83,6 +83,10 @@ super + {_,shift + }c
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
     bspc desktop -f {prev,next}.local
+ctrl + alt + @{Left,Right}
+    bspc desktop -f {prev,next}.local
+ctrl + alt + @{h,l}
+    bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -211,7 +215,13 @@ XF86LaunchB
     rofi -show drun -config ~/.config/rofi/config.rasi
 super + d
     rofi -show drun -config ~/.config/rofi/config.rasi
+super + w
+    rofi -show window -show-icons -config ~/.config/rofi/config.rasi
 
 # Переключение цветовой схемы
 super + alt + t
     ~/.config/rofi/src/switch-theme
+
+# Screen lock
+super + ctrl + alt l
+    slock
