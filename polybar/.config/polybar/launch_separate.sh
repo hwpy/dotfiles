@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $HOME/.config/bspwm/monitors.sh
+
 # Загружаем текущую цветовую схему
 CURRENT_SCHEME=$(cat $HOME/.config/colors/current_scheme)
 
@@ -20,7 +22,7 @@ polybar --config=$HOME/.config/polybar/config_separate.ini powermenu &
 
 
 # Проверяем, подключён ли внешний монитор HDMI-1
-if xrandr | grep "^HDMI-1 connected" >/dev/null; then
+if xrandr | grep "^${EXTERNAL_MONITOR} connected" >/dev/null; then
   polybar --config=$HOME/.config/polybar/config_separate.ini external_arch &
   polybar --config=$HOME/.config/polybar/config_separate.ini external_bspwm &
   polybar --config=$HOME/.config/polybar/config_separate.ini external_date &

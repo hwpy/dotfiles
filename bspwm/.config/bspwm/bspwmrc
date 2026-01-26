@@ -4,33 +4,40 @@
 ln -sf ~/.config/colors/schemes/$(cat ~/.config/colors/current_scheme).conf ~/.config/colors/current.conf
 
 # Загрузка цветовой схемы
+ln -sf ~/.config/colors/schemes/$(cat ~/.config/colors/current_scheme).conf ~/.config/colors/current.conf
+~/.config/bspwm/bin/update-colors
 export COLOR_SCHEME=$(cat ~/.config/colors/current_scheme)
-source ~/.config/colors/current.conf
+
+setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' &
 
 # Обновляем цвета BSPWM
 ~/.config/bspwm/bin/update-colors
 
-INTERNAL_MONITOR="eDP-1"
-EXTERNAL_MONITOR="HDMI-1"
+source ~/.config/bspwm/monitors.sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
 
 for desktop in $(bspc query -D); do
     bspc desktop "$desktop" --remove
 done
 
-xrandr --output "$INTERNAL_MONITOR" --scale 0.75x0.75
+xrandr --output "$INTERNAL_MONITOR" --scale 1x1
 if xrandr | grep "^${EXTERNAL_MONITOR} connected" >/dev/null; then
-    xrandr --output "$EXTERNAL_MONITOR" --scale 1.5x1.5 --auto --right-of "$INTERNAL_MONITOR"
-    bspc monitor "$EXTERNAL_MONITOR" -d 1 2 3 4 5
-    bspc monitor "$INTERNAL_MONITOR" -d 6 7 8 9 10
-    bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
+    xrandr --output "$EXTERNAL_MONITOR" --scale 1x1 --auto --right-of "$INTERNAL_MONITOR"
+    xrandr --output "$INTERNAL_MONITOR" --primary
+    bspc monitor "$INTERNAL_MONITOR" -d 1 2 3
+    bspc monitor "$EXTERNAL_MONITOR" -d 4 5 6
+    bspc wm -O "$INTERNAL_MONITOR" "$EXTERNAL_MONITOR"
 else
-    bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4 5 6 7 8 9 10
+    xrandr --output "$INTERNAL_MONITOR" --primary
+    bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4 5 6
 fi
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+bspc rule -a Alacritty desktop='^1' follow=on
+alacritty &
+
 picom --config ~/.config/picom/picom.conf &
 
-xrdb ~/.Xresources
 bspc rule -a Xdialog state=floating center=on
 
 feh --bg-fill "$LOCKSCREEN_IMAGE" &
@@ -51,19 +58,23 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Firefox desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Firefox desktop='^2' state=tiled follow=on
+bspc rule -a DBeaver desktop='^1' state=tiled follow=on
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
 bspc config border_width 2
 
 xsetroot -cursor_name left_ptr &
 
 $HOME/.config/polybar/launch_separate.sh &
-xss-lock -- $HOME/.config/bspwm/bin/lock &
 flameshot &
-touchegg &
+# touchegg &
 udiskie -a -n -t &
 dunst &
-alacritty &
+
+# скорость мыши
+xinput set-prop 14 'libinput Accel Speed' -0.8
+
+exec bspwm

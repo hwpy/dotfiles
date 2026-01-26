@@ -154,8 +154,4 @@ alias l="eza --tree --icons --long --header --group --git --time-style=long-iso 
 # . "$HOME/.local/share/../bin/env"
 
 # fnm
-FNM_PATH="/home/alexey/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
+eval "$(fnm env --use-on-cd --shell zsh)"
