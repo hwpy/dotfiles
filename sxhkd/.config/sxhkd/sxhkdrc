@@ -225,7 +225,3 @@ super + alt + t
 # Screen lock
 super + ctrl + alt l
     slock
-
-# Перечитать конфиг
-super + alt + r
-    bspc wm -r
