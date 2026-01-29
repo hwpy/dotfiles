@@ -76,6 +76,7 @@ element {
 }
 
 element normal active {
+    background-color: inherit;
     text-color: @bg3;
 }
 
