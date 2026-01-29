@@ -8,8 +8,6 @@ ln -sf ~/.config/colors/schemes/$(cat ~/.config/colors/current_scheme).conf ~/.c
 ~/.config/bspwm/bin/update-colors
 export COLOR_SCHEME=$(cat ~/.config/colors/current_scheme)
 
-setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' &
-
 # Обновляем цвета BSPWM
 ~/.config/bspwm/bin/update-colors
 
@@ -64,7 +62,7 @@ bspc rule -a DBeaver desktop='^1' state=tiled follow=on
 # bspc rule -a mplayer2 state=floating
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
-bspc config border_width 2
+bspc config border_width 4
 
 xsetroot -cursor_name left_ptr &
 
