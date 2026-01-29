@@ -81,6 +81,7 @@ element normal active {
 }
 
 element alternate active {
+    background-color: inherit;
     text-color: @bg3;
 }
 
