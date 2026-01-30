@@ -44,7 +44,6 @@ bspc rule -a "*properties*" state=floating center=on layer=above
 
 #================== AUTOSTART ==============
 pgrep -x sxhkd > /dev/null || sxhkd -m -1 &
-picom --config ~/.config/picom/picom.conf &
 feh --bg-fill "$LOCKSCREEN_IMAGE" &
 $HOME/.config/polybar/launch_separate.sh &
 flameshot &
@@ -69,7 +68,7 @@ case $(ps -p 1 -o comm=) in
     systemctl --user restart picom polybar &> /dev/null
     ;;
 esac
-pkill -USR1 picom &> /dev/null
+# pkill -USR1 picom &> /dev/null
 canberra-gtk-play -i service-login
-
+picom --config ~/.config/picom/picom.conf &
 # exec bspwm
