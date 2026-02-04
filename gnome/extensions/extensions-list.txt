@@ -1,9 +1,9 @@
 just-perfection-desktop@just-perfection
 Rounded_Corners@lennart-k
 caffeine@patapon.info
+display-brightness-ddcutil@themightydeity.github.com
 rounded-window-corners@fxgn
 gsconnect@andyholmes.github.io
 Vitals@CoreCoding.com
 logomenu@aryan_k
 dash-to-dock@micxgx.gmail.com
-display-brightness-ddcutil@themightydeity.github.com
