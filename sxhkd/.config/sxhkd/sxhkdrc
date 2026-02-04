@@ -16,7 +16,7 @@ super + b
 
 # files
 super + e
-        thunar
+        alacritty -e yazi
 
 # powermenu
 super + shift + q
