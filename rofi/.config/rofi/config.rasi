@@ -12,7 +12,7 @@ configuration {
     element-padding: 5;
     scrollbar-width: 8;
     scrollbar-handle-color: #98C379;
-    selected-background: #61afef;
+    selected-background: #E7C787;
     selected-foreground: #ABB2BF;
     window {
         width: 800px;
@@ -25,8 +25,8 @@ configuration {
 * {
     bg0:    #282C34;
     bg1:    #21252B00;
-    bg2:    #61afef;
-    bg3:    #61afef;
+    bg2:    #E7C787;
+    bg3:    #E7C787;
     fg0:    #ABB2BF;
     fg1:    #ABB2BF;
     fg2:    #5C6370;
