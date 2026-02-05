@@ -3,17 +3,17 @@ configuration {
     show-icons: true;
     icon-theme: "Papirus";
     font: "JetBrains Mono Nerd Font 14";
-    background:     #0F1419;
-    foreground:     #E6E6E6;
+    background:     #282C34;
+    foreground:     #ABB2BF;
     border:         1;
-    border-color:   #424868;
+    border-color:   #5C6370;
     border-radius:  8;
     padding:        10;
     element-padding: 5;
     scrollbar-width: 8;
-    scrollbar-handle-color: #1AD29F;
-    selected-background: #746DFE;
-    selected-foreground: #E6E6E6;
+    scrollbar-handle-color: #98C379;
+    selected-background: #61afef;
+    selected-foreground: #ABB2BF;
     window {
         width: 800px;
         border-radius: 10px;
@@ -23,13 +23,13 @@ configuration {
 
 
 * {
-    bg0:    #0F1419;
-    bg1:    #1A1F26;
-    bg2:    #746DFE;
-    bg3:    #746DFE;
-    fg0:    #E6E6E6;
-    fg1:    #E6E6E6;
-    fg2:    #424868;
-    fg3:    #E6E6E6;
+    bg0:    #282C34;
+    bg1:    #21252B00;
+    bg2:    #61afef;
+    bg3:    #61afef;
+    fg0:    #ABB2BF;
+    fg1:    #ABB2BF;
+    fg2:    #5C6370;
+    fg3:    #ABB2BF;
 }
 @import "~/.config/rofi/themes/template/rounded-template.rasi"

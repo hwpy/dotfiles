@@ -1,7 +1,7 @@
 export LANG=ru_RU.UTF-8
 export LANGUAGE=ru_RU.UTF-8
 export LC_ALL=ru_RU.UTF-8
-export LOCKSCREEN_IMAGE="$HOME/dotfiles/wlppr/skull.png"
+export LOCKSCREEN_IMAGE="$HOME/dotfiles/wlppr/nordic-wallpapers/ign_car.png"
 export PATH="$HOME/.local/bin:$PATH"
 
 xss-lock -- $HOME/.config/bspwm/bin/lock &
