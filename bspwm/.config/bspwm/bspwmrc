@@ -46,6 +46,7 @@ bspc rule -a "*properties*" state=floating center=on layer=above
 pgrep -x sxhkd > /dev/null || sxhkd -m -1 &
 feh --bg-fill "$LOCKSCREEN_IMAGE" &
 $HOME/.config/polybar/launch_separate.sh &
+# $HOME/.config/polybar/launch_single.sh &
 flameshot &
 udiskie -a -n -t &
 dunst &
