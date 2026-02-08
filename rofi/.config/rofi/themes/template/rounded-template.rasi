@@ -76,10 +76,12 @@ element {
 }
 
 element normal active {
+    background-color: inherit;
     text-color: @bg3;
 }
 
 element alternate active {
+    background-color: inherit;
     text-color: @bg3;
 }
 

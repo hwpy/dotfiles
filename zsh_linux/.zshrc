@@ -1,3 +1,5 @@
+GITHUB_KEY="$HOME/.ssh/id_ed25519_github"
+
 # поиск от команды
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
@@ -10,7 +12,10 @@ export VISUAL="nvim"
 
 # ssh agent
 # отключить если используется keyring
-# eval "$(ssh-agent -s)"
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    eval "$(ssh-agent -s)" > /dev/null
+    ssh-add "$GITHUB_KEY" > /dev/null 2>&1
+fi
 
 # aliases
 # alias pclean="sh ~/Documents/macports_clean.sh"
@@ -154,8 +159,4 @@ alias l="eza --tree --icons --long --header --group --git --time-style=long-iso 
 # . "$HOME/.local/share/../bin/env"
 
 # fnm
-FNM_PATH="/home/alexey/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
+eval "$(fnm env --use-on-cd --shell zsh)"

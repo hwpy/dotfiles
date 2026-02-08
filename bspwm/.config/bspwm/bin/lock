@@ -1,2 +1,2 @@
 #!/bin/sh
-i3lock -c 282A36
+slock
