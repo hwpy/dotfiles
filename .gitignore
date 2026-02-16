@@ -12,6 +12,7 @@ alacritty/.config/alacritty/alacritty-local.toml
 !/gtk*/
 !/hypr/
 !/kitty/
+!/leaderkey/
 !/mpv/
 !/networkmanager-dmenu/
 !/nvim/

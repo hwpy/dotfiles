@@ -1,0 +1,67 @@
+{
+  "actions" : [
+    {
+      "key" : "t",
+      "type" : "application",
+      "value" : "/Applications/MacPorts/Alacritty.app"
+    },
+    {
+      "key" : "b",
+      "type" : "application",
+      "value" : "/Applications/Firefox.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Safari.app"
+        },
+        {
+          "key" : "e",
+          "type" : "application",
+          "value" : "/System/Applications/Mail.app"
+        },
+        {
+          "key" : "m",
+          "type" : "application",
+          "value" : "/System/Applications/Music.app"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "m",
+              "type" : "application",
+              "value" : "/Applications/Яндекс Музыка.app"
+            },
+            {
+              "key" : "b",
+              "type" : "application",
+              "value" : "/Applications/Yandex.app"
+            }
+          ],
+          "key" : "y",
+          "type" : "group"
+        },
+        {
+          "key" : "t",
+          "type" : "application",
+          "value" : "/Applications/Telegram.app"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "value" : "/Applications/Obsidian.app"
+        },
+        {
+          "key" : "f",
+          "type" : "application",
+          "value" : "/Applications/Firefox.app"
+        }
+      ],
+      "key" : "o",
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}
