@@ -54,9 +54,9 @@
           "value" : "/Applications/Obsidian.app"
         },
         {
-          "key" : "f",
-          "type" : "application",
-          "value" : "/Applications/Firefox.app"
+          "key": "f",
+          "type": "command",
+          "value": "open -a Finder ~/"
         }
       ],
       "key" : "o",

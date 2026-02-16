@@ -3,6 +3,7 @@
 !/aerospace/
 !/alacritty/
 alacritty/.config/alacritty/alacritty-local.toml
+!/borders/
 !/bspwm/
 !/colors/
 !/docs/

@@ -8,7 +8,7 @@ config-version = 2
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  'exec-and-forget borders active_color=0xffC678DD inactive_color=0xff282C34 width=9.0'
+  'exec-and-forget borders'
 ]
 
 # Start AeroSpace at login
@@ -68,8 +68,8 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 12
-    inner.vertical =   12
+    inner.horizontal = 9
+    inner.vertical =   9
     outer.left =       7
     outer.bottom =     7
     outer.top =        7
