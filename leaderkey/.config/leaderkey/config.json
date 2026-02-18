@@ -1,7 +1,7 @@
 {
   "actions" : [
     {
-      "key" : "t",
+      "key" : "enter",
       "type" : "application",
       "value" : "/Applications/MacPorts/Alacritty.app"
     },
@@ -11,21 +11,63 @@
       "value" : "/Applications/Firefox.app"
     },
     {
+      "key" : "p",
+      "type" : "application",
+      "value" : "/System/Applications/System Settings.app"
+    },
+    {
+      "key" : "e",
+      "type" : "command",
+      "value" : "open -a Finder ~/"
+    },
+    {
       "actions" : [
         {
+          "actions" : [
+            {
+              "key" : "a",
+              "type" : "application",
+              "value" : "/Applications/Safari.app"
+            },
+            {
+              "key" : "t",
+              "type" : "application",
+              "value" : "/Applications/Steam.app"
+            }
+          ],
           "key" : "s",
-          "type" : "application",
-          "value" : "/Applications/Safari.app"
+          "type" : "group"
         },
         {
-          "key" : "e",
-          "type" : "application",
-          "value" : "/System/Applications/Mail.app"
-        },
-        {
+          "actions" : [
+            {
+              "key" : "a",
+              "type" : "application",
+              "value" : "/System/Applications/Mail.app"
+            },
+            {
+              "key" : "u",
+              "type" : "application",
+              "value" : "/System/Applications/Music.app"
+            }
+          ],
           "key" : "m",
+          "type" : "group"
+        },
+        {
+          "key" : "t",
           "type" : "application",
-          "value" : "/System/Applications/Music.app"
+          "value" : "/Applications/Telegram.app"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "value" : "/Applications/Obsidian.app"
+        },
+        {
+          "key" : "a",
+          "type" : "application",
+          "value" : "/System/Applications/App Store.app"
         },
         {
           "actions" : [
@@ -42,21 +84,6 @@
           ],
           "key" : "y",
           "type" : "group"
-        },
-        {
-          "key" : "t",
-          "type" : "application",
-          "value" : "/Applications/Telegram.app"
-        },
-        {
-          "key" : "o",
-          "type" : "application",
-          "value" : "/Applications/Obsidian.app"
-        },
-        {
-          "key": "f",
-          "type": "command",
-          "value": "open -a Finder ~/"
         }
       ],
       "key" : "o",
