@@ -1,7 +1,7 @@
 {
   "actions" : [
     {
-      "key" : "enter",
+      "key" : "t",
       "type" : "application",
       "value" : "/Applications/MacPorts/Alacritty.app"
     },
