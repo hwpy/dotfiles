@@ -23,20 +23,14 @@
     {
       "actions" : [
         {
-          "actions" : [
-            {
-              "key" : "a",
-              "type" : "application",
-              "value" : "/Applications/Safari.app"
-            },
-            {
-              "key" : "t",
-              "type" : "application",
-              "value" : "/Applications/Steam.app"
-            }
-          ],
-          "key" : "s",
-          "type" : "group"
+          "key" : "1",
+          "type" : "application",
+          "value" : "/Applications/1Password.app"
+        },
+        {
+          "key" : "a",
+          "type" : "application",
+          "value" : "/System/Applications/App Store.app"
         },
         {
           "actions" : [
@@ -55,19 +49,30 @@
           "type" : "group"
         },
         {
-          "key" : "t",
-          "type" : "application",
-          "value" : "/Applications/Telegram.app"
-        },
-        {
           "key" : "o",
           "type" : "application",
           "value" : "/Applications/Obsidian.app"
         },
         {
-          "key" : "a",
+          "actions" : [
+            {
+              "key" : "a",
+              "type" : "application",
+              "value" : "/Applications/Safari.app"
+            },
+            {
+              "key" : "t",
+              "type" : "application",
+              "value" : "/Applications/Steam.app"
+            }
+          ],
+          "key" : "s",
+          "type" : "group"
+        },
+        {
+          "key" : "t",
           "type" : "application",
-          "value" : "/System/Applications/App Store.app"
+          "value" : "/Applications/Telegram.app"
         },
         {
           "actions" : [
