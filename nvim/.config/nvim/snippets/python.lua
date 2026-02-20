@@ -135,7 +135,8 @@ return {
     i(1, "Function description"),
     i(2, "param"),
     i(3, "type"),
-    i(4, "return type")
+    i(4, "return type"),
+    i(5, "exception")
   })),
 
   s("docclass", fmt([[
