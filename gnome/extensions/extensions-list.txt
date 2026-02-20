@@ -8,4 +8,3 @@ gsconnect@andyholmes.github.io
 Vitals@CoreCoding.com
 logomenu@aryan_k
 dash-to-dock@micxgx.gmail.com
-display-brightness-ddcutil@themightydeity.github.com
