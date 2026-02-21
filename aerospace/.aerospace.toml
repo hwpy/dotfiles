@@ -175,3 +175,34 @@ on-mode-changed = []
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
+
+
+# apps to workspaces
+[[on-window-detected]]
+    if.app-id = 'org.alacritty'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-id = 'org.mozill.firefox'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Music'
+    run = ['layout v_accordion', 'move-node-to-workspace 2']
+
+[[on-window-detected]]
+    if.app-id = 'ru.yandex.desktop.music'
+    run = ['layout v_accordion', 'move-node-to-workspace 2']
+
+[[on-window-detected]]
+    if.app-id = 'com.1password.1password'
+    run = ['layout v_accordion', 'move-node-to-workspace 3']
+
+[[on-window-detected]]
+    if.app-id = 'org.videolan.vlc'
+    if.app-name-regex-substring = 'VLC'
+    run = ['layout v_accordion', 'move-node-to-workspace 3']

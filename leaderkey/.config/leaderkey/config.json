@@ -28,24 +28,29 @@
           "value" : "/Applications/1Password.app"
         },
         {
-          "key" : "a",
-          "type" : "application",
-          "value" : "/System/Applications/App Store.app"
-        },
-        {
           "actions" : [
             {
               "key" : "a",
               "type" : "application",
+              "value" : "/System/Applications/App Store.app"
+            },
+            {
+              "key" : "e",
+              "type" : "application",
               "value" : "/System/Applications/Mail.app"
             },
             {
-              "key" : "u",
+              "key" : "s",
+              "type" : "application",
+              "value" : "/Applications/Safari.app"
+            },
+            {
+              "key" : "m",
               "type" : "application",
               "value" : "/System/Applications/Music.app"
             }
           ],
-          "key" : "m",
+          "key" : "a",
           "type" : "group"
         },
         {
@@ -54,20 +59,9 @@
           "value" : "/Applications/Obsidian.app"
         },
         {
-          "actions" : [
-            {
-              "key" : "a",
-              "type" : "application",
-              "value" : "/Applications/Safari.app"
-            },
-            {
-              "key" : "t",
-              "type" : "application",
-              "value" : "/Applications/Steam.app"
-            }
-          ],
           "key" : "s",
-          "type" : "group"
+          "type" : "application",
+          "value" : "/Applications/Steam.app"
         },
         {
           "key" : "t",
