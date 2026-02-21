@@ -180,15 +180,19 @@ on-mode-changed = []
 # apps to workspaces
 [[on-window-detected]]
     if.app-id = 'org.alacritty'
-    run = 'move-node-to-workspace 1'
+    run = ['layout v_accordion', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
     if.app-id = 'org.mozill.firefox'
-    run = 'move-node-to-workspace 1'
+    run = ['layout v_accordion', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
-    run = 'move-node-to-workspace 1'
+    run = ['layout v_accordion', 'move-node-to-workspace 1']
+
+[[on-window-detected]]
+    if.app-id = 'com.vscodium'
+    run = ['layout v_accordion', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.Music'
