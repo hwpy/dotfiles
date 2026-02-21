@@ -18,7 +18,7 @@
     {
       "key" : "e",
       "type" : "command",
-      "value" : "open -a Finder ~/"
+      "value" : "open -a Finder ~/Downloads/"
     },
     {
       "actions" : [
