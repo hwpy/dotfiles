@@ -187,6 +187,10 @@ on-mode-changed = []
     run = ['layout v_accordion', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
+    if.app-id = 'app.zen-browser.zen'
+    run = ['layout v_accordion', 'move-node-to-workspace 1']
+
+[[on-window-detected]]
     if.app-id = 'com.apple.finder'
     run = ['layout v_accordion', 'move-node-to-workspace 1']
 
