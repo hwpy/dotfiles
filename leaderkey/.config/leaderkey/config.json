@@ -8,7 +8,7 @@
     {
       "key" : "b",
       "type" : "application",
-      "value" : "/Applications/Zen.app"
+      "value" : "/Applications/Firefox.app"
     },
     {
       "key" : "p",
@@ -59,11 +59,6 @@
           "type" : "group"
         },
         {
-          "key" : "f",
-          "type" : "application",
-          "value" : "/Applications/Firefox.app"
-        },
-        {
           "key" : "o",
           "type" : "application",
           "value" : "/Applications/Obsidian.app"
@@ -93,6 +88,11 @@
           ],
           "key" : "y",
           "type" : "group"
+        },
+        {
+          "key" : "z",
+          "type" : "application",
+          "value" : "/Applications/Zen.app"
         }
       ],
       "key" : "o",
