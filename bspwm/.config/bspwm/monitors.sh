@@ -2,7 +2,7 @@
 
 # Имена мониторов
 INTERNAL_MONITOR="HDMI-0"
-EXTERNAL_MONITOR="VGA-0"
+EXTERNAL_MONITOR="DVI-D-0"
 
 # Автоопределение подключённых мониторов
 PRIMARY_MONITOR=$(xrandr --listmonitors | awk 'NR==2{print $4; exit}')
