@@ -48,6 +48,11 @@
               "key" : "m",
               "type" : "application",
               "value" : "/System/Applications/Music.app"
+            },
+            {
+              "key" : "r",
+              "type" : "application",
+              "value" : "/System/Applications/Utilities/Activity Monitor.app"
             }
           ],
           "key" : "a",
@@ -83,6 +88,11 @@
           ],
           "key" : "y",
           "type" : "group"
+        },
+        {
+          "key" : "z",
+          "type" : "application",
+          "value" : "/Applications/Zen.app"
         }
       ],
       "key" : "o",
