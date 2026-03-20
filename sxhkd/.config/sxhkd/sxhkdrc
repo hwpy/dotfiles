@@ -164,6 +164,18 @@ XF86MonBrightnessDown
     brightnessctl set 10%-
 
 #
+# яркость внешних мониторов через ddcutil
+#
+super + ctrl + alt + 1
+    ~/.config/sxhkd/bin/monitor_brightness.sh 2 -10
+super + ctrl + alt + 2
+    ~/.config/sxhkd/bin/monitor_brightness.sh 2 10
+super + ctrl + alt + 3
+    ~/.config/sxhkd/bin/monitor_brightness.sh 1 -10
+super + ctrl + alt + 4
+    ~/.config/sxhkd/bin/monitor_brightness.sh 1 10
+
+#
 # Подсветка клавиатуры
 #
 
