@@ -37,7 +37,7 @@ systemctl --user enable --now pipewire-pulse.service pipewire-pulse.socket wirep
 _данная настройка актуальна для MacBook, можно пропустить_
 
 ```Shell
-sudo nano /etc/modprobe.d/hid_apple.conf
+sudo nvim /etc/modprobe.d/hid_apple.conf
 options hid_apple fnmode=2
 sudo mkinitcpio -P
 sudo reboot
