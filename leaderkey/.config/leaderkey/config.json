@@ -16,7 +16,9 @@
       "value" : "/System/Applications/System Settings.app"
     },
     {
+      "iconPath" : "/System/Library/CoreServices/Finder.app",
       "key" : "e",
+      "label" : "Finder",
       "type" : "command",
       "value" : "open -a Finder ~/Downloads/"
     },
