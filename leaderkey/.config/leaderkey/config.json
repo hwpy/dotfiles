@@ -88,11 +88,6 @@
           ],
           "key" : "y",
           "type" : "group"
-        },
-        {
-          "key" : "z",
-          "type" : "application",
-          "value" : "/Applications/Zen.app"
         }
       ],
       "key" : "o",
