@@ -63,7 +63,11 @@ bspc config gapless_monocle      false
 
 #================== СИСТЕМА ================
 xsetroot -cursor_name left_ptr &
-xinput set-prop 14 'libinput Accel Speed' -0.8
+# xinput set-prop 14 'libinput Accel Speed' -0.8
+for id in $(xinput list | grep 'pointer' | grep -i mouse | sed 's/.*id=\([0-9]*\).*/\1/'); do
+    xinput set-prop $id 'libinput Accel Profile Enabled' 0 1 0
+    xinput set-prop $id 'libinput Accel Speed' -0.3
+done &
 
 case $(ps -p 1 -o comm=) in
   systemd)
