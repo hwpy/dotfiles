@@ -77,4 +77,4 @@ map("n", "<leader>mt", function()
 end, { desc = "Toggle Markdown Render" })
 map('n', '<leader>mf', ':lua require("nabla").popup()<CR>', { desc = 'Markdown Formula' })
 -- terminal exit
-map('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.keymap.set('t', 'jk', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
