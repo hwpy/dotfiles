@@ -1,8 +1,7 @@
 #!/bin/sh
 
-# Имена мониторов
-INTERNAL_MONITOR="HDMI-0"
-EXTERNAL_MONITOR="DVI-D-0"
+# Машино-зависимые переменные
+source "$HOME/.config/env/env"
 
 # Автоопределение подключённых мониторов
 PRIMARY_MONITOR=$(xrandr --listmonitors | awk 'NR==2{print $4; exit}')

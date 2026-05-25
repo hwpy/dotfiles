@@ -128,6 +128,7 @@ _Based on NvChad_
 
 ## Documentation
 - [Initial setup](/docs/en/bspwm/initial_setup.md)
+- [Dotfiles deployment](/docs/en/bspwm/dotfiles_setup.md)
 
 ## 💡 Inspired by:
 
@@ -152,7 +153,7 @@ _Based on NvChad_
 
 1. How to set up the wallpaper?
 Answer:
-In **~/.xprofile** add the line:
+In **~/.config/env/env** set:
 
 ```Shell
 export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"
@@ -331,6 +332,7 @@ _Основан на NvChad_
 
 ## Документация
 - [Первоначальная настройка](/docs/ru/bspwm/initial_setup.md)
+- [Развёртывание dotfiles](/docs/ru/bspwm/dotfiles_setup.md)
 
 ## 💡 Вдохновлено:
 
@@ -355,7 +357,7 @@ _Основан на NvChad_
 
 1. Как установить обои рабочего стола?
 Ответ:
-В файле **~/.xprofile** добавьте строку:
+В файле **~/.config/env/env** укажите:
 
 ```Shell
 export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"

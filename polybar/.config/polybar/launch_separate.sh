@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $HOME/.config/bspwm/monitors.sh
+source "$HOME/.config/env/env"
 
 # Загружаем текущую цветовую схему
 CURRENT_SCHEME=$(cat $HOME/.config/colors/current_scheme)

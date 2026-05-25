@@ -1,5 +1,3 @@
-GITHUB_KEY="$HOME/.ssh/id_ed25519_github"
-
 # поиск от команды
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
@@ -14,7 +12,6 @@ export VISUAL="nvim"
 # отключить если используется keyring
 if [[ -z "$SSH_AUTH_SOCK" ]]; then
     eval "$(ssh-agent -s)" > /dev/null
-    ssh-add "$GITHUB_KEY" > /dev/null 2>&1
 fi
 
 # aliases

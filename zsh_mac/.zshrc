@@ -1,5 +1,3 @@
-GITHUB_KEY="$HOME/.ssh/id_ed25519_github"
-
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
@@ -19,8 +17,6 @@ eval "$(fnm env)"
 if [[ -z "$SSH_AUTH_SOCK" ]]; then
     eval "$(ssh-agent -s)" > /dev/null
 fi
-ssh-add --apple-use-keychain "$GITHUB_KEY" 2>/dev/null
-# ssh-add -K ~/.ssh/id_ed25519_github 2>/dev/null # для macOS Catalina
 
 # aliases
 alias c="clear && fastfetch"

@@ -8,6 +8,8 @@ alacritty/.config/alacritty/alacritty-local.toml
 !/colors/
 !/docs/
 !/dunst/
+!/env/
+env/.config/env/env
 !/fastfetch/
 !/gnome/
 !/gtk*/
@@ -18,12 +20,20 @@ alacritty/.config/alacritty/alacritty-local.toml
 !/networkmanager-dmenu/
 !/nvim/
 nvim/.config/nvim/lazy-lock.json
+!/opencode/
+opencode/.config/opencode/node_modules/
+opencode/.config/opencode/package.json
+opencode/.config/opencode/package-lock.json
+opencode/.config/opencode/.gitignore
 !/picom/
 !/polybar/
 !/ranger/
 !/rofi/
 !/ruff/
 !/screenshots/
+!/ssh/
+ssh/.ssh/*
+!/ssh/.ssh/config
 !/sxhkd/
 !/tmux/
 !/touchegg/
@@ -37,6 +47,7 @@ nvim/.config/nvim/lazy-lock.json
 !/yazi/
 !/zsh_linux/
 !/zsh_mac/
+!AGENTS.md
 !LICENSE
 !README.md
 .DS_Store
