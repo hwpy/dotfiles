@@ -12,6 +12,14 @@ for ini in ~/.config/gtk-3.0/settings.ini ~/.config/gtk-4.0/settings.ini; do
     [ -f "$ini" ] && sed -i "s/^gtk-application-prefer-dark-theme=.*/gtk-application-prefer-dark-theme=$PREFER/" "$ini"
 done
 
+# GTK2 (~/.gtkrc-2.0) — DBeaver и старые приложения
+if [ "$MODE" = "light" ]; then
+    GTK2_THEME="Breeze"
+else
+    GTK2_THEME="Breeze-Dark"
+fi
+[ -f ~/.gtkrc-2.0 ] && sed -i "s/^gtk-theme-name=.*/gtk-theme-name=\"$GTK2_THEME\"/" ~/.gtkrc-2.0
+
 # gsettings — для приложений через портал (GNOME, Flatpak)
 if command -v gsettings >/dev/null 2>&1; then
     if [ "$MODE" = "light" ]; then
