@@ -1,27 +1,27 @@
 [global]
-background = "#1A1B26"
-frame_color = "#7aa2f7"
-frame_width = 2
-corner_radius = 10
-foreground = "#A9B1D6"
+background = "#0D1119"
+frame_color = "#7AA2F7"
+frame_width = 1
+corner_radius = 15
+foreground = "#C0CAF5"
 font = "JetBrains Mono Nerd Font 10"
-width = 300
+width = 350
 origin = top-right
-offset = (9, 42)
+offset = (21, 21)
 
 [urgency_normal]
-background = "#1A1B26"
-foreground = "#A9B1D6"
+background = "#0D1119"
+foreground = "#C0CAF5"
 timeout = 5
 
 [urgency_low]
-background = "#414868"
-foreground = "#A9B1D6"
+background = "#565F89"
+foreground = "#C0CAF5"
 timeout = 3
 
 [urgency_critical]
-background = "#ff75a0"
-foreground = "#A9B1D6"
+background = "#F7768E"
+foreground = "#C0CAF5"
 timeout = 0
 
 [play_sound]

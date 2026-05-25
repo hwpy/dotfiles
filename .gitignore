@@ -4,9 +4,12 @@
 !/alacritty/
 alacritty/.config/alacritty/alacritty-local.toml
 !/borders/
+!/bin/
 !/bspwm/
 !/btop/
 !/colors/
+colors/.config/colors/current.conf
+colors/.config/colors/current_scheme
 !/docs/
 !/dunst/
 !/env/
@@ -28,6 +31,7 @@ opencode/.config/opencode/package-lock.json
 opencode/.config/opencode/.gitignore
 !/picom/
 !/polybar/
+polybar/.config/polybar/scale_active.ini
 !/ranger/
 !/rofi/
 !/ruff/

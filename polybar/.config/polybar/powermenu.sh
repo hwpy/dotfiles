@@ -7,7 +7,7 @@ if echo "$LANG" | grep -q "^ru"; then
     REBOOT="Перезагрузка"
     POWEROFF="Выключение"
     LOGOUT="Выход"
-    PROMPT="Выберите действие:"
+    PROMPT="система"
 else
     MENU=" Lock\n󰤄 Suspend\n Reboot\n󰐥 Poweroff\n󰗼 Logout"
     LOCK="Lock"
@@ -15,7 +15,7 @@ else
     REBOOT="Reboot"
     POWEROFF="Poweroff"
     LOGOUT="Logout"
-    PROMPT="Choose action:"
+    PROMPT="system"
 fi
 
 chosen=$(echo -e "$MENU" | rofi -dmenu -i -p "$PROMPT")

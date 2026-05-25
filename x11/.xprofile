@@ -3,7 +3,23 @@ export LANGUAGE=ru_RU.UTF-8
 export LC_ALL=ru_RU.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 
+# GDM оставляет XDG_SESSION_TYPE=wayland — чиним
+export XDG_SESSION_TYPE=x11
+export QT_QPA_PLATFORM=xcb
+
+source ~/.config/env/env 2>/dev/null || true
+F=${HIDPI_FACTOR:-100}
+
+echo "Xcursor.size: $((24 * F / 100))" | xrdb -merge
+echo "Xft.dpi: $((96 * F / 100))" | xrdb -merge
+
 xss-lock -- $HOME/.config/bspwm/bin/lock &
+
+# Тачпад не блокировать при печати
+for id in $(xinput list --id-only 2>/dev/null); do
+    xinput list-props "$id" 2>/dev/null | grep -q 'Disable While Typing' &&
+        xinput set-prop "$id" 'libinput Disable While Typing Enabled' 0
+done &
 
 # keyring settings
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
@@ -14,5 +30,8 @@ if command -v gnome-keyring-daemon >/dev/null 2>&1; then
   eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
   export GNOME_KEYRING_SOCKET SSH_AUTH_SOCK
 fi
+
+# GTK/Qt тема (требует dbus)
+source ~/.config/colors/src/apply-gtk-theme
 
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources

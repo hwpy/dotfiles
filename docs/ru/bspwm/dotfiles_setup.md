@@ -1,62 +1,83 @@
-# Развёртывание dotfiles
+# Развёртывание Dotfiles
 
 ## Установка GNU Stow
 
-```Shell
+```bash
 sudo pacman -S stow
 ```
 
-## Клонирование репозитория
+## Клонирование
 
-```Shell
+```bash
 git clone https://github.com/hwpy/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
 ## Структура
 
-Каждая директория верхнего уровня — это **Stow-пакет**, повторяющий структуру `$HOME`:
+Каждая директория верхнего уровня — **пакет Stow**, отражающий `$HOME`:
 
-| Пакет | Что разворачивает |
+| Пакет | Разворачивается в |
 |---|---|
 | `bspwm` | `~/.config/bspwm/` |
-| `polybar` | `~/.config/polybar/` |
 | `sxhkd` | `~/.config/sxhkd/` |
+| `polybar` | `~/.config/polybar/` |
+| `picom` | `~/.config/picom/` |
+| `rofi` | `~/.config/rofi/` |
+| `dunst` | `~/.config/dunst/` |
+| `x11` | `~/.xprofile`, `~/.xinitrc`, `~/.Xresources` |
+| `colors` | `~/.config/colors/` |
+| `gtk-*` | `~/.config/gtk-*/settings.ini` |
+| `env` | `~/.config/env/env.template` |
+| `bin` | `~/.local/bin/chromium` |
 | `nvim` | `~/.config/nvim/` |
 | `zsh_linux` | `~/.zshrc` |
-| `tmux` | `~/.tmux.conf`, `~/.tmux/themes/` |
-| `kitty` | `~/.config/kitty/` |
-| `env` | `~/.config/env/` |
-| ... | |
+| `tmux` | `~/.tmux.conf` |
 
-## Машино-зависимые переменные (`env`)
+## Настройки компьютера (`env`)
 
-**Этот шаг нужно выполнить до развёртывания пакетов, использующих переменные окружения** (bspwm, polybar, x11).
+**Сделайте это первым** — bspwm, polybar и x11 зависят от него.
 
-```Shell
+```bash
 stow env
 cp ~/.config/env/env.template ~/.config/env/env
 nvim ~/.config/env/env
 ```
 
-Шаблон содержит комментарии с подсказками, где взять значения:
+Обязательные переменные:
 
-- **Мониторы:** `xrandr --listmonitors | awk '{print $4}'`
-- **Обои для локскрина:** путь к картинке в `~/.config/wlppr/`
-- **Батарея/питание:** `ls /sys/class/power_supply/`
-- **Датчик температуры CPU:** `ls /sys/class/hwmon/*/temp*_input`
-- **SSH-ключи** прописываются в `~/.ssh/config` (пакет `ssh/`)
+```bash
+export HIDPI_FACTOR=100      # 100 = 1080p, 175 = Retina 13"
+export THEME_MODE=dark       # dark | light
+export INTERNAL_MONITOR="eDP-1"
+export EXTERNAL_MONITOR="DP-1"
+export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"
+export POLYBAR_BATTERY="BAT0"
+export POLYBAR_ADAPTER="ADP1"
+export POLYBAR_HWMON_PATH="/sys/class/hwmon/hwmon1/temp1_input"
+```
 
-Файл `env` в `.gitignore` — у каждой машины свой.
+Файл `env` **gitignored** — на каждом компьютере свой.
 
 ## Развёртывание
 
-```Shell
+```bash
 stow bspwm polybar sxhkd picom dunst rofi
-stow nvim zsh_linux tmux kitty
-stow ssh x11 colors gtk-3.0 gtk-4.0
+stow x11 colors gtk-3.0 gtk-4.0
+stow nvim zsh_linux tmux bin
 stow touchegg fastfetch mpv yazi
-# ... добавить нужные пакеты
+# ... добавьте любые нужные пакеты
 ```
 
-Stow создаёт симлинки из `~/dotfiles/` в `~/`. Чтобы удалить пакет: `stow -D <имя>`.
+Удаление: `stow -D <пакет>`.
+
+## Сессия GDM
+
+```bash
+sudo tee /usr/share/xsessions/bspwm.desktop <<'EOF'
+[Desktop Entry]
+Name=bspwm
+Exec=bspwm
+Type=Application
+EOF
+```

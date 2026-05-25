@@ -1,5 +1,6 @@
 #!/bin/sh
-SIZE=30
+source ~/.config/env/env 2>/dev/null || true
+SIZE=$((30 * ${HIDPI_FACTOR:-100} / 100))
 
 if [ "$1" = "expand" ]; then
   bspc node -z left -$SIZE*3 0
@@ -12,4 +13,3 @@ elif [ "$1" = "contract" ]; then
   bspc node -z top 0 $SIZE
   bspc node -z bottom 0 -$SIZE
 fi
-

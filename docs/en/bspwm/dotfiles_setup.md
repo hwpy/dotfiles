@@ -2,13 +2,13 @@
 
 ## Install GNU Stow
 
-```Shell
+```bash
 sudo pacman -S stow
 ```
 
-## Clone the Repository
+## Clone
 
-```Shell
+```bash
 git clone https://github.com/hwpy/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
@@ -20,43 +20,64 @@ Each top-level directory is a **Stow package** that mirrors `$HOME`:
 | Package | Deploys to |
 |---|---|
 | `bspwm` | `~/.config/bspwm/` |
-| `polybar` | `~/.config/polybar/` |
 | `sxhkd` | `~/.config/sxhkd/` |
+| `polybar` | `~/.config/polybar/` |
+| `picom` | `~/.config/picom/` |
+| `rofi` | `~/.config/rofi/` |
+| `dunst` | `~/.config/dunst/` |
+| `x11` | `~/.xprofile`, `~/.xinitrc`, `~/.Xresources` |
+| `colors` | `~/.config/colors/` |
+| `gtk-*` | `~/.config/gtk-*/settings.ini` |
+| `env` | `~/.config/env/env.template` |
+| `bin` | `~/.local/bin/chromium` |
 | `nvim` | `~/.config/nvim/` |
 | `zsh_linux` | `~/.zshrc` |
-| `tmux` | `~/.tmux.conf`, `~/.tmux/themes/` |
-| `kitty` | `~/.config/kitty/` |
-| `env` | `~/.config/env/` |
-| ... | |
+| `tmux` | `~/.tmux.conf` |
 
-## Machine-Specific Configuration (`env`)
+## Machine-Specific Config (`env`)
 
-**This step must be done before deploying packages that use environment variables** (bspwm, polybar, x11).
+**Do this first** — bspwm, polybar, and x11 depend on it.
 
-```Shell
+```bash
 stow env
 cp ~/.config/env/env.template ~/.config/env/env
 nvim ~/.config/env/env
 ```
 
-The template contains comments explaining where to get the values:
+Required variables:
 
-- **Monitors:** `xrandr --listmonitors | awk '{print $4}'`
-- **Lock screen wallpaper:** path to image in `~/.config/wlppr/`
-- **Battery/Power supply:** `ls /sys/class/power_supply/`
-- **CPU temperature sensor:** `ls /sys/class/hwmon/*/temp*_input`
-- **SSH keys** are defined in `~/.ssh/config` (see `ssh/` package)
+```bash
+export HIDPI_FACTOR=100      # 100 = 1080p, 175 = Retina 13"
+export THEME_MODE=dark       # dark | light
+export INTERNAL_MONITOR="eDP-1"
+export EXTERNAL_MONITOR="DP-1"
+export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"
+export POLYBAR_BATTERY="BAT0"
+export POLYBAR_ADAPTER="ADP1"
+export POLYBAR_HWMON_PATH="/sys/class/hwmon/hwmon1/temp1_input"
+```
 
-The `env` file is gitignored — each machine has its own.
+`env` is **gitignored** — each machine has its own.
 
 ## Deploy
 
-```Shell
+```bash
 stow bspwm polybar sxhkd picom dunst rofi
-stow nvim zsh_linux tmux kitty
-stow ssh x11 colors gtk-3.0 gtk-4.0
+stow x11 colors gtk-3.0 gtk-4.0
+stow nvim zsh_linux tmux bin
 stow touchegg fastfetch mpv yazi
 # ... add any package you need
 ```
 
-Stow creates symlinks from `~/dotfiles/` to `~/`. To remove a package: `stow -D <name>`.
+Removing: `stow -D <package>`.
+
+## GDM Session
+
+```bash
+sudo tee /usr/share/xsessions/bspwm.desktop <<'EOF'
+[Desktop Entry]
+Name=bspwm
+Exec=bspwm
+Type=Application
+EOF
+```

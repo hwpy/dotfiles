@@ -1,5 +1,22 @@
 #!/bin/bash
 
+source ~/.config/env/env 2>/dev/null || true
+F=${HIDPI_FACTOR:-100}
+FONT_SIZE=$((11 * F / 100))
+WIN_WIDTH=$((467 * F / 100))
+PAD=$((10 * F / 100))
+EPAD=$((5 * F / 100))
+SBW=$((8 * F / 100))
+BR=$((9 * F / 100))
+WBR=$((9 * F / 100))
+FW=$((2 * F / 100))
+
+if echo "$LANG" | grep -q "^ru"; then
+    PLACEHOLDER="поиск"
+else
+    PLACEHOLDER="search"
+fi
+
 # Загружаем текущую схему
 CURRENT_SCHEME=$(cat ~/.config/colors/current_scheme)
 SCHEME_FILE="$HOME/.config/colors/schemes/$CURRENT_SCHEME.conf"
@@ -22,41 +39,17 @@ disabled=${disabled:-#5C5A57}
 alert=${alert:-#FB3ECE}
 background_alt=${background_alt:-#1A1F26}
 
-# Обновляем конфиг rofi
 CONFIG_FILE=~/.config/rofi/config.rasi
 
-# Удаляем старую тему
 sed -i '/@theme/d' "$CONFIG_FILE"
 
-# Добавляем обновлённую тему с правильными цветами
 cat > "$CONFIG_FILE" <<EOF
 configuration {
     modi: "drun,run";
     show-icons: true;
     icon-theme: "Papirus";
-    font: "JetBrains Mono Nerd Font 14";
-    background:     ${background};
-    foreground:     ${foreground};
-    border:         1;
-    border-color:   ${disabled};
-    border-radius:  8;
-    padding:        10;
-    element-padding: 5;
-    scrollbar-width: 8;
-    scrollbar-handle-color: ${secondary};
-    selected-normal-background: ${primary};
-    selected-normal-foreground: ${background};
-    selected-active-background: ${primary};
-    selected-active-foreground: ${background};
-    active-background: transparent;
-    active-foreground: ${foreground};
-    window {
-        width: 800px;
-        border-radius: 10px;
-        padding: 10px;
-    }
+    font: "JetBrains Mono Nerd Font ${FONT_SIZE}";
 }
-
 
 * {
     bg0:    ${background};
@@ -67,6 +60,110 @@ configuration {
     fg1:    ${background};
     fg2:    ${disabled};
     fg3:    ${foreground};
+
+    background-color:   transparent;
+    text-color:         @fg0;
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
 }
-@import "~/.config/rofi/themes/template/rounded-template.rasi"
+
+window {
+    location:       center;
+    width:          ${WIN_WIDTH}px;
+    border-radius:  ${WBR}px;
+    background-color:   @bg0;
+    border: ${FW}px;
+    border-color: @bg2;
+}
+
+mainbox {
+    padding:    ${PAD}px;
+}
+
+inputbar {
+    background-color:   @bg1;
+    border-color:       @bg3;
+    border:         ${FW}px;
+    border-radius:  ${BR}px;
+    padding:    ${EPAD}px ${PAD}px;
+    spacing:    8px;
+    children:   [ prompt, entry ];
+}
+
+prompt {
+    text-color: @fg2;
+}
+
+entry {
+    text-color:         @fg0;
+    placeholder:        "${PLACEHOLDER}";
+    placeholder-color:  @fg3;
+}
+
+message {
+    margin:             ${PAD}px 0 0;
+    border-radius:      ${BR}px;
+    border-color:       @bg2;
+    background-color:   @bg2;
+}
+
+textbox {
+    padding:    ${EPAD}px ${PAD}px;
+}
+
+listview {
+    background-color:   transparent;
+    margin:     ${PAD}px 0 0;
+    lines:      8;
+    columns:    1;
+    fixed-height: false;
+    border: 0px;
+}
+
+scrollbar {
+    handle-color: @bg2;
+    width: ${SBW}px;
+}
+
+element {
+    background-color:   transparent;
+    padding:        ${EPAD}px ${PAD}px;
+    spacing:        8px;
+    border-radius:  ${BR}px;
+}
+
+element normal active {
+    background-color: inherit;
+    text-color: @fg0;
+}
+
+element alternate active {
+    background-color: inherit;
+    text-color: @fg0;
+}
+
+element selected normal, element selected active {
+    background-color:   @bg3;
+    text-color:         @fg1;
+}
+
+element-icon {
+    size:           1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+element.normal.normal {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element.alternate.normal {
+    background-color: inherit;
+    text-color:       inherit;
+}
 EOF

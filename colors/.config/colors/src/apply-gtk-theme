@@ -1,0 +1,22 @@
+#!/bin/sh
+# Переключает тёмную/светлую тему GTK на основе THEME_MODE из env
+# Вызывается из .xprofile (X11), switch-theme, или вручную
+
+source ~/.config/env/env 2>/dev/null || true
+MODE=${THEME_MODE:-dark}
+
+[ "$MODE" = "light" ] && PREFER=0 || PREFER=1
+
+# GTK settings.ini — читается ВСЕМИ GTK-приложениями (включая Chromium)
+for ini in ~/.config/gtk-3.0/settings.ini ~/.config/gtk-4.0/settings.ini; do
+    [ -f "$ini" ] && sed -i "s/^gtk-application-prefer-dark-theme=.*/gtk-application-prefer-dark-theme=$PREFER/" "$ini"
+done
+
+# gsettings — для приложений через портал (GNOME, Flatpak)
+if command -v gsettings >/dev/null 2>&1; then
+    if [ "$MODE" = "light" ]; then
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' 2>/dev/null || true
+    else
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null || true
+    fi
+fi

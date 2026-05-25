@@ -2,34 +2,121 @@ configuration {
     modi: "drun,run";
     show-icons: true;
     icon-theme: "Papirus";
-    font: "JetBrains Mono Nerd Font 14";
-    background:     #1A1B26;
-    foreground:     #A9B1D6;
-    border:         1;
-    border-color:   #414868;
-    border-radius:  8;
-    padding:        10;
-    element-padding: 5;
-    scrollbar-width: 8;
-    scrollbar-handle-color: #9ece6a;
-    selected-background: #7aa2f7;
-    selected-foreground: #A9B1D6;
-    window {
-        width: 800px;
-        border-radius: 10px;
-        padding: 10px;
-    }
+    font: "JetBrains Mono Nerd Font 19";
 }
-
 
 * {
-    bg0:    #1A1B26;
-    bg1:    #16161E00;
-    bg2:    #7aa2f7;
-    bg3:    #7aa2f7;
-    fg0:    #A9B1D6;
-    fg1:    #A9B1D6;
-    fg2:    #414868;
-    fg3:    #A9B1D6;
+    bg0:    #0D1119;
+    bg1:    #0A0D14AA;
+    bg2:    #BB9AF7;
+    bg3:    #7AA2F7;
+    fg0:    #C0CAF5;
+    fg1:    #0D1119;
+    fg2:    #565F89;
+    fg3:    #C0CAF5;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
 }
-@import "~/.config/rofi/themes/template/rounded-template.rasi"
+
+window {
+    location:       center;
+    width:          817px;
+    border-radius:  15px;
+    background-color:   @bg0;
+    border: 3px;
+    border-color: @bg2;
+}
+
+mainbox {
+    padding:    17px;
+}
+
+inputbar {
+    background-color:   @bg1;
+    border-color:       @bg3;
+    border:         3px;
+    border-radius:  15px;
+    padding:    8px 17px;
+    spacing:    8px;
+    children:   [ prompt, entry ];
+}
+
+prompt {
+    text-color: @fg2;
+}
+
+entry {
+    text-color:         @fg0;
+    placeholder:        "поиск";
+    placeholder-color:  @fg3;
+}
+
+message {
+    margin:             17px 0 0;
+    border-radius:      15px;
+    border-color:       @bg2;
+    background-color:   @bg2;
+}
+
+textbox {
+    padding:    8px 17px;
+}
+
+listview {
+    background-color:   transparent;
+    margin:     17px 0 0;
+    lines:      8;
+    columns:    1;
+    fixed-height: false;
+    border: 0px;
+}
+
+scrollbar {
+    handle-color: @bg2;
+    width: 14px;
+}
+
+element {
+    background-color:   transparent;
+    padding:        8px 17px;
+    spacing:        8px;
+    border-radius:  15px;
+}
+
+element normal active {
+    background-color: inherit;
+    text-color: @fg0;
+}
+
+element alternate active {
+    background-color: inherit;
+    text-color: @fg0;
+}
+
+element selected normal, element selected active {
+    background-color:   @bg3;
+    text-color:         @fg1;
+}
+
+element-icon {
+    size:           1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+element.normal.normal {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element.alternate.normal {
+    background-color: inherit;
+    text-color:       inherit;
+}
