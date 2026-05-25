@@ -27,5 +27,5 @@ bspc config presel_border_color "$pink"
 bspc config urgent_border_color "$white"
 
 # Обновляем фон корневого окна (опционально)
-xsetroot -solid "$background"# Обновляем цвета границ
+xsetroot -solid "$background" # Обновляем цвета границ
 

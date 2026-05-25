@@ -2,7 +2,6 @@
 
 #================== ЦВЕТА ==================
 ln -sf ~/.config/colors/schemes/$(cat ~/.config/colors/current_scheme).conf ~/.config/colors/current.conf
-export COLOR_SCHEME=$(cat ~/.config/colors/current_scheme)
 ~/.config/bspwm/bin/update-colors
 
 #================== МОНИТОРЫ ===============
@@ -51,6 +50,9 @@ $HOME/.config/polybar/launch_separate.sh &
 flameshot &
 udiskie -a -n -t &
 dunst &
+
+# Жесты touchpad (touchegg) — включить: export USE_TOUCHEGG=true в ~/.config/env/env
+[ "$USE_TOUCHEGG" = "true" ] && ~/.config/bspwm/bin/touchegg.sh &
 
 #================== BSPWM CONFIG ===========
 bspc config focus_follows_pointer false
