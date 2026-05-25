@@ -77,16 +77,17 @@ element {
 
 element normal active {
     background-color: inherit;
-    text-color: @bg3;
+    text-color: @fg0;
 }
 
 element alternate active {
     background-color: inherit;
-    text-color: @bg3;
+    text-color: @fg0;
 }
 
 element selected normal, element selected active {
     background-color:   @bg3;
+    text-color:         @fg1;
 }
 
 element-icon {

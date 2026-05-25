@@ -5,6 +5,7 @@
 alacritty/.config/alacritty/alacritty-local.toml
 !/borders/
 !/bspwm/
+!/btop/
 !/colors/
 !/docs/
 !/dunst/

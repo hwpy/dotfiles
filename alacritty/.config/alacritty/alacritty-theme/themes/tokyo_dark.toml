@@ -1,0 +1,29 @@
+# Colors (Tokyo Dark)
+# Matches colors/.config/colors/schemes/tokyo_dark.conf
+
+# Default colors
+[colors.primary]
+background = '#0D1119'
+foreground = '#C0CAF5'
+
+# Normal colors
+[colors.normal]
+black   = '#0A0D14'
+red     = '#F7768E'
+green   = '#9ECE6A'
+yellow  = '#E0AF68'
+blue    = '#7AA2F7'
+magenta = '#BB9AF7'
+cyan    = '#7DCFFF'
+white   = '#C0CAF5'
+
+# Bright colors
+[colors.bright]
+black   = '#565F89'
+red     = '#F7768E'
+green   = '#9ECE6A'
+yellow  = '#FF9E64'
+blue    = '#7AA2F7'
+magenta = '#BB9AF7'
+cyan    = '#7DCFFF'
+white   = '#C0CAF5'

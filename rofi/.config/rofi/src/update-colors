@@ -10,9 +10,8 @@ foreground=$(grep '^foreground\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
 primary=$(grep '^primary\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
 secondary=$(grep '^secondary\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
 disabled=$(grep '^disabled\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
-green=$(grep '^green\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
+alert=$(grep '^alert\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
 background_alt=$(grep '^background-alt\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
-purple=$(grep '^purple\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)
 
 # Устанавливаем значения по умолчанию
 background=${background:-#0F1419}
@@ -20,9 +19,8 @@ foreground=${foreground:-#FFFFFF}
 primary=${primary:-#7DCFFF}
 secondary=${secondary:-#746DFE}
 disabled=${disabled:-#5C5A57}
-green=${green:-#A6E3A1}
+alert=${alert:-#FB3ECE}
 background_alt=${background_alt:-#1A1F26}
-purple=${purple:-#C792EA}
 
 # Обновляем конфиг rofi
 CONFIG_FILE=~/.config/rofi/config.rasi
@@ -45,9 +43,13 @@ configuration {
     padding:        10;
     element-padding: 5;
     scrollbar-width: 8;
-    scrollbar-handle-color: ${green};
-    selected-background: ${primary};
-    selected-foreground: ${foreground};
+    scrollbar-handle-color: ${secondary};
+    selected-normal-background: ${primary};
+    selected-normal-foreground: ${background};
+    selected-active-background: ${primary};
+    selected-active-foreground: ${background};
+    active-background: transparent;
+    active-foreground: ${foreground};
     window {
         width: 800px;
         border-radius: 10px;
@@ -59,10 +61,10 @@ configuration {
 * {
     bg0:    ${background};
     bg1:    ${background_alt};
-    bg2:    ${primary};
+    bg2:    ${secondary};
     bg3:    ${primary};
     fg0:    ${foreground};
-    fg1:    ${foreground};
+    fg1:    ${background};
     fg2:    ${disabled};
     fg3:    ${foreground};
 }

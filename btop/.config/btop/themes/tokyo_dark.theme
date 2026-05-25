@@ -1,0 +1,92 @@
+# Tokyo Dark Theme for btop
+# Matches colors/.config/colors/schemes/tokyo_dark.conf
+
+# Main background
+theme[main_bg]="#0D1119"
+
+# Main text color
+theme[main_fg]="#C0CAF5"
+
+# Title color for boxes
+theme[title]="#7AA2F7"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#7DCFFF"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#7AA2F7"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#0D1119"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#565F89"
+
+# Color of text appearing on top of graphs
+theme[graph_text]="#C0CAF5"
+
+# Background color of the percentage meters
+theme[meter_bg]="#0A0D14"
+
+# Misc colors for processes box
+theme[proc_misc]="#BB9AF7"
+
+# Cpu box outline color
+theme[cpu_box]="#7AA2F7"
+
+# Memory/disks box outline color
+theme[mem_box]="#BB9AF7"
+
+# Net up/down box outline color
+theme[net_box]="#7DCFFF"
+
+# Processes box outline color
+theme[proc_box]="#9ECE6A"
+
+# Box divider line and small boxes line color
+theme[div_line]="#565F89"
+
+# Temperature graph colors (cool → hot)
+theme[temp_start]="#7DCFFF"
+theme[temp_mid]="#7AA2F7"
+theme[temp_end]="#F7768E"
+
+# CPU graph colors (low → high)
+theme[cpu_start]="#7DCFFF"
+theme[cpu_mid]="#BB9AF7"
+theme[cpu_end]="#F7768E"
+
+# Mem/Disk free meter
+theme[free_start]="#565F89"
+theme[free_mid]="#7AA2F7"
+theme[free_end]="#7DCFFF"
+
+# Mem/Disk cached meter
+theme[cached_start]="#565F89"
+theme[cached_mid]="#BB9AF7"
+theme[cached_end]="#7DCFFF"
+
+# Mem/Disk available meter
+theme[available_start]="#9ECE6A"
+theme[available_mid]="#7DCFFF"
+theme[available_end]="#7AA2F7"
+
+# Mem/Disk used meter (low → critical)
+theme[used_start]="#E0AF68"
+theme[used_mid]="#FF9E64"
+theme[used_end]="#F7768E"
+
+# Download graph colors
+theme[download_start]="#7DCFFF"
+theme[download_mid]="#7AA2F7"
+theme[download_end]="#BB9AF7"
+
+# Upload graph colors
+theme[upload_start]="#9ECE6A"
+theme[upload_mid]="#7DCFFF"
+theme[upload_end]="#BB9AF7"
+
+# Process box color gradient (low cpu → high cpu)
+theme[process_start]="#9ECE6A"
+theme[process_mid]="#E0AF68"
+theme[process_end]="#F7768E"
