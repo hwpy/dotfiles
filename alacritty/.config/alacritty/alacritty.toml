@@ -1,6 +1,6 @@
 [general]
 import = [
-  "~/.config/alacritty/alacritty-theme/themes/github_dark_custom.toml",
+  "~/.config/alacritty/alacritty-theme/themes/tokyo_dark.toml",
   "~/.config/alacritty/alacritty-local.toml"
 ]
 

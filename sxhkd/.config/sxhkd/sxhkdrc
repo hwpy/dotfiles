@@ -16,7 +16,7 @@ super + b
 
 # files
 super + e
-        thunar
+        alacritty -e yazi
 
 # powermenu
 super + shift + q
@@ -82,6 +82,10 @@ super + {_,shift + }c
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
+    bspc desktop -f {prev,next}.local
+ctrl + alt + @{Left,Right}
+    bspc desktop -f {prev,next}.local
+ctrl + alt + @{h,l}
     bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
@@ -160,6 +164,18 @@ XF86MonBrightnessDown
     brightnessctl set 10%-
 
 #
+# яркость внешних мониторов через ddcutil
+#
+super + ctrl + alt + 1
+    ~/.config/sxhkd/bin/monitor_brightness.sh 2 -10
+super + ctrl + alt + 2
+    ~/.config/sxhkd/bin/monitor_brightness.sh 2 10
+super + ctrl + alt + 3
+    ~/.config/sxhkd/bin/monitor_brightness.sh 1 -10
+super + ctrl + alt + 4
+    ~/.config/sxhkd/bin/monitor_brightness.sh 1 10
+
+#
 # Подсветка клавиатуры
 #
 
@@ -211,7 +227,13 @@ XF86LaunchB
     rofi -show drun -config ~/.config/rofi/config.rasi
 super + d
     rofi -show drun -config ~/.config/rofi/config.rasi
+alt + d
+    rofi -show window -show-icons -config ~/.config/rofi/config.rasi
 
 # Переключение цветовой схемы
 super + alt + t
     ~/.config/rofi/src/switch-theme
+
+# Screen lock
+super + ctrl + alt l
+    slock

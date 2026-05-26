@@ -1,0 +1,100 @@
+{
+  "actions" : [
+    {
+      "key" : "t",
+      "type" : "application",
+      "value" : "/Applications/MacPorts/Alacritty.app"
+    },
+    {
+      "key" : "b",
+      "type" : "application",
+      "value" : "/Applications/Firefox.app"
+    },
+    {
+      "key" : "p",
+      "type" : "application",
+      "value" : "/System/Applications/System Settings.app"
+    },
+    {
+      "iconPath" : "/System/Library/CoreServices/Finder.app",
+      "key" : "e",
+      "label" : "Finder",
+      "type" : "command",
+      "value" : "open -a Finder ~/Downloads/"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "1",
+          "type" : "application",
+          "value" : "/Applications/1Password.app"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "a",
+              "type" : "application",
+              "value" : "/System/Applications/App Store.app"
+            },
+            {
+              "key" : "e",
+              "type" : "application",
+              "value" : "/System/Applications/Mail.app"
+            },
+            {
+              "key" : "s",
+              "type" : "application",
+              "value" : "/Applications/Safari.app"
+            },
+            {
+              "key" : "m",
+              "type" : "application",
+              "value" : "/System/Applications/Music.app"
+            },
+            {
+              "key" : "r",
+              "type" : "application",
+              "value" : "/System/Applications/Utilities/Activity Monitor.app"
+            }
+          ],
+          "key" : "a",
+          "type" : "group"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "value" : "/Applications/Obsidian.app"
+        },
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Steam.app"
+        },
+        {
+          "key" : "t",
+          "type" : "application",
+          "value" : "/Applications/Telegram.app"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "m",
+              "type" : "application",
+              "value" : "/Applications/Яндекс Музыка.app"
+            },
+            {
+              "key" : "b",
+              "type" : "application",
+              "value" : "/Applications/Yandex.app"
+            }
+          ],
+          "key" : "y",
+          "type" : "group"
+        }
+      ],
+      "key" : "o",
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}

@@ -1,69 +1,77 @@
-# 💻 Configuration files for Arch Linux and software
+# dotfiles
+
+Конфиги для Arch Linux. Управление через GNU Stow.
+
+[bspwm](#bspwm) · [GNOME](#gnome) · [Hyprland](#hyprland)
 
 ---
 
 <details open>
 <summary>EN</summary>
 
-## Key features
+## Stack
 
-- Minimalist, lightweight software following the Unix philosophy — doing one thing well.
-- Simple config, no unnecessary automation or GUIs, follows KISS.
-- Full user control — manual selection and setup.
-- Focus on terminal/text tools (bspwm, nvim, tmux, zsh) for efficiency.
-- Supports Xorg (bspwm) and Wayland (GNOME / Hyprland) for a flexible GUI.
-- Customizable appearance (polybar, rofi, picom, themes, icons).
-- Prioritizes lightness, resource efficiency, and performance.
-- Installation via GNU Stow
+| Category | Software |
+|---|---|
+| WM | bspwm + sxhkd |
+| Bar | polybar |
+| Compositor | picom |
+| Launcher | rofi |
+| Notifications | dunst |
+| Terminal | alacritty |
+| Shell | zsh + oh-my-zsh |
+| Font | JetBrains Mono Nerd Font |
+| Theme | Breeze / Papirus-Dark / Bibata-Modern-Ice |
 
-## 🐧 Arch Linux
+## Machine-specific config
 
----
+All machine-specific settings in `~/.config/env/env` (gitignored):
 
-<details open>
-<summary>GNOME</summary>
+```
+HIDPI_FACTOR=175    # 100 = 1080p, 175 = Retina 13"
+THEME_MODE=dark     # dark | light
+INTERNAL_MONITOR="eDP-1"
+EXTERNAL_MONITOR="DP-1"
+POLYBAR_BATTERY="BAT0"
+```
 
-[GNOME configuration](docs/gnome.md).
+`HIDPI_FACTOR` scales everything: DPI, cursor, polybar, rofi, dunst, picom corners, bspwm borders. One number, no per-app configs.
 
-<div style="text-align: center;">
+`THEME_MODE` toggles dark/light for all GTK apps including Chromium.
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/gnome/desktop.png" alt="arch gnome" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Desktop</strong></p>
+## Quick start
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/gnome/nvim.png" alt="nvim" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>nvim</strong></p>
+```bash
+git clone https://github.com/hwpy/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 
-</details>
+stow env
+cp ~/.config/env/env.template ~/.config/env/env
+# edit: monitors, HIDPI_FACTOR, THEME_MODE
 
----
+stow bspwm polybar sxhkd picom dunst rofi
+stow x11 colors gtk-3.0 gtk-4.0
+stow nvim zsh_linux tmux bin
+```
 
-<details open>
-<summary>BSPWM</summary>
+[Documentation →](docs/bspwm.md)
 
-[BSPWM configuration](docs/bspwm.md).
+## BSPWM
 
-<div style="text-align: center;">
+![Desktop](screenshots/bspwm/arch_bspwm.png)
+![Rofi](screenshots/bspwm/rofi_drun.gif)
+![nvim](screenshots/bspwm/nvim.png)
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Desktop</strong></p>
+## GNOME
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/bspwm/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Rofi</strong></p>
+![Desktop](screenshots/gnome/desktop.png)
+![nvim](screenshots/gnome/nvim.png)
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/bspwm/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Custom powermenu</strong></p>
+[Extensions and settings →](docs/gnome.md)
 
-</details>
+## Hyprland
+
+Config: `hypr/`. Wayland session with waybar, wofi, hyprpaper.
 
 </details>
 
@@ -72,66 +80,68 @@
 <details>
 <summary>RU</summary>
 
-## Ключевые особенности
+## Стек
 
-- Минималистичный, лёгкий софт, следующий философии Unix — программы, которые делают одну вещь хорошо.
-- Простая, прозрачная конфигурация, без лишней автоматизации и графических оболочек, соблюдающая принцип KISS.
-- Пользователь сам контролирует настройки своей системы через конфигурационные файлы.
-- Акцент на терминальные и текстовые инструменты (bspwm, nvim, tmux, zsh).
-- Поддержка графической среды Xorg (bspwm) либо Wayland (GNOME / Hyprland).
-- Настраиваемый внешний вид (polybar, rofi, picom, темы, иконки).
-- В приоритете лёгкость, экономия ресурсов и производительность.
-- Установка через GNU Stow
+| Категория | Софт |
+|---|---|
+| WM | bspwm + sxhkd |
+| Бар | polybar |
+| Композитор | picom |
+| Лаунчер | rofi |
+| Уведомления | dunst |
+| Терминал | alacritty |
+| Оболочка | zsh + oh-my-zsh |
+| Шрифт | JetBrains Mono Nerd Font |
+| Тема | Breeze / Papirus-Dark / Bibata-Modern-Ice |
 
-## 🐧 Arch Linux
+## Настройки компьютера
 
----
+Все настройки конкретного компьютера в `~/.config/env/env` (gitignored):
 
-<details open>
-<summary>GNOME</summary>
+```
+HIDPI_FACTOR=175    # 100 = 1080p, 175 = Retina 13"
+THEME_MODE=dark     # dark | light
+INTERNAL_MONITOR="eDP-1"
+EXTERNAL_MONITOR="DP-1"
+POLYBAR_BATTERY="BAT0"
+```
 
-[GNOME конфигурация](docs/gnome.md).
+`HIDPI_FACTOR` масштабирует всё: DPI, курсор, polybar, rofi, dunst, скругления picom, рамки bspwm. Одно число, без правки конфигов отдельных приложений.
 
-<div style="text-align: center;">
+`THEME_MODE` переключает тёмную/светлую тему для всех GTK-приложений, включая Chromium.
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/gnome/desktop.png" alt="arch gnome" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Desktop</strong></p>
+## Быстрый старт
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/gnome/nvim.png" alt="nvim" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>nvim</strong></p>
+```bash
+git clone https://github.com/hwpy/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+stow env
+cp ~/.config/env/env.template ~/.config/env/env
+# указать: мониторы, HIDPI_FACTOR, THEME_MODE
+
+stow bspwm polybar sxhkd picom dunst rofi
+stow x11 colors gtk-3.0 gtk-4.0
+stow nvim zsh_linux tmux bin
+```
+
+[Документация →](docs/bspwm.md)
+
+## BSPWM
+
+![Desktop](screenshots/bspwm/arch_bspwm.png)
+![Rofi](screenshots/bspwm/rofi_drun.gif)
+![nvim](screenshots/bspwm/nvim.png)
+
+## GNOME
+
+![Desktop](screenshots/gnome/desktop.png)
+![nvim](screenshots/gnome/nvim.png)
+
+[Расширения и настройки →](docs/gnome.md)
+
+## Hyprland
+
+Конфиг: `hypr/`. Wayland-сессия с waybar, wofi, hyprpaper.
 
 </details>
-
----
-
-<details open>
-<summary>BSPWM</summary>
-
-[BSPWM конфигурация](docs/bspwm.md).
-
-<div style="text-align: center;">
-
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Desktop</strong></p>
-
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/bspwm/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Rofi</strong></p>
-
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="screenshots/bspwm/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Custom powermenu</strong></p>
-
-</details>
-
-</details>
-
----

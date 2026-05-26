@@ -1,69 +1,79 @@
-#! /bin/sh
+#!/bin/sh
 
-# Создаём симлинк для текущей схемы
+# Цвета
 ln -sf ~/.config/colors/schemes/$(cat ~/.config/colors/current_scheme).conf ~/.config/colors/current.conf
-
-# Загрузка цветовой схемы
-export COLOR_SCHEME=$(cat ~/.config/colors/current_scheme)
-source ~/.config/colors/current.conf
-
-# Обновляем цвета BSPWM
 ~/.config/bspwm/bin/update-colors
 
-INTERNAL_MONITOR="eDP-1"
-EXTERNAL_MONITOR="HDMI-1"
+# Мониторы
+source ~/.config/bspwm/monitors.sh
 
-for desktop in $(bspc query -D); do
-    bspc desktop "$desktop" --remove
-done
+# Тема (после env)
+~/.config/colors/src/apply-gtk-theme
+~/.config/bspwm/bin/apply-desktop-theme
 
-xrandr --output "$INTERNAL_MONITOR" --scale 0.75x0.75
+# BSPWM настройки
+xrandr --output "$INTERNAL_MONITOR" --auto --primary
 if xrandr | grep "^${EXTERNAL_MONITOR} connected" >/dev/null; then
-    xrandr --output "$EXTERNAL_MONITOR" --scale 1.5x1.5 --auto --right-of "$INTERNAL_MONITOR"
-    bspc monitor "$EXTERNAL_MONITOR" -d 1 2 3 4 5
-    bspc monitor "$INTERNAL_MONITOR" -d 6 7 8 9 10
-    bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
+    xrandr --output "$EXTERNAL_MONITOR" --auto --right-of "$INTERNAL_MONITOR"
+    bspc monitor "$INTERNAL_MONITOR" -d 1 2 3
+    bspc monitor "$EXTERNAL_MONITOR" -d 4 5 6
+    bspc wm -O "$INTERNAL_MONITOR" "$EXTERNAL_MONITOR"
 else
-    bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4 5 6 7 8 9 10
+    bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4 5 6
 fi
 
-pgrep -x sxhkd > /dev/null || sxhkd &
-picom --config ~/.config/picom/picom.conf &
+# Правила окон
+bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a DBeaver desktop='^1' state=tiled follow=on
+bspc rule -a Chromium desktop='^2' follow=on
+bspc rule -a TelegramDesktop desktop='^3' follow=on
+bspc rule -a Mattermost desktop='^3' follow=on
+bspc rule -a obsidian desktop='^3' follow=on
+bspc rule -a firefox desktop='^4' state=tiled follow=on
+bspc rule -a libreoffice-startcenter desktop='^4' state=tiled follow=on
+bspc rule -a Org.gnome.Evolution desktop='^5' state=tiled follow=on
+bspc rule -a ktalk desktop='^5' state=tiled follow=on
+bspc rule -a org.remmina.Remmina desktop='^6' state=tiled follow=on
 
-xrdb ~/.Xresources
-bspc rule -a Xdialog state=floating center=on
+bspc rule -a Xdialog state=floating center=on layer=above
+bspc rule -a Dialog state=floating center=on layer=above
+bspc rule -a "*Preferences*" state=floating center=on layer=above
+bspc rule -a "*properties*" state=floating center=on layer=above
 
+# AUTOSTART
+pgrep -x sxhkd > /dev/null || sxhkd -m -1 &
 feh --bg-fill "$LOCKSCREEN_IMAGE" &
+$HOME/.config/polybar/launch_separate.sh &
+# $HOME/.config/polybar/launch_single.sh &
+flameshot &
+udiskie -a -n -t &
+~/.config/rofi/src/update-colors &
+~/.config/dunst/src/update-dunst-colors &
+
+# Жесты touchpad (touchegg) — включить: export USE_TOUCHEGG=true в ~/.config/env/env
+[ "$USE_TOUCHEGG" = "true" ] && ~/.config/bspwm/bin/touchegg.sh &
+
+# BSPWM config
+bspc config focus_follows_pointer false
+bspc config window_gap           6
+bspc config split_ratio          0.52
+bspc config automatic_scheme     spiral
+bspc config border_width         $((2 * ${HIDPI_FACTOR:-100} / 100))
+bspc config borderless_monocle   true
+bspc config gapless_monocle      false
+
+# Система
+xsetroot -cursor_name left_ptr &
+for id in $(xinput list | grep 'pointer' | grep -i mouse | sed 's/.*id=\([0-9]*\).*/\1/'); do
+    xinput set-prop $id 'libinput Accel Profile Enabled' 0 1 0
+    xinput set-prop $id 'libinput Accel Speed' -0.3
+done &
+
 case $(ps -p 1 -o comm=) in
   systemd)
     systemctl --user import-environment DISPLAY XAUTHORITY
+    systemctl --user restart picom polybar &> /dev/null
     ;;
 esac
-systemctl --user restart picom polybar &> /dev/null
-pkill -USR1 picom &> /dev/null
-
-# звук при запуске
 canberra-gtk-play -i service-login
-
-bspc config focus_follows_pointer true
-bspc config window_gap           2
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Firefox desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-bspc config border_width 2
-
-xsetroot -cursor_name left_ptr &
-
-$HOME/.config/polybar/launch_separate.sh &
-xss-lock -- $HOME/.config/bspwm/bin/lock &
-flameshot &
-touchegg &
-udiskie -a -n -t &
-dunst &
-alacritty &
+picom --corner-radius $((9 * ${HIDPI_FACTOR:-100} / 100)) --config ~/.config/picom/picom.conf &

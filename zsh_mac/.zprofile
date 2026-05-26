@@ -4,8 +4,12 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # Homebrew
+# intel (?)
 # eval "$(/usr/local/bin/brew shellenv)"
 # export PATH=/usr/local/bin:$PATH
+#
+# apple silicon
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Packages
 export PATH=/opt/local/lib/postgresql15/bin:$PATH

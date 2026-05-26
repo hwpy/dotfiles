@@ -1,207 +1,80 @@
 # Первоначальная настройка
 
-## Wi-Fi/Bluetooth
+Пакеты Arch Linux, необходимые перед развёртыванием dotfiles.
 
-```Shell
-sudo systemctl enable --now NetworkManager
+## Ядро
 
-sudo pacman -Syu broadcom-wl bluez bluez-utils blueman pulseaudio-bluetooth pulseaudio-alsa
-sudo systemctl enable --now bluetooth
+```bash
+# сервер отображения + оконный менеджер
+sudo pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xinput xorg-xrdb xorg-xsetroot
+sudo pacman -S bspwm sxhkd
 
-sudo modprobe wl
+# композитор + бар + лаунчер + уведомления
+sudo pacman -S picom polybar rofi dunst
 
+# терминал + оболочка
+sudo pacman -S alacritty zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo pacman -S zsh-syntax-highlighting zsh-autosuggestions
+
+# шрифты + иконки + курсор
+sudo pacman -S ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols noto-fonts
+sudo pacman -S papirus-icon-theme breeze breeze-gtk
+
+# утилиты
+sudo pacman -S feh flameshot brightnessctl xclip udiskie
 ```
 
-_установка broadcom-wl и настройка wl зависит от вашего сетевого оборудования_
+## Звук
 
-## Video Intel
-
-```Shell
-sudo pacman -S intel-gpu-tools libva libva-utils libva-intel-driver vulkan-intel
-
+```bash
+sudo pacman -S pipewire pipewire-pulse pipewire-alsa wireplumber
+systemctl --user enable --now pipewire-pulse wireplumber
 ```
 
-## Audio PipeWire
+## Сессия
 
-```Shell
-sudo pacman -S rtkit pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils
+```bash
+# блокировка экрана
+sudo pacman -S slock xss-lock
 
-sudo systemctl enable --now rtkit-daemon.service
-
-systemctl --user enable --now pipewire-pulse.service pipewire-pulse.socket wireplumber.service
-
+# запись сессии для GDM
+sudo tee /usr/share/xsessions/bspwm.desktop <<'EOF'
+[Desktop Entry]
+Name=bspwm
+Exec=bspwm
+Type=Application
+EOF
 ```
 
-## Настройка функциональных/медиа клавиш
+## Ноутбук (опционально)
 
-_данная настройка актуальна для MacBook, можно пропустить_
-
-```Shell
-sudo nano /etc/modprobe.d/hid_apple.conf
-options hid_apple fnmode=2
-sudo mkinitcpio -P
-sudo reboot
-
-```
-
-## Настройка PowerKey
-
-_чтобы ноутбук не выключался по случайному нажатию_
-
-```Shell
-sudo nvim /etc/systemd/logind.conf
-HandlePowerKey=ignore
-HandlePowerKeyLongPress=poweroff
-
-```
-
-## Настройка режима сна и блокировки экрана
-
-_остальные настройки включены в конфигурацию bspwm в этом репозитории_
-
-```Shell
-sudo pacman -S i3lock xss-lock
-
-HandleLidSwitch=suspend
-HandleLidSwitchDocked=suspend
-
-```
-
-## Яркость экрана
-
-```Shell
-sudo pacman -S brightnessctl
-
-```
-
-## Настройка принтеров
-
-```Shell
-sudo pacman -S cups hplip system-config-printer gutenprint splix foomatic-db foomatic-db-gutenprint-ppds
-sudo systemctl enable --now cups.service
-
-```
-
-## Устройства ввода для X-сервера
-
-```Shell
-sudo pacman -S xorg-xinput
-
-```
-
-## Настройка языка (локаль)
-
-```Shell
-sudo nvim /etc/locale.gen # раскомментировать нужную локаль
-sudo locale-gen
-
-```
-
-## Жесты touchpad
-
-_протестировано на MacBook_
-
-```Shell
+```bash
+# жесты тачпада
 sudo pacman -S touchegg
-sudo systemctl enable --now touchegg.service
+sudo systemctl enable --now touchegg
 
-```
-
-## Буфер обмена
-
-```Shell
-sudo pacman -S xclip
-
-```
-
-## TLP энергосбережение (для ноутбуков)
-
-```Shell
+# энергосбережение
 sudo pacman -S tlp
-sudo systemctl enable --now tlp.service
+sudo systemctl enable --now tlp
 
+# MacBook: fn-режим клавиатуры
+echo 'options hid_apple fnmode=2' | sudo tee /etc/modprobe.d/hid_apple.conf
+sudo mkinitcpio -P
 ```
 
-## VPN
+## Сеть
 
-```Shell
-sudo pacman -S openvpn networkmanager-openvpn
-sudo pacman -S openconnect networkmanager-openconnect
-
+```bash
+sudo pacman -S networkmanager
+sudo systemctl enable --now NetworkManager
 ```
 
-## Программное обеспечение
+## Дополнительно
 
-```Shell
-
-# основной софт
-sudo pacman -S \
-alacritty \ # терминал
-cmatrix \ # скринсейвер матрица
-dunst \ # для уведомлений
-fastfetch \ # информация о системе в терминале
-feh \ # управление обоями рабочего стола
-firefox \ # браузер
-gvfs gvfs gvfs-afc gvfs-mtp gvfs-smb \ # надстройки thunar сетевые ресурсы и usb
-libcanberra \ # звуки системы
-lxappearance \ # управление цветовыми схемами
-nvim \ # текстовый редактор
-nvm \ # nodejs version manager
-pavucontrol \ # управление звуком
-picom \ # композитор окон
-playerctl \ # переключение треков
-polkit \ # надстройки thunar сетевые ресурсы и usb
-polybar \ # меню бар
-postgresql-libs \ # библиотеки postgresql
-ranger \ # файловый менеджер с tui
-ristretto \ # предпросмотр изображений thunar
-rofi \ # меню
-sound-theme-freedesktop \ # звуки системы
-sxhkd \ # горячие клавиши
-thunar \ # файловый менеджер с gui
-thunar-volman \ # надстройки thunar сетевые ресурсы и usb
-tmux \ # терминальный мультиплексор
-udisks2 \ # надстройки thunar сетевые ресурсы и usb
-unzip \ # для работы с архивами
-xorg-xrandr \ # управление масштабированием и разрешением
-
-# необязательный софт
-sudo pacman -S \
-breeze \ # цветовая схема и курсоры
-calcurse \ # календарь tui
-chromium \ # браузер
-dbeaver \ # клиент СУБД
-evolution evolution-ews \ # почтовый клиент
-flameshot \ # создание скриншотов
-gdu \ # утилита для контроля / очистки диска
-htop \ # монитор ресурсов
-libreoffice-still \ # офис
-mpv yt-dlp \ # медиаплеер + библиотека для youtube
-obsidian \ # заметки obsidian
-peek \ # утилита для записи gif
-qalculate-gtk \ # калькулятор
-remmina freerdp \ # удаленный рабочий стол
-telegram-desktop \ # клиент telegram
-transmission-gtk \ # торрент клиент
-uv \ # управление версиями python и venv
-
-```
-
-## Шрифты
-
-```Shell
-sudo pacman -S ttf-nerd-fonts-symbols ttf-nerd-fonts ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-font-awesome ttf-nerd-fonts-symbols papirus-icon-theme materia-gtk-theme
-
-fc-cache -f -v
-
-```
-
-## Цветовая схема приложений/курсора
-
-```Shell
-lxappearance
-
-# Theme: Materia-dark
-# Cursor: breeze
-
+```bash
+sudo pacman -S firefox chromium thunderbird
+sudo pacman -S neovim tmux fastfetch btop yazi fzf eza
+sudo pacman -S mpv yt-dlp
+sudo pacman -S gnu-stow git
 ```

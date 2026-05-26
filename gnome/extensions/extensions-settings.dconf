@@ -8,17 +8,20 @@ use-custom-icon=false
 
 [caffeine]
 cli-toggle=false
-indicator-position-max=2
+indicator-position-max=5
+user-enabled=false
 
 [dash-to-dock]
 animation-time=1.3877787807814457e-17
 apply-custom-theme=false
-background-opacity=0.80000000000000004
+background-color='rgb(0,0,0)'
+background-opacity=0.5
+custom-background-color=true
 custom-theme-shrink=true
 dash-max-icon-size=32
 disable-overview-on-startup=true
-dock-fixed=false
-dock-position='BOTTOM'
+dock-fixed=true
+dock-position='LEFT'
 height-fraction=0.90000000000000002
 hot-keys=false
 intellihide-mode='FOCUS_APPLICATION_WINDOWS'
@@ -39,8 +42,19 @@ panel-sizes='{}'
 prefs-opened=false
 window-preview-title-position='TOP'
 
+[display-brightness-ddcutil]
+button-location=1
+ddcutil-binary-path='/usr/bin/ddcutil'
+ddcutil-sleep-multiplier=40.0
+decrease-brightness-shortcut=['']
+increase-brightness-shortcut=['']
+position-system-menu=3.0
+show-display-name=true
+show-osd=true
+step-change-keyboard=5.0
+
 [gsconnect]
-enabled=true
+enabled=false
 keep-alive-when-locked=true
 missing-openssl=false
 name='mbp-13-arch'
@@ -50,7 +64,7 @@ window-maximized=false
 window-size=(785, 550)
 
 [just-perfection]
-accent-color-icon=true
+accent-color-icon=false
 accessibility-menu=true
 activities-button=true
 animation=0
@@ -94,6 +108,7 @@ application-styles='.space-bar {\n  -natural-hpadding: 12px;\n}\n\n.space-bar-wo
 
 [space-bar/behavior]
 always-show-numbers=false
+enable-custom-label=false
 indicator-style='workspaces-bar'
 toggle-overview=true
 

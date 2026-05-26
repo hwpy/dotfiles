@@ -1,6 +1,8 @@
 just-perfection-desktop@just-perfection
 Rounded_Corners@lennart-k
 caffeine@patapon.info
+display-brightness-ddcutil@themightydeity.github.com
+transparent-top-bar@ftpix.com
 rounded-window-corners@fxgn
 gsconnect@andyholmes.github.io
 Vitals@CoreCoding.com

@@ -1,15 +1,21 @@
-# IN PROGRESS
-
+# GNOME
 
 <details open>
 <summary>EN</summary>
 
-## Key features
+## Extensions
 
-## 🐧 Arch Linux
+[Setup →](en/gnome/README.md)
 
-### Extensions:
+</details>
 
-[Setup extensions](en/gnome/README.md).
+---
+
+<details>
+<summary>RU</summary>
+
+## Расширения
+
+[Настройка →](ru/gnome/README.md)
 
 </details>

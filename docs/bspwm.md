@@ -1,201 +1,133 @@
+# BSPWM
 
 <details open>
 <summary>EN</summary>
 
-<div style="text-align: center;">
+![Powermenu](../screenshots/bspwm/rofi_powermenu.gif)
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Desktop</strong></p>
+## Startup
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/bspwm/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Rofi</strong></p>
-
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/bspwm/rofi_powermenu.gif" alt="Custom powermenu" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Custom powermenu</strong></p>
-
-</div>
-
-### Display servers:
-
-_Supports Xorg or Wayland, by choice_
-
-#### Xorg components:
-- [bspwm](https://github.com/baskerville/bspwm) - tiling
-- [sxhkd](https://github.com/baskerville/sxhkd) - hotkey daemon
-- [picom](https://github.com/yshui/picom) - compositor
-- [polybar](https://github.com/polybar/polybar) - status bar
-- [rofi](https://github.com/davatorium/rofi) - menu
-- [i3lock](https://archlinux.org/packages/extra/x86_64/i3lock/) - screen locker for X
-
-#### Wayland components:
-- [hyprland](https://github.com/hyprwm/Hyprland) - tiling / compositor
-- [waybar](https://github.com/Alexays/Waybar) - status bar
-- [wofi](https://man.archlinux.org/man/wofi.1.en) - menu
-- [swaylock](https://github.com/swaywm/swaylock) - screen locker for Wayland
-
-#### Appearance:
-- [breeze](https://archlinux.org/packages/extra/x86_64/breeze/) - cursor theme
-- [materia-gtk-theme](https://archlinux.org/packages/extra/any/materia-gtk-theme/) - theme
-- [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) - icons
-- [ttf-jetbrains-mono-nerd](https://archlinux.org/packages/extra/any/ttf-jetbrains-mono-nerd/) - font
-
-### Software
-- [alacritty](https://github.com/alacritty/alacritty) - terminal emulator
-- [tmux](https://github.com/tmux/tmux) - terminal multiplexer
-- [neovim](https://github.com/neovim/neovim) - for all things
-- [nvchad](https://github.com/NvChad/NvChad) - neovim framework
-- [thunar](https://gitlab.xfce.org/xfce/thunar) - file manager GUI
-- [ranger](https://github.com/ranger/ranger) - file manager TUI
-- [firefox](https://www.mozilla.org/ru/firefox/new/) - main web browser
-- [flameshot](https://github.com/flameshot-org/flameshot) - screenshot software
-- [cmatrix](https://github.com/abishekvashok/cmatrix) - matrix screensaver
-- [htop](https://github.com/htop-dev/htop) - process viewer
-- [fastfetch](https://github.com/fastfetch-cli/fastfetch) - system information tool
-- [calcurse](https://github.com/lfos/calcurse) - text-based calendar
-- [blueman-manager](https://github.com/blueman-project/blueman) - bluetooth manager GUI
-- [NetworkManager](https://networkmanager.dev/) - network manager
-
-## 🖍️ Themes
-
-*supports consistent bspwm / polybar / rofi / dunst appearance*
-
-- To switch the color scheme, use Super + Alt + T
-- Colors for tmux are set separately in the .tmux.conf file
-- Colors for Alacritty and NvChad are configured separately in their respective config files and switched using Leader + T + H respectively
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/ayu_dark.png" width="150"><br/>
-      <sub>Ayu Dark</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/catppuccin_mocha.png" width="150"><br/>
-      <sub>Catppuccin Mocha</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/dracula.png" width="150"><br/>
-      <sub>Dracula</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/github_dark.png" width="150"><br/>
-      <sub>GitHub Dark</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/nord.png" width="150"><br/>
-      <sub>Nord</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/one_dark.png" width="150"><br/>
-      <sub>One Dark</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/tokyo_night.png" width="150"><br/>
-      <sub>Tokyo Night</sub>
-    </td>
-</table>
-
-## 📝 Neovim
-
-_Based on NvChad_
-
-```Shell
-:MasonInstallAll
-:Lazy sync
 ```
+.xprofile → .xinitrc → bspwm → bspwmrc
+    │                       │
+    ├─ Xft.dpi, cursor      ├─ monitors, polybar, picom, dunst, sxhkd
+    ├─ disable DWT           ├─ color scheme
+    ├─ XDG_SESSION_TYPE      ├─ apply-desktop-theme
+    ├─ QT_QPA_PLATFORM      └─ touchegg
+    └─ apply-gtk-theme
+```
+
+## Scaling
+
+One variable — `HIDPI_FACTOR` in env. All sizes are `base × F / 100`.
+
+| Property | Base | F=100 | F=175 |
+|---|---|---|---|
+| Xft.dpi | 96 | 96 | 168 |
+| Xcursor.size | 24 | 24 | 42 |
+| Polybar height | 20pt | 20 | 35 |
+| Polybar font0 | 10px | 10 | 17 |
+| Rofi font | 11px | 11 | 19 |
+| Rofi width | 467px | 467 | 817 |
+| Dunst font | 10pt | — | — |
+| Dunst width | 350px | 350 | 612 |
+| Picom corner-radius | 9 | 9 | 15 |
+| Bspwm border | 2 | 2 | 3 |
+| Resize step | 30 | 30 | 52 |
+
+Dunst font is points — Pango scales it via Xft.dpi automatically.
+
+## Dark/Light
+
+`THEME_MODE=dark` or `light` in env. Toggled by `apply-gtk-theme` (called from `.xprofile` and `switch-theme`):
+
+- Flips `gtk-application-prefer-dark-theme` in `settings.ini` (affects all GTK apps + Chromium)
+- Sets `color-scheme` via gsettings (for portal-aware apps)
+
+Theme name toggled by `apply-gtk-theme` (`Breeze-Dark` / `Breeze`).
+Icon/cursor names set by `apply-desktop-theme` via env: `ICON_THEME`, `CURSOR_THEME`.
+Cursor size removed from `settings.ini` — GTK reads Xcursor directly.
+
+## Color schemes
+
+| Scheme | Switch |
+|---|---|
+| Tokyo Night | Super + Alt + T |
+| Tokyo Dark | —"— |
+| Nord | —"— |
+| Catppuccin Mocha | —"— |
+| Dracula | —"— |
+| Ayu Dark | —"— |
+| One Dark | —"— |
+| GitHub Dark | —"— |
+
+Syncs: bspwm, polybar, rofi, dunst. Terminals and Neovim have separate theme systems.
 
 <p align="center">
-    <img src="../screenshots/bspwm/nvim.png">
+  <img src="../screenshots/bspwm/themes/ayu_dark.png" width="140">
+  <img src="../screenshots/bspwm/themes/catppuccin_mocha.png" width="140">
+  <img src="../screenshots/bspwm/themes/dracula.png" width="140">
+  <img src="../screenshots/bspwm/themes/github_dark.png" width="140">
+  <img src="../screenshots/bspwm/themes/nord.png" width="140">
+  <img src="../screenshots/bspwm/themes/one_dark.png" width="140">
+  <img src="../screenshots/bspwm/themes/tokyo_night.png" width="140">
 </p>
 
-### Files:
-- alacritty/alacritty.toml: config for Alacritty terminal emulator
-- nvim: lua config files for neovim
-- ruff/pyproject.toml: ruff config
-- user: config files for user dir (tmux, zsh, .X*, drivers configuration)
+## Session (X11 vs Wayland)
 
-### Requirements:
-- npm / fnm pyright
-    * npm install -g pyright
-- lua
-- unzip
+`~/.local/bin/chromium` — wrapper, checks `$DISPLAY` / `$WAYLAND_DISPLAY`, passes correct `--ozone-platform`. `.xprofile` sets `XDG_SESSION_TYPE=x11` and `QT_QPA_PLATFORM=xcb` for X11. Hyprland handles Wayland via its own env.
 
-## Documentation
-- [Initial setup](/docs/en/bspwm/initial_setup.md)
+## Keys
 
-## 💡 Inspired by:
+| Key | Action |
+|---|---|
+| Super + Enter | Terminal |
+| Super + D | Apps (rofi drun) |
+| Alt + D | Windows (rofi window) |
+| Super + Q | Close |
+| Super + Shift + Q | Kill |
+| Super + H/J/K/L | Focus |
+| Super + Shift + H/J/K/L | Move |
+| Super + 1-6 | Desktop |
+| Super + S | Float |
+| Super + M | Monocle / tiled |
+| Super + F | Fullscreen |
+| Super + Alt + T | Switch color scheme |
+| Super + Alt + R | Restart bspwm |
+| Super + Alt + Q | Quit |
 
-- [1](https://github.com/gh0stzk/dotfiles)
-- [2](https://github.com/Zproger/bspwm-dotfiles)
-- [3](https://github.com/raexera/tokyo)
-- [4](https://github.com/basecamp/omarchy)
+## Touchpad (touchegg)
 
-## 🖼 Wallpapers by:
+| Gesture | Action |
+|---|---|
+| 3 ↑ | Float / tile |
+| 3 ↓ | Monocle / tile |
+| 3 ←→ | Prev / next desktop |
+| 4 ↑↓ | Change desktop |
+| 4 pinch out | Show desktop |
 
-- [1](https://github.com/gh0stzk/dotfiles)
-- [2](https://github.com/connorslade/ArchPapers)
-- [3](https://github.com/LagrangianLad/arch-minimal-wallpapers)
-- [4](https://github.com/archcraft-os/archcraft-wallpapers)
-- [5](https://github.com/raexera/tokyo)
-- [6](https://github.com/basecamp/omarchy)
+Touchpad not locked while typing (`libinput Disable While Typing Enabled = 0`).
 
-## F.A.Q
+## Packages
 
-<details>
-<summary>Appearance</summary>
+| Package | Target |
+|---|---|
+| `bspwm` | `~/.config/bspwm/` |
+| `sxhkd` | `~/.config/sxhkd/` |
+| `polybar` | `~/.config/polybar/` |
+| `picom` | `~/.config/picom/` |
+| `rofi` | `~/.config/rofi/` |
+| `dunst` | `~/.config/dunst/` |
+| `x11` | `~/.xprofile`, `~/.xinitrc`, `~/.Xresources` |
+| `colors` | `~/.config/colors/` |
+| `gtk-3.0` | `settings.ini` |
+| `gtk-4.0` | `settings.ini` |
+| `env` | `env.template` |
+| `bin` | `~/.local/bin/chromium` |
+| `touchegg` | `~/.config/touchegg/` |
 
-1. How to set up the wallpaper?
-Answer:
-In **~/.xprofile** add the line:
-
-```Shell
-export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"
-
-```
-
-2. How to set up bspwm / rofi / polybar / dunst consistent theme?
-Answer:
-
-```Shell
-SUPER + ALT + T
-
-```
-
-3. How to set up NvChad theme?
-Answer:
-
-```Shell
-Leader + T + H
-
-```
-
-4. How to set up Alacritty theme?
-Answer:
-In **~/.config/alacritty/alacritty.toml** change:
-
-```Shell
-import = [
-  "~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"
-]
-
-```
-
-5. How to set tmux theme?
-Answer:
-In **~/.tmux.conf** change:
-
-```Shell
-source-file $HOME/.config/tmux/themes/ayu_dark.conf
-
-```
-
-</details>
+[Initial setup →](en/bspwm/initial_setup.md)
+[Deploy →](en/bspwm/dotfiles_setup.md)
 
 </details>
 
@@ -204,200 +136,130 @@ source-file $HOME/.config/tmux/themes/ayu_dark.conf
 <details>
 <summary>RU</summary>
 
-<div style="text-align: center;">
+![Powermenu](../screenshots/bspwm/rofi_powermenu.gif)
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/bspwm/arch_bspwm.png" alt="arch bspwm" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Рабочий стол</strong></p>
+## Запуск
 
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/bspwm/rofi_drun.gif" alt="Rofi" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Список приложений</strong></p>
-
-  <figure style="display: inline-block; text-align: center; margin: 1em;">
-    <img src="../screenshots/bspwm/rofi_powermenu.gif" alt="rofi powermenu" style="max-width: 300px;">
-  </figure>
-  <p align="center"><strong>Меню выключения / перезагрузки / сна и т.д.</strong></p>
-
-</div>
-
-### Серверы отображения:
-
-_Поддержка Xorg или Wayland, по выбору_
-
-#### Компоненты Xorg:
-- [bspwm](https://github.com/baskerville/bspwm) — тайлинговый оконный менеджер
-- [sxhkd](https://github.com/baskerville/sxhkd) — демон горячих клавиш
-- [picom](https://github.com/yshui/picom) — композитор
-- [polybar](https://github.com/polybar/polybar) — статус-бар
-- [rofi](https://github.com/davatorium/rofi) — меню
-- [i3lock](https://archlinux.org/packages/extra/x86_64/i3lock/) - блокировщик экрана для X
-
-#### Компоненты Wayland:
-- [hyprland](https://github.com/hyprwm/Hyprland) — тайлинг / композитор
-- [waybar](https://github.com/Alexays/Waybar) — статус-бар
-- [wofi](https://man.archlinux.org/man/wofi.1.en) — меню
-- [swaylock](https://github.com/swaywm/swaylock) - блокировщик экрана для Wayland
-
-#### Оформление:
-- [breeze](https://archlinux.org/packages/extra/x86_64/breeze/) — тема курсора
-- [materia-gtk-theme](https://archlinux.org/packages/extra/any/materia-gtk-theme/) — тема оформления
-- [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) — иконки
-- [ttf-jetbrains-mono-nerd](https://archlinux.org/packages/extra/any/ttf-jetbrains-mono-nerd/) — шрифт
-
-### Программное обеспечение
-- [alacritty](https://github.com/alacritty/alacritty) — эмулятор терминала
-- [tmux](https://github.com/tmux/tmux) — мультиплексор терминала
-- [neovim](https://github.com/neovim/neovim) — для всего
-- [nvchad](https://github.com/NvChad/NvChad) — фреймворк для neovim
-- [thunar](https://gitlab.xfce.org/xfce/thunar) — файловый менеджер GUI
-- [ranger](https://github.com/ranger/ranger) — файловый менеджер TUI
-- [firefox](https://www.mozilla.org/ru/firefox/new/) — основной веб-браузер
-- [flameshot](https://github.com/flameshot-org/flameshot) — программа для скриншотов
-- [cmatrix](https://github.com/abishekvashok/cmatrix) — скринсейвер
-- [htop](https://github.com/htop-dev/htop) — просмотр процессов
-- [fastfetch](https://github.com/fastfetch-cli/fastfetch) — инструмент вывода системной информации
-- [calcurse](https://github.com/lfos/calcurse) — календарь TUI
-- [blueman-manager](https://github.com/blueman-project/blueman) — менеджер Bluetooth GUI
-- [NetworkManager](https://networkmanager.dev/) — менеджер сети
-
-## 🖍️ Цветовые схемы
-
-*поддержка консистентного внешнего вида bspwm / polybar / rofi / dunst*
-
-- Для смены цветовой схемы используйте Super + Alt + T
-- Цвета для tmux настраиваются отдельно в файле .tmux.conf
-- Цвета для Alacritty и NvChad настраиваются отдельно в их конфигурационных файлах и переключаются с помощью сочетания Leader + T + H соответственно
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/ayu_dark.png" width="150"><br/>
-      <sub>Ayu Dark</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/catppuccin_mocha.png" width="150"><br/>
-      <sub>Catppuccin Mocha</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/dracula.png" width="150"><br/>
-      <sub>Dracula</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/github_dark.png" width="150"><br/>
-      <sub>GitHub Dark</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/nord.png" width="150"><br/>
-      <sub>Nord</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/one_dark.png" width="150"><br/>
-      <sub>One Dark</sub>
-    </td>
-    <td align="center">
-      <img src="../screenshots/bspwm/themes/tokyo_night.png" width="150"><br/>
-      <sub>Tokyo Night</sub>
-    </td>
-</table>
-
-## 📝 Neovim
-
-_Основан на NvChad_
-
-```Shell
-:MasonInstallAll
-:Lazy sync
+```
+.xprofile → .xinitrc → bspwm → bspwmrc
+    │                       │
+    ├─ Xft.dpi, курсор      ├─ мониторы, polybar, picom, dunst, sxhkd
+    ├─ откл. DWT            ├─ цветовая схема
+    ├─ XDG_SESSION_TYPE      ├─ apply-desktop-theme
+    ├─ QT_QPA_PLATFORM      └─ touchegg
+    └─ apply-gtk-theme
 ```
 
+## Масштабирование
+
+Одна переменная — `HIDPI_FACTOR` в env. Все размеры: `база × F / 100`.
+
+| Свойство | База | F=100 | F=175 |
+|---|---|---|---|
+| Xft.dpi | 96 | 96 | 168 |
+| Xcursor.size | 24 | 24 | 42 |
+| Polybar высота | 20pt | 20 | 35 |
+| Polybar шрифт0 | 10px | 10 | 17 |
+| Rofi шрифт | 11px | 11 | 19 |
+| Rofi ширина | 467px | 467 | 817 |
+| Dunst шрифт | 10pt | — | — |
+| Dunst ширина | 350px | 350 | 612 |
+| Picom скругления | 9 | 9 | 15 |
+| Bspwm рамки | 2 | 2 | 3 |
+| Шаг ресайза | 30 | 30 | 52 |
+
+Шрифт Dunst в пунктах — Pango сам масштабирует через Xft.dpi.
+
+## Тёмная/светлая тема
+
+`THEME_MODE=dark` или `light` в env. Переключается `apply-gtk-theme` (вызывается из `.xprofile` и `switch-theme`):
+
+- Меняет `gtk-application-prefer-dark-theme` в `settings.ini` (все GTK-приложения + Chromium)
+- Выставляет `color-scheme` через gsettings (для приложений через портал)
+
+Имя темы переключается `apply-gtk-theme` (`Breeze-Dark` / `Breeze`).
+Иконки/курсор задаются `apply-desktop-theme` через env: `ICON_THEME`, `CURSOR_THEME`.
+Размер курсора убран из `settings.ini` — GTK читает Xcursor напрямую.
+
+## Цветовые схемы
+
+| Схема | Переключение |
+|---|---|
+| Tokyo Night | Super + Alt + T |
+| Tokyo Dark | —"— |
+| Nord | —"— |
+| Catppuccin Mocha | —"— |
+| Dracula | —"— |
+| Ayu Dark | —"— |
+| One Dark | —"— |
+| GitHub Dark | —"— |
+
+Синхронизирует: bspwm, polybar, rofi, dunst. Терминалы и Neovim — отдельные системы тем.
 
 <p align="center">
-    <img src="../screenshots/bspwm/nvim.png">
+  <img src="../screenshots/bspwm/themes/ayu_dark.png" width="140">
+  <img src="../screenshots/bspwm/themes/catppuccin_mocha.png" width="140">
+  <img src="../screenshots/bspwm/themes/dracula.png" width="140">
+  <img src="../screenshots/bspwm/themes/github_dark.png" width="140">
+  <img src="../screenshots/bspwm/themes/nord.png" width="140">
+  <img src="../screenshots/bspwm/themes/one_dark.png" width="140">
+  <img src="../screenshots/bspwm/themes/tokyo_night.png" width="140">
 </p>
 
-### Файлы:
-- alacritty/alacritty.toml: конфигурация для эмулятора терминала Alacritty
-- nvim: lua-конфиги для neovim
-- ruff/pyproject.toml: конфигурация ruff
-- user: конфигурационные файлы для пользовательской директории (tmux, zsh, .X*, настройки драйверов)
+## Сессия (X11 vs Wayland)
 
-### Зависимости:
-- npm / fnm / pyright
-  * `npm install -g pyright`
-- lua
-- unzip
+`~/.local/bin/chromium` — враппер, проверяет `$DISPLAY` / `$WAYLAND_DISPLAY`, передаёт нужный `--ozone-platform`. `.xprofile` выставляет `XDG_SESSION_TYPE=x11` и `QT_QPA_PLATFORM=xcb` для X11. Hyprland работает с Wayland через свой env.
 
-## Документация
-- [Первоначальная настройка](/docs/ru/bspwm/initial_setup.md)
+## Клавиши
 
-## 💡 Вдохновлено:
+| Клавиша | Действие |
+|---|---|
+| Super + Enter | Терминал |
+| Super + D | Приложения (rofi drun) |
+| Alt + D | Окна (rofi window) |
+| Super + Q | Закрыть |
+| Super + Shift + Q | Убить |
+| Super + H/J/K/L | Фокус |
+| Super + Shift + H/J/K/L | Переместить |
+| Super + 1-6 | Рабочий стол |
+| Super + S | Float |
+| Super + M | Monocle / tiled |
+| Super + F | Fullscreen |
+| Super + Alt + T | Смена схемы |
+| Super + Alt + R | Перезапуск bspwm |
+| Super + Alt + Q | Выход |
 
-- [1](https://github.com/gh0stzk/dotfiles)
-- [2](https://github.com/Zproger/bspwm-dotfiles)
-- [3](https://github.com/raexera/tokyo)
-- [4](https://github.com/basecamp/omarchy)
+## Тачпад (touchegg)
 
-## 🖼 Обои:
+| Жест | Действие |
+|---|---|
+| 3 ↑ | Float / tile |
+| 3 ↓ | Monocle / tile |
+| 3 ←→ | Предыдущий / следующий стол |
+| 4 ↑↓ | Смена стола |
+| 4 pinch out | Показать стол |
 
-- [1](https://github.com/gh0stzk/dotfiles)
-- [2](https://github.com/connorslade/ArchPapers)
-- [3](https://github.com/LagrangianLad/arch-minimal-wallpapers)
-- [4](https://github.com/archcraft-os/archcraft-wallpapers)
-- [5](https://github.com/raexera/tokyo)
-- [6](https://github.com/basecamp/omarchy)
+Тачпад не блокируется при печати (`libinput Disable While Typing Enabled = 0`).
 
-## F.A.Q
+## Пакеты
 
-<details>
-<summary>Внешний вид</summary>
+| Пакет | Куда |
+|---|---|
+| `bspwm` | `~/.config/bspwm/` |
+| `sxhkd` | `~/.config/sxhkd/` |
+| `polybar` | `~/.config/polybar/` |
+| `picom` | `~/.config/picom/` |
+| `rofi` | `~/.config/rofi/` |
+| `dunst` | `~/.config/dunst/` |
+| `x11` | `~/.xprofile`, `~/.xinitrc`, `~/.Xresources` |
+| `colors` | `~/.config/colors/` |
+| `gtk-3.0` | `settings.ini` |
+| `gtk-4.0` | `settings.ini` |
+| `env` | `env.template` |
+| `bin` | `~/.local/bin/chromium` |
+| `touchegg` | `~/.config/touchegg/` |
 
-1. Как установить обои рабочего стола?
-Ответ:
-В файле **~/.xprofile** добавьте строку:
-
-```Shell
-export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"
-
-```
-
-2. Как установить bspwm / rofi / polybar / dunst консистентную цветовую схему?
-Ответ:
-
-```Shell
-SUPER + ALT + T
-
-```
-
-3. Как установить цветовую схему NvChad?
-Ответ:
-
-```Shell
-Leader + T + H
-
-```
-
-4. Как установить цветовую схему Alacritty?
-Ответ:
-В файле **~/.config/alacritty/alacritty.toml** измените:
-
-```Shell
-import = [
-  "~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"
-]
-
-```
-
-5. Как установить цветовую схему tmux?
-Ответ:
-В файле **~/.tmux.conf** измените:
-
-```Shell
-source-file $HOME/.config/tmux/themes/ayu_dark.conf
-
-```
-
-</details>
+[Первоначальная настройка →](ru/bspwm/initial_setup.md)
+[Развёртывание →](ru/bspwm/dotfiles_setup.md)
 
 </details>

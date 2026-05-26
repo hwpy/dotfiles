@@ -11,7 +11,7 @@ for scheme in "$SCHEMES_DIR"/*.conf; do
 done
 
 # Выбор схемы через rofi
-selected=$(printf "%s\n" "${schemes[@]}" | rofi -dmenu -p "Select color scheme" -config ~/.config/rofi/config.rasi)
+selected=$(printf "%s\n" "${schemes[@]}" | rofi -dmenu -p "color scheme" -config ~/.config/rofi/config.rasi)
 
 if [[ -n "$selected" && -f "$SCHEMES_DIR/$selected.conf" ]]; then
     # Сохраняем выбранную схему
@@ -37,4 +37,9 @@ if [[ -n "$selected" && -f "$SCHEMES_DIR/$selected.conf" ]]; then
     $HOME/.config/dunst/src/update-dunst-colors
 
     notify-send "Color scheme changed" "Selected: $selected"
+
+    # Применяем GTK/Qt тему (если сменился dark/light)
+    ~/.config/colors/src/apply-gtk-theme
+    # Применяем тему/иконки/курсор из цветовой схемы
+    ~/.config/bspwm/bin/apply-desktop-theme
 fi

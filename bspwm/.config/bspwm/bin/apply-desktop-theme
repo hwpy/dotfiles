@@ -1,0 +1,32 @@
+#!/bin/sh
+# Применяет иконки и курсор из env-переменных
+# (тема и dark/light переключение — в apply-gtk-theme)
+
+source "$HOME/.config/env/env" 2>/dev/null || true
+
+icon_theme="${ICON_THEME:-Papirus-Dark}"
+cursor_theme="${CURSOR_THEME:-breeze_cursors}"
+
+set_ini_key() {
+    file="$1" key="$2" val="$3"
+    escaped_val=$(printf '%s\n' "$val" | sed 's/[&/]/\\&/g')
+    if grep -q "^${key}=" "$file"; then
+        sed -i "s/^${key}=.*/${key}=${escaped_val}/" "$file"
+    else
+        echo "${key}=${val}" >> "$file"
+    fi
+}
+
+# GTK 3
+set_ini_key "$HOME/.config/gtk-3.0/settings.ini" "gtk-icon-theme-name" "$icon_theme"
+set_ini_key "$HOME/.config/gtk-3.0/settings.ini" "gtk-cursor-theme-name" "$cursor_theme"
+
+# GTK 4
+set_ini_key "$HOME/.config/gtk-4.0/settings.ini" "gtk-icon-theme-name" "$icon_theme"
+set_ini_key "$HOME/.config/gtk-4.0/settings.ini" "gtk-cursor-theme-name" "$cursor_theme"
+
+# gsettings (Firefox, GNOME apps)
+if command -v gsettings >/dev/null 2>&1; then
+    gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
+    gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
+fi

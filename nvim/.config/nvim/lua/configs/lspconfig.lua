@@ -1,8 +1,6 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require("nvchad.configs.lspconfig")
-
 -- EXAMPLE
 local servers = { "html", "cssls", "lua_ls", "pyright", "ruff", "gopls" }
 local nvlsp = require("nvchad.configs.lspconfig")
@@ -79,3 +77,16 @@ vim.lsp.config("gopls", {
 
 -- Setup DAP for Python
 -- require('dap-python').setup(vim.fn.exepath('python'))
+
+local diagnostics_off = false
+local function toggle_diagnostics()
+  diagnostics_off = not diagnostics_off
+  if diagnostics_off then
+    vim.diagnostic.enable(false)
+    vim.notify("LSP diagnostics OFF", vim.log.levels.INFO)
+  else
+    vim.diagnostic.enable(true)
+    vim.notify("LSP diagnostics ON", vim.log.levels.INFO)
+  end
+end
+vim.keymap.set("n", "<leader>td", toggle_diagnostics, { desc = "Toggle LSP diagnostics" })
