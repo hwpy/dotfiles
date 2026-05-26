@@ -1,4 +1,1 @@
-! Xcursor.theme: Bibata-Modern-Ice
-! Xcursor.theme: Breeze_Light
-Xcursor.theme: breeze_cursors
-! Xcursor.size и Xft.dpi задаются динамически в .xprofile через HIDPI
+! Xcursor.theme и Xcursor.size задаются динамически в .xprofile через CURSOR_THEME и HIDPI_FACTOR

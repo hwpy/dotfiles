@@ -12,6 +12,7 @@ colors/.config/colors/current.conf
 colors/.config/colors/current_scheme
 !/docs/
 !/dunst/
+dunst/.config/dunst/dunstrc
 !/env/
 env/.config/env/env
 !/fastfetch/
@@ -34,6 +35,7 @@ opencode/.config/opencode/.gitignore
 polybar/.config/polybar/scale_active.ini
 !/ranger/
 !/rofi/
+rofi/.config/rofi/config.rasi
 !/ruff/
 !/screenshots/
 !/ssh/

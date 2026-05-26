@@ -10,6 +10,7 @@ export QT_QPA_PLATFORM=xcb
 source ~/.config/env/env 2>/dev/null || true
 F=${HIDPI_FACTOR:-100}
 
+echo "Xcursor.theme: ${CURSOR_THEME:-breeze_cursors}" | xrdb -merge
 echo "Xcursor.size: $((24 * F / 100))" | xrdb -merge
 echo "Xft.dpi: $((96 * F / 100))" | xrdb -merge
 

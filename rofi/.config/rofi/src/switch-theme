@@ -40,4 +40,6 @@ if [[ -n "$selected" && -f "$SCHEMES_DIR/$selected.conf" ]]; then
 
     # Применяем GTK/Qt тему (если сменился dark/light)
     ~/.config/colors/src/apply-gtk-theme
+    # Применяем тему/иконки/курсор из цветовой схемы
+    ~/.config/bspwm/bin/apply-desktop-theme
 fi

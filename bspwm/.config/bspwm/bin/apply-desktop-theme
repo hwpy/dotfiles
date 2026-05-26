@@ -1,0 +1,48 @@
+#!/bin/sh
+# Читаем env для GTK_THEME, ICON_THEME, CURSOR_THEME
+source "$HOME/.config/env/env" 2>/dev/null || true
+MODE=${THEME_MODE:-dark}
+
+SCHEME_FILE="$HOME/.config/colors/schemes/$(cat "$HOME/.config/colors/current_scheme").conf"
+
+# Приоритет: env-переменная > значение из схемы > дефолт
+gtk_theme="${GTK_THEME:-$(grep '^gtk_theme\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)}"
+icon_theme="${ICON_THEME:-$(grep '^icon_theme\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)}"
+cursor_theme="${CURSOR_THEME:-$(grep '^cursor_theme\s*=' "$SCHEME_FILE" | cut -d= -f2 | xargs)}"
+
+gtk_theme=${gtk_theme:-Materia-dark}
+icon_theme=${icon_theme:-Papirus-Dark}
+cursor_theme=${cursor_theme:-breeze_cursors}
+
+set_ini_key() {
+    file="$1" key="$2" val="$3"
+    # Escape / (delimiter) and & (backref) for sed replacement
+    escaped_val=$(printf '%s\n' "$val" | sed 's/[&/]/\\&/g')
+    if grep -q "^${key}=" "$file"; then
+        sed -i "s/^${key}=.*/${key}=${escaped_val}/" "$file"
+    else
+        echo "${key}=${val}" >> "$file"
+    fi
+}
+
+# GTK 3
+set_ini_key "$HOME/.config/gtk-3.0/settings.ini" "gtk-theme-name" "$gtk_theme"
+set_ini_key "$HOME/.config/gtk-3.0/settings.ini" "gtk-icon-theme-name" "$icon_theme"
+set_ini_key "$HOME/.config/gtk-3.0/settings.ini" "gtk-cursor-theme-name" "$cursor_theme"
+
+# GTK 4
+set_ini_key "$HOME/.config/gtk-4.0/settings.ini" "gtk-theme-name" "$gtk_theme"
+set_ini_key "$HOME/.config/gtk-4.0/settings.ini" "gtk-icon-theme-name" "$icon_theme"
+set_ini_key "$HOME/.config/gtk-4.0/settings.ini" "gtk-cursor-theme-name" "$cursor_theme"
+
+# gsettings (Firefox, GNOME apps)
+if command -v gsettings >/dev/null 2>&1; then
+    gsettings set org.gnome.desktop.interface gtk-theme "$gtk_theme"
+    gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
+    gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
+    if [ "$MODE" = "light" ]; then
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+    else
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    fi
+fi

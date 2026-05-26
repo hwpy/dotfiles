@@ -5,7 +5,7 @@ F=${HIDPI_FACTOR:-100}
 
 # font — константа в pt, Pango сам применит Xft.dpi
 FONT="JetBrains Mono Nerd Font 10"
-WIDTH=$((200 * F / 100))
+WIDTH=$((350 * F / 100))
 OFFSET_X=$((12 * F / 100))
 OFFSET_Y=$((12 * F / 100))
 FW=$((1 * F / 100))

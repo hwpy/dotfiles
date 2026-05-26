@@ -7,11 +7,13 @@ ln -sf ~/.config/colors/schemes/$(cat ~/.config/colors/current_scheme).conf ~/.c
 #================== МОНИТОРЫ ===============
 source ~/.config/bspwm/monitors.sh
 
-#================== BSPWM НАСТРОЙКИ =========
-# for desktop in $(bspc query -D); do
-#     bspc desktop "$desktop" --remove
-# done
+#================== ТЕМА ДЕСКТОПА (после env) ===============
+~/.config/colors/src/apply-gtk-theme
+~/.config/bspwm/bin/apply-desktop-theme
+~/.config/rofi/src/update-colors
+~/.config/dunst/src/update-dunst-colors
 
+#================== BSPWM НАСТРОЙКИ =========
 xrandr --output "$INTERNAL_MONITOR" --auto --primary
 if xrandr | grep "^${EXTERNAL_MONITOR} connected" >/dev/null; then
     xrandr --output "$EXTERNAL_MONITOR" --auto --right-of "$INTERNAL_MONITOR"
@@ -47,7 +49,6 @@ $HOME/.config/polybar/launch_separate.sh &
 # $HOME/.config/polybar/launch_single.sh &
 flameshot &
 udiskie -a -n -t &
-dunst &
 
 # Жесты touchpad (touchegg) — включить: export USE_TOUCHEGG=true в ~/.config/env/env
 [ "$USE_TOUCHEGG" = "true" ] && ~/.config/bspwm/bin/touchegg.sh &
@@ -63,7 +64,6 @@ bspc config gapless_monocle      false
 
 #================== СИСТЕМА ================
 xsetroot -cursor_name left_ptr &
-# xinput set-prop 14 'libinput Accel Speed' -0.8
 for id in $(xinput list | grep 'pointer' | grep -i mouse | sed 's/.*id=\([0-9]*\).*/\1/'); do
     xinput set-prop $id 'libinput Accel Profile Enabled' 0 1 0
     xinput set-prop $id 'libinput Accel Speed' -0.3
@@ -75,10 +75,5 @@ case $(ps -p 1 -o comm=) in
     systemctl --user restart picom polybar &> /dev/null
     ;;
 esac
-# pkill -USR1 picom &> /dev/null
 canberra-gtk-play -i service-login
-# picom: подставляем corner-radius из HIDPI_FACTOR
-sed -i "s/^corner-radius = .*/corner-radius = $((9 * ${HIDPI_FACTOR:-100} / 100));/" \
-    ~/.config/picom/picom.conf
-picom --config ~/.config/picom/picom.conf &
-# exec bspwm
+picom --corner-radius $((9 * ${HIDPI_FACTOR:-100} / 100)) --config ~/.config/picom/picom.conf &
