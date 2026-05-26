@@ -11,6 +11,7 @@ alacritty/.config/alacritty/alacritty-local.toml
 colors/.config/colors/current.conf
 colors/.config/colors/current_scheme
 !/docs/
+!/dualboot/
 !/dunst/
 dunst/.config/dunst/dunstrc
 !/env/
