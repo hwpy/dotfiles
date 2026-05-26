@@ -12,8 +12,8 @@
     │                       │
     ├─ Xft.dpi, cursor      ├─ monitors, polybar, picom, dunst, sxhkd
     ├─ disable DWT           ├─ color scheme
-    ├─ XDG_SESSION_TYPE      └─ touchegg
-    ├─ QT_QPA_PLATFORM
+    ├─ XDG_SESSION_TYPE      ├─ apply-desktop-theme
+    ├─ QT_QPA_PLATFORM      └─ touchegg
     └─ apply-gtk-theme
 ```
 
@@ -30,7 +30,7 @@ One variable — `HIDPI_FACTOR` in env. All sizes are `base × F / 100`.
 | Rofi font | 11px | 11 | 19 |
 | Rofi width | 467px | 467 | 817 |
 | Dunst font | 10pt | — | — |
-| Dunst width | 200px | 200 | 350 |
+| Dunst width | 350px | 350 | 612 |
 | Picom corner-radius | 9 | 9 | 15 |
 | Bspwm border | 2 | 2 | 3 |
 | Resize step | 30 | 30 | 52 |
@@ -43,7 +43,10 @@ Dunst font is points — Pango scales it via Xft.dpi automatically.
 
 - Flips `gtk-application-prefer-dark-theme` in `settings.ini` (affects all GTK apps + Chromium)
 - Sets `color-scheme` via gsettings (for portal-aware apps)
-- Cursor size removed from `settings.ini` — GTK reads Xcursor directly
+
+Theme name toggled by `apply-gtk-theme` (`Breeze-Dark` / `Breeze`).
+Icon/cursor names set by `apply-desktop-theme` via env: `ICON_THEME`, `CURSOR_THEME`.
+Cursor size removed from `settings.ini` — GTK reads Xcursor directly.
 
 ## Color schemes
 
@@ -142,8 +145,8 @@ Touchpad not locked while typing (`libinput Disable While Typing Enabled = 0`).
     │                       │
     ├─ Xft.dpi, курсор      ├─ мониторы, polybar, picom, dunst, sxhkd
     ├─ откл. DWT            ├─ цветовая схема
-    ├─ XDG_SESSION_TYPE      └─ touchegg
-    ├─ QT_QPA_PLATFORM
+    ├─ XDG_SESSION_TYPE      ├─ apply-desktop-theme
+    ├─ QT_QPA_PLATFORM      └─ touchegg
     └─ apply-gtk-theme
 ```
 
@@ -160,7 +163,7 @@ Touchpad not locked while typing (`libinput Disable While Typing Enabled = 0`).
 | Rofi шрифт | 11px | 11 | 19 |
 | Rofi ширина | 467px | 467 | 817 |
 | Dunst шрифт | 10pt | — | — |
-| Dunst ширина | 200px | 200 | 350 |
+| Dunst ширина | 350px | 350 | 612 |
 | Picom скругления | 9 | 9 | 15 |
 | Bspwm рамки | 2 | 2 | 3 |
 | Шаг ресайза | 30 | 30 | 52 |
@@ -173,7 +176,10 @@ Touchpad not locked while typing (`libinput Disable While Typing Enabled = 0`).
 
 - Меняет `gtk-application-prefer-dark-theme` в `settings.ini` (все GTK-приложения + Chromium)
 - Выставляет `color-scheme` через gsettings (для приложений через портал)
-- Размер курсора убран из `settings.ini` — GTK читает Xcursor напрямую
+
+Имя темы переключается `apply-gtk-theme` (`Breeze-Dark` / `Breeze`).
+Иконки/курсор задаются `apply-desktop-theme` через env: `ICON_THEME`, `CURSOR_THEME`.
+Размер курсора убран из `settings.ini` — GTK читает Xcursor напрямую.
 
 ## Цветовые схемы
 

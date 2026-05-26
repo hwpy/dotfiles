@@ -49,6 +49,9 @@ nvim ~/.config/env/env
 ```bash
 export HIDPI_FACTOR=100      # 100 = 1080p, 175 = Retina 13"
 export THEME_MODE=dark       # dark | light
+export GTK_THEME="Breeze-Dark"
+export ICON_THEME="Papirus-Dark"
+export CURSOR_THEME="breeze_cursors"
 export INTERNAL_MONITOR="eDP-1"
 export EXTERNAL_MONITOR="DP-1"
 export LOCKSCREEN_IMAGE="$HOME/.config/wlppr/skull.png"

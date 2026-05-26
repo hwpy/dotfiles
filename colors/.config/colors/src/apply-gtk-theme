@@ -5,23 +5,29 @@
 source ~/.config/env/env 2>/dev/null || true
 MODE=${THEME_MODE:-dark}
 
-[ "$MODE" = "light" ] && PREFER=0 || PREFER=1
+if [ "$MODE" = "light" ]; then
+    PREFER=0
+    THEME="Breeze"
+else
+    PREFER=1
+    THEME="Breeze-Dark"
+fi
 
-# GTK settings.ini — читается ВСЕМИ GTK-приложениями (включая Chromium)
+# GTK3/4 settings.ini — читается ВСЕМИ GTK-приложениями (включая Chromium)
 for ini in ~/.config/gtk-3.0/settings.ini ~/.config/gtk-4.0/settings.ini; do
-    [ -f "$ini" ] && sed -i "s/^gtk-application-prefer-dark-theme=.*/gtk-application-prefer-dark-theme=$PREFER/" "$ini"
+    if [ -f "$ini" ]; then
+        sed -i "s/^gtk-application-prefer-dark-theme=.*/gtk-application-prefer-dark-theme=$PREFER/" "$ini"
+        sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$THEME/" "$ini"
+    fi
 done
 
 # GTK2 (~/.gtkrc-2.0) — DBeaver и старые приложения
-if [ "$MODE" = "light" ]; then
-    GTK2_THEME="Breeze"
-else
-    GTK2_THEME="Breeze-Dark"
-fi
+GTK2_THEME=${THEME}  # Breeze или Breeze-Dark — совпадает с GTK3/4
 [ -f ~/.gtkrc-2.0 ] && sed -i "s/^gtk-theme-name=.*/gtk-theme-name=\"$GTK2_THEME\"/" ~/.gtkrc-2.0
 
 # gsettings — для приложений через портал (GNOME, Flatpak)
 if command -v gsettings >/dev/null 2>&1; then
+    gsettings set org.gnome.desktop.interface gtk-theme "$THEME" 2>/dev/null || true
     if [ "$MODE" = "light" ]; then
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' 2>/dev/null || true
     else
