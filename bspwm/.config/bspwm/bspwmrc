@@ -1,17 +1,17 @@
 #!/bin/sh
 
-#================== ЦВЕТА ==================
+# Цвета
 ln -sf ~/.config/colors/schemes/$(cat ~/.config/colors/current_scheme).conf ~/.config/colors/current.conf
 ~/.config/bspwm/bin/update-colors
 
-#================== МОНИТОРЫ ===============
+# Мониторы
 source ~/.config/bspwm/monitors.sh
 
-#================== ТЕМА ДЕСКТОПА (после env) ===============
+# Тема (после env)
 ~/.config/colors/src/apply-gtk-theme
 ~/.config/bspwm/bin/apply-desktop-theme
 
-#================== BSPWM НАСТРОЙКИ =========
+# BSPWM настройки
 xrandr --output "$INTERNAL_MONITOR" --auto --primary
 if xrandr | grep "^${EXTERNAL_MONITOR} connected" >/dev/null; then
     xrandr --output "$EXTERNAL_MONITOR" --auto --right-of "$INTERNAL_MONITOR"
@@ -22,7 +22,7 @@ else
     bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4 5 6
 fi
 
-#================== ПРАВИЛА ОКОН ===========
+# Правила окон
 bspc rule -a Alacritty desktop='^1' follow=on
 bspc rule -a DBeaver desktop='^1' state=tiled follow=on
 bspc rule -a Chromium desktop='^2' follow=on
@@ -40,7 +40,7 @@ bspc rule -a Dialog state=floating center=on layer=above
 bspc rule -a "*Preferences*" state=floating center=on layer=above
 bspc rule -a "*properties*" state=floating center=on layer=above
 
-#================== AUTOSTART ==============
+# AUTOSTART
 pgrep -x sxhkd > /dev/null || sxhkd -m -1 &
 feh --bg-fill "$LOCKSCREEN_IMAGE" &
 $HOME/.config/polybar/launch_separate.sh &
@@ -53,7 +53,7 @@ udiskie -a -n -t &
 # Жесты touchpad (touchegg) — включить: export USE_TOUCHEGG=true в ~/.config/env/env
 [ "$USE_TOUCHEGG" = "true" ] && ~/.config/bspwm/bin/touchegg.sh &
 
-#================== BSPWM CONFIG ===========
+# BSPWM config
 bspc config focus_follows_pointer false
 bspc config window_gap           6
 bspc config split_ratio          0.52
@@ -62,7 +62,7 @@ bspc config border_width         $((2 * ${HIDPI_FACTOR:-100} / 100))
 bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 
-#================== СИСТЕМА ================
+# Система
 xsetroot -cursor_name left_ptr &
 for id in $(xinput list | grep 'pointer' | grep -i mouse | sed 's/.*id=\([0-9]*\).*/\1/'); do
     xinput set-prop $id 'libinput Accel Profile Enabled' 0 1 0
