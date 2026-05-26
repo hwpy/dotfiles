@@ -32,6 +32,8 @@ if command -v gnome-keyring-daemon >/dev/null 2>&1; then
   export GNOME_KEYRING_SOCKET SSH_AUTH_SOCK
 fi
 
+ssh-add -q ~/.ssh/id_ed25519_github 2>/dev/null &
+
 # GTK/Qt тема (требует dbus)
 source ~/.config/colors/src/apply-gtk-theme
 

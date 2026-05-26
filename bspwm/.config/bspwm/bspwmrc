@@ -10,8 +10,6 @@ source ~/.config/bspwm/monitors.sh
 #================== ТЕМА ДЕСКТОПА (после env) ===============
 ~/.config/colors/src/apply-gtk-theme
 ~/.config/bspwm/bin/apply-desktop-theme
-~/.config/rofi/src/update-colors
-~/.config/dunst/src/update-dunst-colors
 
 #================== BSPWM НАСТРОЙКИ =========
 xrandr --output "$INTERNAL_MONITOR" --auto --primary
@@ -49,6 +47,8 @@ $HOME/.config/polybar/launch_separate.sh &
 # $HOME/.config/polybar/launch_single.sh &
 flameshot &
 udiskie -a -n -t &
+~/.config/rofi/src/update-colors &
+~/.config/dunst/src/update-dunst-colors &
 
 # Жесты touchpad (touchegg) — включить: export USE_TOUCHEGG=true в ~/.config/env/env
 [ "$USE_TOUCHEGG" = "true" ] && ~/.config/bspwm/bin/touchegg.sh &
