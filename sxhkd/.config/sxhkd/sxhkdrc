@@ -142,6 +142,14 @@ super + alt + equal
 super + alt + minus
     ~/.config/sxhkd/bin/bspwm_resize contract
 
+#
+#custom
+#
+
+# rotate tree 90 degrees clockwise
+super + slash
+    bspc node @/ -R 90
+
 # Модификатор клавиши для управления мышью (обычно Super/Mod4)
 bspc config pointer_modifier mod4
 # ЛКМ + модификатор - перемещение окна
