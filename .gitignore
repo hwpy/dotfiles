@@ -20,6 +20,7 @@ env/.config/env/env
 !/gnome/
 !/gtk*/
 !/hypr/
+!/kde/
 !/kitty/
 !/leaderkey/
 !/mpv/

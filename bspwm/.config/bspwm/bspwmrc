@@ -10,6 +10,7 @@ source ~/.config/bspwm/monitors.sh
 # Тема (после env)
 ~/.config/colors/src/apply-gtk-theme
 ~/.config/bspwm/bin/apply-desktop-theme
+~/.config/kde/src/apply-kde-theme
 
 # BSPWM настройки
 xrandr --output "$INTERNAL_MONITOR" --auto --primary
