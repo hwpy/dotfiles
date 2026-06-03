@@ -78,4 +78,4 @@ case $(ps -p 1 -o comm=) in
     ;;
 esac
 canberra-gtk-play -i service-login
-picom --corner-radius $((9 * ${HIDPI_FACTOR:-100} / 100)) --config ~/.config/picom/picom.conf &
+picom --config ~/.config/picom/picom.conf &
