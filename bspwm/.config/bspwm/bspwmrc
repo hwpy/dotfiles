@@ -24,8 +24,9 @@ else
 fi
 
 # Правила окон
-bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a Alacritty desktop='^1' state=tiled follow=on
 bspc rule -a DBeaver desktop='^1' state=tiled follow=on
+bspc rule -a Java state=floating follow=on
 bspc rule -a Chromium desktop='^2' follow=on
 bspc rule -a TelegramDesktop desktop='^3' follow=on
 bspc rule -a Mattermost.Desktop desktop='^3' follow=on
