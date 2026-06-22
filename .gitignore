@@ -24,6 +24,7 @@ env/.config/env/env
 !/leaderkey/
 !/mpv/
 !/networkmanager-dmenu/
+!/niri/
 !/nvim/
 nvim/.config/nvim/lazy-lock.json
 !/opencode/
