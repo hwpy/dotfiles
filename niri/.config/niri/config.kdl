@@ -445,8 +445,8 @@ binds {
 
     Mod+S hotkey-overlay-title="Open a Control Center: noctalia" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     Mod+Alt+Comma hotkey-overlay-title="Open Settings: noctalia" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Super+Shift+Q hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Alt+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    Mod+Shift+Q hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
@@ -699,9 +699,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Super+Shift+S { screenshot; }
-    Super+Alt+S { screenshot-screen; }
-    Super+Ctrl+S { screenshot-window; }
+    Mod+Shift+S { screenshot; }
+    Mod+Alt+S { screenshot-screen; }
+    Mod+Ctrl+S { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
