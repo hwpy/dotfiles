@@ -25,6 +25,7 @@ env/.config/env/env
 !/mpv/
 !/networkmanager-dmenu/
 !/niri/
+/niri/.config/niri/animations.kdl
 !/nvim/
 nvim/.config/nvim/lazy-lock.json
 !/opencode/
