@@ -14,5 +14,8 @@
 # dark = "catppuccin-macchiato-pink"
 # light = "catppuccin-macchiato-pink"
 
-dark = "tokyo-night"
-light = "tokyo-night"
+# dark = "tokyo-night"
+# light = "tokyo-night"
+
+dark  = "noctalia"
+light = "noctalia"

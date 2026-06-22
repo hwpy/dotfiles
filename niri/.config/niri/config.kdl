@@ -441,6 +441,8 @@ binds {
 
     // Core Noctalia binds
     Mod+D hotkey-overlay-title="Run an Application: noctalia" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    XF86LaunchB hotkey-overlay-title="Run an Application: noctalia" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+
     Mod+S hotkey-overlay-title="Open a Control Center: noctalia" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     Mod+Alt+Comma hotkey-overlay-title="Open Settings: noctalia" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
@@ -477,10 +479,15 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
+    // Keyboard brightness
+    XF86KbdBrightnessUp allow-when-locked=true { spawn-sh "brightnessctl --device='smc::kbd_backlight' set +10%"; }
+    XF86KbdBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl --device='smc::kbd_backlight' set 10%-"; }
+
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+A repeat=false { toggle-overview; }
+    XF86LaunchA repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
 
@@ -714,3 +721,6 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+include "./noctalia.kdl"
+

@@ -1,7 +1,8 @@
 [general]
 import = [
-  "~/.config/alacritty/alacritty-theme/themes/tokyo_dark.toml",
-  "~/.config/alacritty/alacritty-local.toml"
+  # "~/.config/alacritty/themes/tokyo_dark.toml",
+  "~/.config/alacritty/alacritty-local.toml",
+    "~/.config/alacritty/themes/noctalia.toml",
 ]
 
 [window]
