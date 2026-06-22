@@ -7,6 +7,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export XDG_SESSION_TYPE=x11
 export QT_QPA_PLATFORM=xcb
 
+export QT_QPA_PLATFORMTHEME=kde
+
 source ~/.config/env/env 2>/dev/null || true
 F=${HIDPI_FACTOR:-100}
 
@@ -34,7 +36,8 @@ fi
 
 ssh-add -q ~/.ssh/id_ed25519_github 2>/dev/null &
 
-# GTK/Qt тема (требует dbus)
+# GTK/Qt/KDE тема (требует dbus)
 source ~/.config/colors/src/apply-gtk-theme
+~/.config/kde/src/apply-kde-theme
 
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources

@@ -31,7 +31,6 @@ One variable — `HIDPI_FACTOR` in env. All sizes are `base × F / 100`.
 | Rofi width | 467px | 467 | 817 |
 | Dunst font | 10pt | — | — |
 | Dunst width | 350px | 350 | 612 |
-| Picom corner-radius | 9 | 9 | 15 |
 | Bspwm border | 2 | 2 | 3 |
 | Resize step | 30 | 30 | 52 |
 
@@ -164,7 +163,6 @@ Touchpad not locked while typing (`libinput Disable While Typing Enabled = 0`).
 | Rofi ширина | 467px | 467 | 817 |
 | Dunst шрифт | 10pt | — | — |
 | Dunst ширина | 350px | 350 | 612 |
-| Picom скругления | 9 | 9 | 15 |
 | Bspwm рамки | 2 | 2 | 3 |
 | Шаг ресайза | 30 | 30 | 52 |
 

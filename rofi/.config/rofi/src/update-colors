@@ -60,6 +60,7 @@ configuration {
     fg1:    ${background};
     fg2:    ${disabled};
     fg3:    ${foreground};
+    a0:     ${alert};
 
     background-color:   transparent;
     text-color:         @fg0;
@@ -165,5 +166,20 @@ element.normal.normal {
 element.alternate.normal {
     background-color: inherit;
     text-color:       inherit;
+}
+
+element normal urgent {
+    background-color: inherit;
+    text-color:       @a0;
+}
+
+element alternate urgent {
+    background-color: inherit;
+    text-color:       @a0;
+}
+
+element selected urgent {
+    background-color: @bg3;
+    text-color:       @fg1;
 }
 EOF

@@ -1,0 +1,15 @@
+#!/bin/sh
+# Applies KDE look-and-feel based on THEME_MODE from env
+# For KDE apps in bspwm: Dolphin, Kate, Gwenview, Okular, etc.
+
+source ~/.config/env/env 2>/dev/null || true
+MODE=${THEME_MODE:-dark}
+
+if command -v kwriteconfig6 >/dev/null 2>&1; then
+    if [ "$MODE" = "light" ]; then
+        LOOK_AND_FEEL="org.kde.breeze.desktop"
+    else
+        LOOK_AND_FEEL="org.kde.breezedark.desktop"
+    fi
+    kwriteconfig6 --file kdeglobals --group KDE --key LookAndFeelPackage "$LOOK_AND_FEEL" --notify
+fi
