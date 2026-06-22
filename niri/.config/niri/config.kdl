@@ -355,35 +355,35 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match title="Firefox"
+    match title="Telegram"
     open-on-workspace "2"
+}
+window-rule {
+    match title="Mattermost"
+    open-on-workspace "2"
+}
+window-rule {
+    match title="Толк"
+    open-on-workspace "2"
+}
+window-rule {
+    match title="Firefox"
+    open-on-workspace "3"
     open-maximized true
 }
 window-rule {
     match title="Chromium"
-    open-on-workspace "2"
+    open-on-workspace "3"
     open-maximized true
 }
 window-rule {
     match title="SDMS"
-    open-on-workspace "2"
+    open-on-workspace "3"
     open-maximized true
 }
 window-rule {
     match title="Obsidian"
-    open-on-workspace "2"
-}
-window-rule {
-    match title="Telegram"
     open-on-workspace "3"
-}
-window-rule {
-    match title="Mattermost"
-    open-on-workspace "3"
-}
-window-rule {
-    match title="Толк"
-    open-on-workspace "4"
 }
 window-rule {
     match title="Remmina"
