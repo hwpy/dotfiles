@@ -10,6 +10,7 @@ source ~/.config/bspwm/monitors.sh
 # Тема (после env)
 ~/.config/colors/src/apply-gtk-theme
 ~/.config/bspwm/bin/apply-desktop-theme
+~/.config/kde/src/apply-kde-theme
 
 # BSPWM настройки
 xrandr --output "$INTERNAL_MONITOR" --auto --primary
@@ -23,17 +24,19 @@ else
 fi
 
 # Правила окон
-bspc rule -a Alacritty desktop='^1' follow=on
-bspc rule -a DBeaver desktop='^1' state=tiled follow=on
+bspc rule -a Alacritty desktop='^1' center=on follow=on
+bspc rule -a DBeaver desktop='^1' center=on follow=on
+bspc rule -a Java state=floating center=on follow=on
 bspc rule -a Chromium desktop='^2' follow=on
 bspc rule -a TelegramDesktop desktop='^3' follow=on
-bspc rule -a Mattermost desktop='^3' follow=on
+bspc rule -a Mattermost.Desktop desktop='^3' follow=on
 bspc rule -a obsidian desktop='^3' follow=on
 bspc rule -a firefox desktop='^4' state=tiled follow=on
 bspc rule -a libreoffice-startcenter desktop='^4' state=tiled follow=on
 bspc rule -a Org.gnome.Evolution desktop='^5' state=tiled follow=on
 bspc rule -a ktalk desktop='^5' state=tiled follow=on
 bspc rule -a org.remmina.Remmina desktop='^6' state=tiled follow=on
+bspc rule -a PortProton desktop='^6' state=tiled follow=on
 
 bspc rule -a Xdialog state=floating center=on layer=above
 bspc rule -a Dialog state=floating center=on layer=above
@@ -76,4 +79,4 @@ case $(ps -p 1 -o comm=) in
     ;;
 esac
 canberra-gtk-play -i service-login
-picom --corner-radius $((9 * ${HIDPI_FACTOR:-100} / 100)) --config ~/.config/picom/picom.conf &
+picom --config ~/.config/picom/picom.conf &

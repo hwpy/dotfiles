@@ -17,9 +17,12 @@ dunst/.config/dunst/dunstrc
 !/env/
 env/.config/env/env
 !/fastfetch/
+!/flameshot/
+/flameshot/.config/flameshot/flameshot.ini
 !/gnome/
 !/gtk*/
 !/hypr/
+!/kde/
 !/kitty/
 !/leaderkey/
 !/mpv/

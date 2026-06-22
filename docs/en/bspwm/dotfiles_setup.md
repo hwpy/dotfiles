@@ -2,13 +2,13 @@
 
 ## Install GNU Stow
 
-```bash
+```
 sudo pacman -S stow
 ```
 
 ## Clone
 
-```bash
+```
 git clone https://github.com/hwpy/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
@@ -38,7 +38,7 @@ Each top-level directory is a **Stow package** that mirrors `$HOME`:
 
 **Do this first** — bspwm, polybar, and x11 depend on it.
 
-```bash
+```
 stow env
 cp ~/.config/env/env.template ~/.config/env/env
 nvim ~/.config/env/env
@@ -46,7 +46,7 @@ nvim ~/.config/env/env
 
 Required variables:
 
-```bash
+```
 export HIDPI_FACTOR=100      # 100 = 1080p, 175 = Retina 13"
 export THEME_MODE=dark       # dark | light
 export GTK_THEME="Breeze-Dark"
@@ -64,7 +64,7 @@ export POLYBAR_HWMON_PATH="/sys/class/hwmon/hwmon1/temp1_input"
 
 ## Deploy
 
-```bash
+```
 stow bspwm polybar sxhkd picom dunst rofi
 stow x11 colors gtk-3.0 gtk-4.0
 stow nvim zsh_linux tmux bin
@@ -76,7 +76,7 @@ Removing: `stow -D <package>`.
 
 ## GDM Session
 
-```bash
+```
 sudo tee /usr/share/xsessions/bspwm.desktop <<'EOF'
 [Desktop Entry]
 Name=bspwm

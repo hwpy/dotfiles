@@ -4,7 +4,7 @@ Arch Linux packages required before deploying dotfiles.
 
 ## Core
 
-```bash
+```
 # display server + window manager
 sudo pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xinput xorg-xrdb xorg-xsetroot
 sudo pacman -S bspwm sxhkd
@@ -27,14 +27,14 @@ sudo pacman -S feh flameshot brightnessctl xclip udiskie
 
 ## Audio
 
-```bash
+```
 sudo pacman -S pipewire pipewire-pulse pipewire-alsa wireplumber
 systemctl --user enable --now pipewire-pulse wireplumber
 ```
 
 ## Session
 
-```bash
+```
 # lock screen
 sudo pacman -S slock xss-lock
 
@@ -49,7 +49,7 @@ EOF
 
 ## Laptop (optional)
 
-```bash
+```
 # touchpad gestures
 sudo pacman -S touchegg
 sudo systemctl enable --now touchegg
@@ -65,14 +65,14 @@ sudo mkinitcpio -P
 
 ## Network
 
-```bash
+```
 sudo pacman -S networkmanager
 sudo systemctl enable --now NetworkManager
 ```
 
 ## Extras
 
-```bash
+```
 sudo pacman -S firefox chromium thunderbird
 sudo pacman -S neovim tmux fastfetch btop yazi fzf eza
 sudo pacman -S mpv yt-dlp
