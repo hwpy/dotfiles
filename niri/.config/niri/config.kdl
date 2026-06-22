@@ -321,6 +321,8 @@ animations {
 
 workspace "1"
 workspace "2"
+workspace "3"
+workspace "4"
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -342,8 +344,49 @@ window-rule {
     open-maximized true
 }
 window-rule {
+    match title="DBeaver"
+    open-on-workspace "1"
+    open-maximized true
+}
+window-rule {
+    match title="VSCodium"
+    open-on-workspace "1"
+    open-maximized true
+}
+window-rule {
     match title="Firefox"
     open-on-workspace "2"
+    open-maximized true
+}
+window-rule {
+    match title="Chromium"
+    open-on-workspace "2"
+    open-maximized true
+}
+window-rule {
+    match title="SDMS"
+    open-on-workspace "2"
+    open-maximized true
+}
+window-rule {
+    match title="Obsidian"
+    open-on-workspace "2"
+}
+window-rule {
+    match title="Telegram"
+    open-on-workspace "3"
+}
+window-rule {
+    match title="Mattermost"
+    open-on-workspace "3"
+}
+window-rule {
+    match title="Толк"
+    open-on-workspace "4"
+}
+window-rule {
+    match title="Remmina"
+    open-on-workspace "4"
     open-maximized true
 }
 // Open the Firefox picture-in-picture player as floating by default.
