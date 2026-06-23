@@ -8,7 +8,7 @@ import = [
 [window]
 dimensions = { columns = 135, lines = 40 }
 decorations_theme_variant = "Dark"
-startup_mode = "Maximized"
+# startup_mode = "Maximized"
 dynamic_title = false
 option_as_alt = "Both"
 
