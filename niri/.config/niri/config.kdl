@@ -12,6 +12,8 @@ prefer-no-csd
 environment {
     LANG "ru_RU.UTF-8"
     QS_ICON_THEME "Papirus-Dark"
+    QT_QPA_PLATFORMTHEME "gtk3"
+    QT_STYLE_OVERRIDE "Breeze"
 }
 
 input {
