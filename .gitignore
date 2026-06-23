@@ -51,7 +51,7 @@ ssh/.ssh/*
 !/touchegg/.config/touchegg/touchegg.conf
 !/user/
 !/waybar/
-!/wlppr/
+!/wallpapers/
 !/wofi/
 !/x11/
 !/yazi/
