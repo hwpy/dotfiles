@@ -19,7 +19,7 @@ env/.config/env/env
 !/fastfetch/
 !/gnome/
 !/gtk*/
-**/gtk*/bookmarks*
+**/gtk*/bookmarks
 !/hypr/
 !/kitty/
 !/leaderkey/
