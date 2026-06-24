@@ -392,6 +392,11 @@ window-rule {
     open-on-workspace "4"
     open-maximized true
 }
+window-rule {
+    match title="VirtualBox"
+    open-on-workspace "4"
+    open-maximized true
+}
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
