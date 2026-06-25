@@ -26,6 +26,9 @@ env/.config/env/env
 !/mpv/
 !/networkmanager-dmenu/
 !/niri/
+!noctalia/
+noctalia/.config/noctalia/*
+!noctalia/.config/noctalia/settings.json
 /niri/.config/niri/animations.kdl
 !/nvim/
 nvim/.config/nvim/lazy-lock.json
