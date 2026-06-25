@@ -7,6 +7,11 @@ return {
     { '<leader><leader>', '<cmd>Telescope cmdline<cr>', desc = 'Cmdline' },
     { '<leader>fe', function()
         require('telescope.builtin').live_grep({
+          additional_args = { '--hidden' }
+        })
+      end, desc = 'telescope live grep (hidden)' },
+    { '<leader>fg', function()
+        require('telescope.builtin').live_grep({
           additional_args = { '--hidden', '--no-ignore' }
         })
       end, desc = 'telescope live grep (hidden + no-ignore)' },
