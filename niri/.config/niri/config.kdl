@@ -370,7 +370,7 @@ window-rule {
 }
 window-rule {
     match title="Firefox"
-    open-on-workspace "3"
+    open-on-workspace "2"
     open-maximized true
 }
 window-rule {
