@@ -59,6 +59,7 @@ ssh/.ssh/*
 !/wofi/
 !/x11/
 !/yazi/
+/yazi/.config/yazi/plugins/
 !/zsh_linux/
 !/zsh_mac/
 !AGENTS.md
