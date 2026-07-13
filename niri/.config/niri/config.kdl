@@ -366,7 +366,7 @@ window-rule {
 }
 window-rule {
     match title="Толк"
-    open-on-workspace "2"
+    open-on-workspace "3"
 }
 window-rule {
     match title="Firefox"
