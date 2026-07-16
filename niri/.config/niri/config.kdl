@@ -457,7 +457,8 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
+    Mod+B hotkey-overlay-title="Open a Web Browser: firefox" { spawn "firefox"; }
+    Mod+E hotkey-overlay-title="Open a File Browser: yazi" { spawn-sh "alacritty -e yazi"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
