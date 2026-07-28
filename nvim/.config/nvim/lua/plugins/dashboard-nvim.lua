@@ -35,6 +35,13 @@ return {
             action = 'Telescope oldfiles',
           },
           {
+            icon = '󰈔  ',
+            desc = 'New file',
+            key = 'n',
+            key_format = ' %s',
+            action = 'ene',
+          },
+          {
             icon = '  ',
             desc = 'Dotfiles',
             key = 'd',
