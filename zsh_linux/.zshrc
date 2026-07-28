@@ -24,7 +24,17 @@ alias n="nvim"
 alias ht="htop"
 alias bt="btop"
 alias ra="ranger"
-alias t="tmux list-sessions >/dev/null 2>&1 && tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf --no-preview --height 40% --reverse --prompt='Выберите сессию tmux: ') || echo 'Нет активных сессий tmux'"
+t() {
+  if tmux list-sessions >/dev/null 2>&1; then
+    local session
+    session=$(tmux list-sessions -F '#S' | fzf --no-preview --height 40% --reverse --prompt='Выберите сессию tmux: ')
+    if [[ -n "$session" ]]; then
+      tmux attach-session -t "$session"
+    fi
+  else
+    tmux
+  fi
+}
 
 export LUA_LS="/sbin/lua-language-server"
 
