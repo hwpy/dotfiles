@@ -213,6 +213,7 @@ volume = true
 volume_output = true
 volume_input = false
 brightness = true
+lock_keys = false
 
 # Notifications
 [notification]
