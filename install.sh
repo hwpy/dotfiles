@@ -89,6 +89,7 @@ fi
 # Конфиги
 if yesno "x11 (сессия, Xft.dpi, курсор)?"; then stow x11; fi
 if yesno "GTK (тема приложений)?"; then stow gtk-2.0 gtk-3.0 gtk-4.0; fi
+if yesno "mime (приложения по умолчанию для xdg-open)?"; then stow mime; fi
 if yesno "colors (цветовые схемы)?"; then stow colors; fi
 if yesno "bspwm + sxhkd?"; then stow bspwm sxhkd; fi
 if yesno "polybar, picom, rofi, dunst?"; then stow polybar picom rofi dunst; fi
