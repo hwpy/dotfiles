@@ -16,8 +16,8 @@ fill_mode = "crop"
 # Backdrop
 [backdrop]
 enabled = true
-blur_intensity = 0.5
-tint_intensity = 0.3
+blur_intensity = 0.0
+tint_intensity = 0.8
 
 # Shell
 [shell]

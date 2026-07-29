@@ -347,6 +347,11 @@ overview {
   }
 }
 
+// Notebook lock on lid close
+switch-events {
+    lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
+}
+
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
