@@ -28,7 +28,8 @@ env/.config/env/env
 !/niri/
 !noctalia/
 noctalia/.config/noctalia/*
-!noctalia/.config/noctalia/settings-template.json
+!noctalia/.config/noctalia/settings-template-v4.json
+!noctalia/.config/noctalia/config-template-v5.toml
 /niri/.config/niri/animations.kdl
 !/nvim/
 nvim/.config/nvim/lazy-lock.json

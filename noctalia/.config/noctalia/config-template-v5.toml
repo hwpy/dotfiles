@@ -1,0 +1,261 @@
+# Theme
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+[theme.templates]
+enable_builtin_templates = true
+builtin_ids = ["niri"]
+
+# Wallpaper
+[wallpaper.default]
+path = "/home/user/Pictures/Wallpapers/other/leaves.png"
+fill_mode = "crop"
+
+# Backdrop
+[backdrop]
+enabled = true
+blur_intensity = 0.5
+tint_intensity = 0.3
+
+# Shell
+[shell]
+font_family = "JetBrainsMono Nerd Font"
+lang = "ru"
+telemetry_enabled = false
+avatar_path = "/home/user/Pictures/Wallpapers/other/skull.png"
+clipboard_enabled = false
+clipboard_keep_from_closed_apps = true
+corner_radius_scale = 1.0
+button_borders = false
+niri_overview_type_to_launch_enabled = false
+password_style = "random"
+polkit_agent = true
+
+[shell.animation]
+enabled = true
+speed = 1.0
+
+[shell.shadow]
+alpha = 0.55
+direction = "down_right"
+
+[shell.panel]
+shadow = false
+borders = false
+transparency_mode = "solid"
+launcher_placement = "floating"
+launcher_position = "center"
+control_center_placement = "attached"
+session_placement = "floating"
+clipboard_placement = "attached"
+clipboard_position = "center"
+
+[shell.launcher]
+sort_by_usage = true
+show_icons = true
+compact = false
+
+[shell.screenshot]
+save_to_file = true
+directory = "~/Pictures/Screenshots"
+copy_to_clipboard = true
+
+[shell.privacy]
+mic_filter_regex = ""
+cam_filter_regex = ""
+
+# Lock screen
+[lockscreen]
+enabled = true
+fingerprint = true
+blur_intensity = 0.0
+tint_intensity = 0.5
+wallpaper = ""
+
+# Accessibility
+[accessibility]
+ui_scale = 0.9
+
+# Keybinds
+[keybinds]
+validate = ["Return", "KP_Enter"]
+cancel = ["Escape"]
+left = ["Left"]
+right = ["Right"]
+up = ["Up"]
+down = ["Down"]
+
+# Bar
+[bar.default]
+position = "top"
+background_opacity = 0.93
+radius = 12
+margin_ends = 4
+margin_edge = 0
+padding = 12
+widget_spacing = 6
+capsule = false
+concave_edge_corners = true
+shadow = false
+
+start = ["launcher", "workspaces", "active_window", "media"]
+center = ["clock"]
+end = ["keyboard_layout", "tray", "privacy", "sysmon", "notifications", "battery", "volume", "brightness", "control-center"]
+
+# Bar widgets
+
+[widget.launcher]
+type = "launcher"
+glyph = "rocket"
+
+[widget.workspaces]
+type = "workspaces"
+style = "regular"
+display = "id"
+max_label_chars = 2
+pill_scale = 1.0
+labels_only_when_occupied = true
+
+[widget.active_window]
+type = "active_window"
+max_length = 145
+title_scroll = "on_hover"
+display = "icon_and_text"
+
+[widget.media]
+type = "media"
+artist_first = true
+hide_when_no_media = true
+max_length = 145
+title_scroll = "on_hover"
+
+[widget.clock]
+type = "clock"
+format = "{:%H:%M %a, %b %d}"
+tooltip_format = "{:%H:%M %a, %b %d}"
+
+[widget.keyboard_layout]
+type = "keyboard_layout"
+show_icon = false
+show_label = true
+display = "short"
+
+[widget.tray]
+type = "tray"
+drawer = true
+
+[widget.privacy]
+type = "privacy"
+hide_inactive = true
+active_color = "primary"
+icon_spacing = 4
+
+[widget.sysmon]
+type = "sysmon"
+stat = "cpu_usage"
+display = "text"
+show_label = true
+
+[widget.notifications]
+type = "notifications"
+hide_when_no_unread = false
+
+[widget.battery]
+type = "battery"
+display_mode = "graphic"
+show_label = false
+
+[widget.volume]
+type = "volume"
+device = "output"
+show_label = false
+
+[widget.brightness]
+type = "brightness"
+show_label = false
+
+[widget.control-center]
+type = "control-center"
+glyph = "noctalia"
+
+# Dock
+[dock]
+enabled = false
+position = "left"
+active_monitor_only = true
+cross_axis_padding = 2
+icon_size = 24
+magnification = false
+main_axis_padding = 2
+shadow = false
+show_dots = true
+
+# Desktop Widgets
+[desktop_widgets]
+enabled = false
+
+# OSD
+[osd]
+enabled = true
+position = "top_right"
+background_opacity = 1.0
+border = true
+offset_x = 20
+offset_y = 8
+
+[osd.kinds]
+volume = true
+volume_output = true
+volume_input = false
+brightness = true
+
+# Notifications
+[notification]
+enable_daemon = true
+position = "top_right"
+
+# Audio
+[audio]
+enable_overdrive = false
+
+# Brightness
+[brightness]
+enable_ddcutil = true
+
+# Idle
+[idle]
+
+[idle.behavior.idle]
+action = "lock"
+enabled = true
+timeout = 200.0
+
+[idle.behavior.screen_off]
+action = "screen_off"
+enabled = true
+timeout = 180.0
+
+# Night Light
+[nightlight]
+enabled = true
+force = false
+temperature_day = 6500
+temperature_night = 5000
+
+# System Monitor
+[system.monitor]
+enabled = true
+cpu_usage_activity_threshold = 50.0
+cpu_usage_critical_threshold = 90.0
+cpu_temp_activity_threshold = 60.0
+cpu_temp_critical_threshold = 85.0
+ram_pct_activity_threshold = 60.0
+ram_pct_critical_threshold = 90.0
+disk_used_pct_activity_threshold = 80.0
+disk_used_pct_critical_threshold = 95.0
+
+# Location
+[location]
+auto_locate = false
