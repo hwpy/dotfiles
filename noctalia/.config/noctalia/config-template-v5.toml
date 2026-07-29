@@ -214,6 +214,7 @@ volume_output = true
 volume_input = false
 brightness = true
 lock_keys = false
+keyboard_layout = false
 
 # Notifications
 [notification]
