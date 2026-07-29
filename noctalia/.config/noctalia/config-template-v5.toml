@@ -262,4 +262,7 @@ disk_used_pct_critical_threshold = 95.0
 [location]
 auto_locate = false
 
+[hooks]
+battery_charging = "noctalia msg power-set performance"
+battery_discharging = "noctalia msg power-set power-saver"
 
