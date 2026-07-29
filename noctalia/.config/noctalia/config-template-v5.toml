@@ -112,7 +112,9 @@ end = ["keyboard_layout", "tray", "privacy", "sysmon", "notifications", "battery
 
 [widget.launcher]
 type = "launcher"
-glyph = "rocket"
+# glyph = "rocket"
+custom_image = "/usr/share/pixmaps/archlinux-logo.png"
+custom_image_colorize = true
 
 [widget.workspaces]
 type = "workspaces"
