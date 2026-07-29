@@ -1,4 +1,3 @@
-# Theme
 [theme]
 mode = "dark"
 source = "wallpaper"
@@ -8,18 +7,17 @@ wallpaper_scheme = "m3-tonal-spot"
 enable_builtin_templates = true
 builtin_ids = ["alacritty", "niri"]
 
-# Wallpaper
 [wallpaper.default]
 path = "/home/user/Pictures/Wallpapers/other/leaves.png"
 fill_mode = "crop"
 
-# Backdrop
 [backdrop]
 enabled = true
 blur_intensity = 0.0
 tint_intensity = 0.8
 
 # Shell
+
 [shell]
 font_family = "JetBrainsMono Nerd Font"
 lang = "ru"
@@ -66,7 +64,6 @@ copy_to_clipboard = true
 mic_filter_regex = ""
 cam_filter_regex = ""
 
-# Lock screen
 [lockscreen]
 enabled = true
 fingerprint = true
@@ -77,11 +74,9 @@ wallpaper = ""
 [lockscreen_widgets]
 enabled = true
 
-# Accessibility
 [accessibility]
-ui_scale = 0.9
+ui_scale = 0.95
 
-# Keybinds
 [keybinds]
 validate = ["Return", "KP_Enter"]
 cancel = ["Escape"]
@@ -90,7 +85,6 @@ right = ["Right"]
 up = ["Up"]
 down = ["Down"]
 
-# Bar
 [bar.default]
 position = "top"
 background_opacity = 0.93
@@ -183,7 +177,6 @@ show_label = false
 type = "control-center"
 glyph = "noctalia"
 
-# Dock
 [dock]
 enabled = false
 position = "left"
@@ -195,11 +188,9 @@ main_axis_padding = 2
 shadow = false
 show_dots = true
 
-# Desktop Widgets
 [desktop_widgets]
 enabled = false
 
-# OSD
 [osd]
 enabled = true
 position = "top_right"
@@ -216,20 +207,16 @@ brightness = true
 lock_keys = false
 keyboard_layout = false
 
-# Notifications
 [notification]
 enable_daemon = true
 position = "top_right"
 
-# Audio
 [audio]
 enable_overdrive = false
 
-# Brightness
 [brightness]
 enable_ddcutil = true
 
-# Idle
 [idle]
 behavior_order = ["lock", "screen-off", "suspend"]
 
@@ -248,14 +235,12 @@ action = "lock_and_suspend"
 enabled = true
 timeout = 300.0
 
-# Night Light
 [nightlight]
 enabled = true
 force = false
 temperature_day = 6500
 temperature_night = 5000
 
-# System Monitor
 [system.monitor]
 enabled = true
 cpu_usage_activity_threshold = 50.0
@@ -267,7 +252,6 @@ ram_pct_critical_threshold = 90.0
 disk_used_pct_activity_threshold = 80.0
 disk_used_pct_critical_threshold = 95.0
 
-# Location
 [location]
 auto_locate = false
 
