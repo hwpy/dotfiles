@@ -336,6 +336,17 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}
+
+overview {
+  workspace-shadow {
+    off
+  }
+}
+
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.

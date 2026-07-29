@@ -6,7 +6,7 @@ wallpaper_scheme = "m3-tonal-spot"
 
 [theme.templates]
 enable_builtin_templates = true
-builtin_ids = ["niri"]
+builtin_ids = ["alacritty", "niri"]
 
 # Wallpaper
 [wallpaper.default]
@@ -95,7 +95,7 @@ radius = 12
 margin_ends = 4
 margin_edge = 0
 padding = 12
-widget_spacing = 6
+widget_spacing = 12
 capsule = false
 concave_edge_corners = true
 shadow = false
@@ -259,3 +259,5 @@ disk_used_pct_critical_threshold = 95.0
 # Location
 [location]
 auto_locate = false
+
+
