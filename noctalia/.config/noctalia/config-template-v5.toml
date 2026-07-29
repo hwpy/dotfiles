@@ -74,6 +74,9 @@ blur_intensity = 0.0
 tint_intensity = 0.5
 wallpaper = ""
 
+[lockscreen_widgets]
+enabled = true
+
 # Accessibility
 [accessibility]
 ui_scale = 0.9
