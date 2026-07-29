@@ -14,6 +14,9 @@ environment {
     QS_ICON_THEME "Papirus-Dark"
     QT_QPA_PLATFORMTHEME "gtk3"
     QT_STYLE_OVERRIDE "Breeze"
+    EDITOR "nvim"
+    VISUAL "nvim"
+    TERMINAL "alacritty"
 }
 
 input {
