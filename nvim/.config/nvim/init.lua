@@ -45,6 +45,12 @@ end)
 -- путь к LuaSnip сниппетам
 vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/snippets"
 
+-- если есть проблема с resize
+vim.api.nvim_create_autocmd("VimEnter", {
+  once = true,
+  command = "redraw!",
+})
+
 -- загрузка сниппетов
 require("luasnip.loaders.from_lua").lazy_load({
   paths = vim.g.lua_snippets_path,
