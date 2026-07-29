@@ -23,6 +23,7 @@ env/.config/env/env
 !/hypr/
 !/kitty/
 !/leaderkey/
+!/mime/
 !/mpv/
 !/networkmanager-dmenu/
 !/niri/
