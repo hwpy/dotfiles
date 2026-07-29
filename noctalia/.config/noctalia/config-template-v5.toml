@@ -168,7 +168,7 @@ hide_when_no_unread = false
 [widget.battery]
 type = "battery"
 display_mode = "graphic"
-show_label = false
+show_label = true
 
 [widget.volume]
 type = "volume"
