@@ -77,6 +77,13 @@ enabled = true
 [accessibility]
 ui_scale = 0.95
 
+# Control center
+[control_center]
+width = 900
+
+[control_center.calendar]
+show_week_numbers = true
+
 [keybinds]
 validate = ["Return", "KP_Enter"]
 cancel = ["Escape"]
