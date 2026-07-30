@@ -118,11 +118,12 @@ custom_image_colorize = true
 
 [widget.workspaces]
 type = "workspaces"
-style = "regular"
+style = "minimal"
 display = "id"
 max_label_chars = 2
 pill_scale = 1.0
 labels_only_when_occupied = true
+hide_when_empty = true
 
 [widget.active_window]
 type = "active_window"
