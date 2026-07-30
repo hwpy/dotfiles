@@ -3,61 +3,61 @@ text/calendar=org.gnome.Evolution.desktop;
 x-scheme-handler/mailto=org.gnome.Evolution.desktop;
 
 # Web
-text/html=firefox.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
-x-scheme-handler/chrome=firefox.desktop
+text/html=firefox.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/chrome=firefox.desktop;
 
-#Text / Code
-text/plain=nvim.desktop
-text/markdown=okularApplication_md.desktop
-text/csv=libreoffice-calc.desktop
+# Text / Code
+text/plain=nvim.desktop;
+text/markdown=okularApplication_md.desktop;
+text/csv=libreoffice-calc.desktop;
 application/json=codium.desktop;
 application/x-yaml=codium.desktop;
 text/x-cmake=codium.desktop;
 application/x-docbook+xml=codium.desktop;
 
-#Images
-image/png=org.kde.gwenview.desktop
-image/jpeg=org.kde.gwenview.desktop
-image/webp=org.kde.gwenview.desktop
-image/svg+xml=org.kde.gwenview.desktop
-image/gif=org.kde.gwenview.desktop
-image/avif=org.kde.gwenview.desktop
+# Images
+image/png=org.kde.gwenview.desktop;
+image/jpeg=org.kde.gwenview.desktop;
+image/webp=org.kde.gwenview.desktop;
+image/svg+xml=org.kde.gwenview.desktop;
+image/gif=org.kde.gwenview.desktop;
+image/avif=org.kde.gwenview.desktop;
 image/x-icns=okularApplication_kimgio.desktop;
 
-#Audio (vlc handles all other formats via its .desktop)
+# Audio
 audio/mpeg=vlc.desktop;
 audio/ogg=vlc.desktop;
 audio/flac=vlc.desktop;
 audio/aac=vlc.desktop;
 audio/x-wav=vlc.desktop;
 
-#Video
+# Video
 video/mp4=vlc.desktop;
 video/webm=vlc.desktop;
 video/x-matroska=vlc.desktop;
 
-#Archives
-application/zip=org.kde.ark.desktop
-application/x-tar=org.kde.ark.desktop
-application/x-7z-compressed=org.kde.ark.desktop
-application/vnd.rar=org.kde.ark.desktop
-application/gzip=org.kde.ark.desktop
-application/x-bzip=org.kde.ark.desktop
-application/x-xz=org.kde.ark.desktop
+# Archives
+application/zip=org.kde.ark.desktop;
+application/x-tar=org.kde.ark.desktop;
+application/x-7z-compressed=org.kde.ark.desktop;
+application/vnd.rar=org.kde.ark.desktop;
+application/gzip=org.kde.ark.desktop;
+application/x-bzip=org.kde.ark.desktop;
+application/x-xz=org.kde.ark.desktop;
 
-#Documents
-application/pdf=okularApplication_pdf.desktop
+# Documents
+application/pdf=okularApplication_pdf.desktop;
 application/vnd.ms-visio.drawing.main+xml=libreoffice-xsltfilter.desktop;
-application/msword=libreoffice-writer.desktop
-application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
-application/vnd.ms-excel=libreoffice-calc.desktop
-application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop
-application/x-rpm=libreoffice-calc.desktop
+application/msword=libreoffice-writer.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+application/vnd.ms-excel=libreoffice-calc.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;
+application/x-rpm=libreoffice-calc.desktop;
 
-#Other
-inode/directory=org.kde.dolphin.desktop
-application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program;text/win-bat;=PortProton.desktop
-x-scheme-handler/bitwarden=bitwarden.desktop
-x-scheme-handler/ktalk=ktalk.desktop
+# Other
+inode/directory=org.kde.dolphin.desktop;
+application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program;text/win-bat;=PortProton.desktop;
+x-scheme-handler/bitwarden=bitwarden.desktop;
+x-scheme-handler/ktalk=ktalk.desktop;
