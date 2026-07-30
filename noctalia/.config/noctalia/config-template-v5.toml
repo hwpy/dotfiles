@@ -187,7 +187,8 @@ show_label = false
 
 [widget.control-center]
 type = "control-center"
-glyph = "noctalia"
+# glyph = "noctalia"
+glyph = "settings-2"
 
 [dock]
 enabled = false
