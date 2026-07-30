@@ -5,7 +5,7 @@ wallpaper_scheme = "m3-tonal-spot"
 
 [theme.templates]
 enable_builtin_templates = true
-builtin_ids = [ "alacritty", "btop", "niri" ]
+builtin_ids = [ "alacritty", "btop", "cava", "niri" ]
 
 [wallpaper.default]
 path = "/home/user/Pictures/Wallpapers/other/leaves.png"
