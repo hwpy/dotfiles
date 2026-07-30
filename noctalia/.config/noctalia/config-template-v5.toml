@@ -5,7 +5,7 @@ wallpaper_scheme = "m3-tonal-spot"
 
 [theme.templates]
 enable_builtin_templates = true
-builtin_ids = ["alacritty", "niri"]
+builtin_ids = [ "alacritty", "btop", "niri" ]
 
 [wallpaper.default]
 path = "/home/user/Pictures/Wallpapers/other/leaves.png"
@@ -231,6 +231,7 @@ enable_ddcutil = true
 
 [idle]
 behavior_order = ["lock", "screen-off", "suspend"]
+pre_action_fade_seconds = 5
 
 [idle.behavior.lock]
 action = "lock"
