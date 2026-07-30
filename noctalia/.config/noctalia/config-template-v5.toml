@@ -95,14 +95,16 @@ down = ["Down"]
 [bar.default]
 position = "top"
 background_opacity = 0.93
-radius = 12
-margin_ends = 4
-margin_edge = 0
+radius = 6
+margin_ends = 3
+margin_edge = 3
 padding = 12
 widget_spacing = 12
 capsule = false
-concave_edge_corners = true
+concave_edge_corners = false
 shadow = false
+capsule_radius = 6
+capsule_thickness = 0.75
 
 start = ["launcher", "workspaces", "active_window", "media"]
 center = ["clock"]
