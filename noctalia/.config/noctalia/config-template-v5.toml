@@ -246,7 +246,7 @@ timeout = 200.0
 
 [idle.behavior.suspend]
 action = "lock_and_suspend"
-enabled = true
+enabled = false
 timeout = 300.0
 
 [nightlight]
