@@ -7,10 +7,6 @@ wallpaper_scheme = "m3-tonal-spot"
 enable_builtin_templates = true
 builtin_ids = [ "alacritty", "btop", "cava", "niri" ]
 
-[wallpaper.default]
-path = "/home/user/Pictures/Wallpapers/other/leaves.png"
-fill_mode = "crop"
-
 [backdrop]
 enabled = true
 blur_intensity = 0.0
