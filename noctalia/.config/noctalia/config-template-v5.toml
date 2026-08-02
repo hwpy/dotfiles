@@ -8,10 +8,6 @@ enable_builtin_templates = true
 builtin_ids = [ "alacritty", "btop", "cava", "niri" ]
 community_ids = [ "yazi" ]
 
-[wallpaper.default]
-path = "/home/user/Pictures/Wallpapers/other/leaves.png"
-fill_mode = "crop"
-
 [backdrop]
 enabled = true
 blur_intensity = 0.0
@@ -130,7 +126,7 @@ hide_when_empty = true
 
 [widget.active_window]
 type = "active_window"
-max_length = 145
+max_length = 200
 title_scroll = "on_hover"
 display = "icon_and_text"
 
