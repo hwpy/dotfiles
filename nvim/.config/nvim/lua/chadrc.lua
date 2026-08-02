@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-    theme = "tokyonight",
+    theme = "catppuccin",
   transparency = true,
   -- настройки конкретно для statusline theme = "vscode_colored"
   hl_override = {
