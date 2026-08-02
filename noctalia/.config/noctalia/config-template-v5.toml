@@ -27,6 +27,9 @@ button_borders = false
 niri_overview_type_to_launch_enabled = false
 password_style = "random"
 polkit_agent = true
+app_icon_color = "primary"
+app_icon_colorize = true
+
 
 [shell.animation]
 enabled = true
