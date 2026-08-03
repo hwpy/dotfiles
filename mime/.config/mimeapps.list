@@ -10,7 +10,7 @@ x-scheme-handler/chrome=firefox.desktop;
 
 # Text / Code
 text/plain=nvim.desktop;
-text/markdown=okularApplication_md.desktop;
+text/markdown=codium.desktop;
 text/csv=libreoffice-calc.desktop;
 application/json=codium.desktop;
 application/x-yaml=codium.desktop;
