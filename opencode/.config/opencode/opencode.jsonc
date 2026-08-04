@@ -12,6 +12,8 @@
   "model": "deepseek/deepseek-v4-pro",
   "small_model": "deepseek/deepseek-v4-flash",
   "subagent_depth": 2,
+  "lsp": true,
+  "formatter": true,
   "agent": {
     "build": {
       "model": "deepseek/deepseek-v4-pro",
