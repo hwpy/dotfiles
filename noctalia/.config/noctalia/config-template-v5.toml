@@ -9,7 +9,7 @@ builtin_ids = [ "alacritty", "btop", "cava", "niri" ]
 community_ids = [ "yazi" ]
 
 [backdrop]
-enabled = true
+enabled = false
 blur_intensity = 0.0
 tint_intensity = 0.8
 
