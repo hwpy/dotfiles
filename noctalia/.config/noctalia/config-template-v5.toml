@@ -59,6 +59,10 @@ compact = false
 save_to_file = true
 directory = "~/Pictures/Screenshots"
 copy_to_clipboard = true
+freeze_screen = true
+confirm_region = false
+pipe_to_command = true
+pipe_command = "satty -f -"
 
 [shell.privacy]
 mic_filter_regex = ""

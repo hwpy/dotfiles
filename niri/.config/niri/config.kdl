@@ -710,9 +710,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Mod+Shift+S { screenshot; }
-    Mod+Alt+S { screenshot-screen; }
-    Mod+Ctrl+S { screenshot-window; }
+    Mod+Shift+S { spawn "noctalia" "msg" "screenshot-region"; }
+    Mod+Alt+S { spawn "noctalia" "msg" "screenshot-fullscreen"; }
+    Mod+Ctrl+S { spawn "noctalia" "msg" "screenshot-fullscreen" "pick"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
