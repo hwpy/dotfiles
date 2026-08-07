@@ -464,6 +464,7 @@ binds {
 
     // Core Noctalia binds
     Mod+D hotkey-overlay-title="Run an Application: noctalia" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Alt+D { spawn-sh "noctalia msg panel-toggle launcher /win"; }
     XF86LaunchB hotkey-overlay-title="Run an Application: noctalia" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
 
     Mod+S hotkey-overlay-title="Open a Control Center: noctalia" { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
