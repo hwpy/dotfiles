@@ -8,3 +8,8 @@ run = "plugin bunny"
 desc = "Start bunny.yazi fuzzy search"
 on = "'"
 run = "plugin bunny fuzzy"
+
+[[mgr.prepend_keymap]]
+on = [ "M" ]
+run = "shell 'mpv %h' --orphan"
+desc = "Play in mpv (detached)"

@@ -4,3 +4,8 @@ show_symlink = true
 linemode = "size_and_mtime"
 sort_by = "mtime"
 sort_reverse = true
+
+[opener]
+play = [
+    { run = 'mpv %s', orphan = true, desc = "Play with mpv", for = "unix" },
+]
