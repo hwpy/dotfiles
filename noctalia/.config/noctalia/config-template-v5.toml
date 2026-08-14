@@ -125,7 +125,8 @@ custom_image_colorize = true
 [widget.workspaces]
 type = "workspaces"
 style = "minimal"
-display = "id"
+label_source = "id"
+show_labels = true
 max_label_chars = 2
 pill_scale = 1.0
 labels_only_when_occupied = true
@@ -151,7 +152,7 @@ tooltip_format = "{:%H:%M %a, %b %d}"
 
 [widget.keyboard_layout]
 type = "keyboard_layout"
-show_icon = false
+show_glyph = false
 show_label = true
 display = "short"
 
@@ -168,8 +169,8 @@ icon_spacing = 4
 [widget.sysmon]
 type = "sysmon"
 stat = "cpu_usage"
-display = "text"
-show_label = true
+visualization = "none"
+show_value = true
 
 [widget.notifications]
 type = "notifications"
