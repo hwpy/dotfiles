@@ -11,6 +11,7 @@ decorations_theme_variant = "Dark"
 # startup_mode = "Maximized"
 # dynamic_title = false
 option_as_alt = "Both"
+padding = { x = 5, y = 5 }
 
 [selection]
 save_to_clipboard = true
