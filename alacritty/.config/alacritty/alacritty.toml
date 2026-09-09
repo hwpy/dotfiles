@@ -6,7 +6,7 @@ import = [
 ]
 
 [window]
-dimensions = { columns = 150, lines = 45 }
+dimensions = { columns = 170, lines = 45 }
 decorations_theme_variant = "Dark"
 # startup_mode = "Maximized"
 # dynamic_title = false
