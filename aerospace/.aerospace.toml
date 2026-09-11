@@ -222,3 +222,8 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'Mattermost.Desktop'
     run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.rdc.macos'
+    run = ['move-node-to-workspace 4']
+
