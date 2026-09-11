@@ -180,41 +180,45 @@ on-mode-changed = []
 # apps to workspaces
 [[on-window-detected]]
     if.app-id = 'org.alacritty'
-    run = ['layout v_accordion', 'move-node-to-workspace 1']
+    run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
     if.app-id = 'com.1password.1password'
     run = ['layout floating']
 
 [[on-window-detected]]
-    if.app-id = 'org.mozill.firefox'
-    run = ['layout v_accordion', 'move-node-to-workspace 1']
-
-[[on-window-detected]]
-    if.app-id = 'app.zen-browser.zen'
-    run = ['layout v_accordion', 'move-node-to-workspace 1']
-
-[[on-window-detected]]
     if.app-id = 'com.apple.finder'
-    run = ['layout v_accordion', 'move-node-to-workspace 1']
+    run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
     if.app-id = 'com.vscodium'
-    run = ['layout v_accordion', 'move-node-to-workspace 1']
+    run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+    if.app-id = 'org.mozill.firefox'
+    run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.Music'
-    run = ['layout v_accordion', 'move-node-to-workspace 2']
+    run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
     if.app-id = 'ru.yandex.desktop.music'
-    run = ['layout v_accordion', 'move-node-to-workspace 2']
-
-[[on-window-detected]]
-    if.app-id = 'com.1password.1password'
-    run = ['layout v_accordion', 'move-node-to-workspace 3']
+    run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
     if.app-id = 'org.videolan.vlc'
     if.app-name-regex-substring = 'VLC'
-    run = ['layout v_accordion', 'move-node-to-workspace 3']
+    run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.Outlook'
+    run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+    if.app-id = 'kontur.talk'
+    run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+    if.app-id = 'Mattermost.Desktop'
+    run = ['move-node-to-workspace 3']
