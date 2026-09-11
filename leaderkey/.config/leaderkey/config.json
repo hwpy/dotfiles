@@ -11,6 +11,11 @@
       "value" : "/Applications/Firefox.app"
     },
     {
+      "key" : "w",
+      "type" : "command",
+      "value" : "$HOME/.config/leaderkey/open-work.sh"
+    },
+    {
       "key" : "p",
       "type" : "application",
       "value" : "/System/Applications/System Settings.app"

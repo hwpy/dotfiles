@@ -1,0 +1,5 @@
+open -a "Alacritty"
+open -a "Firefox"
+open -a "Mattermost"
+open -a "Толк"
+open -a "Microsoft Outlook"
