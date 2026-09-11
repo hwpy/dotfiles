@@ -1,5 +1,6 @@
 open -b "org.alacritty"
 open -b "org.mozilla.firefox"
+open -b "com.apple.Music"
 open -b "Mattermost.Desktop"
 open -b "kontur.talk"
 open -b "com.microsoft.Outlook"
