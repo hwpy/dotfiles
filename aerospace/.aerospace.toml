@@ -199,6 +199,14 @@ on-mode-changed = []
     run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
+    if.app-id = 'ru.yandex.desktop.yandex-browser'
+    run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'SDMS'
+    run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
     if.app-id = 'com.apple.Music'
     run = ['move-node-to-workspace 2']
 
