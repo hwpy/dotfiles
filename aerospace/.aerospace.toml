@@ -219,10 +219,6 @@ on-mode-changed = []
     run = ['layout floating']
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.finder'
-    run = ['move-node-to-workspace 1']
-
-[[on-window-detected]]
     if.app-id = 'com.vscodium'
     run = ['move-node-to-workspace 1']
 
