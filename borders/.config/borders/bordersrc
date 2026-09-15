@@ -1,9 +1,9 @@
 #!/bin/bash
 options=(
   style=round
-  width=2.0
+  width=7.0
   hidpi=on
-  order=above
+  order=below
   active_color=0xff83D2E4
   inactive_color=0xff0E1416
 )
