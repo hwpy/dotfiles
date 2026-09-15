@@ -11,7 +11,9 @@
       "value" : "/Applications/Firefox.app"
     },
     {
+      "iconPath" : "hammer.fill",
       "key" : "w",
+      "label" : "Workspace",
       "type" : "command",
       "value" : "$HOME/.config/leaderkey/open-work.sh"
     },
