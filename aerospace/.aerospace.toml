@@ -138,12 +138,12 @@ on-mode-changed = []
     alt-ctrl-l = 'focus-monitor right'
     alt-ctrl-j = 'focus-monitor up'
     alt-ctrl-k = 'focus-monitor down'
-    alt-shift-ctrl-h = 'move-node-to-monitor left --focus-follows-window'
-    alt-shift-ctrl-l = 'move-node-to-monitor right --focus-follows-window'
-    alt-shift-ctrl-j = 'move-node-to-monitor up --focus-follows-window'
-    alt-shift-ctrl-k = 'move-node-to-monitor down --focus-follows-window'
+    alt-shift-ctrl-h = 'move-node-to-monitor left'
+    alt-shift-ctrl-l = 'move-node-to-monitor right'
+    alt-shift-ctrl-j = 'move-node-to-monitor up'
+    alt-shift-ctrl-k = 'move-node-to-monitor down'
     alt-ctrl-space = 'focus-monitor --wrap-around next'
-    alt-shift-ctrl-space = 'move-node-to-monitor --wrap-around next --focus-follows-window'
+    alt-shift-ctrl-space = 'move-node-to-monitor --wrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-shift-h = 'move left'
@@ -169,15 +169,15 @@ on-mode-changed = []
     alt-9 = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
-    alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
-    alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
-    alt-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
-    alt-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
-    alt-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
-    alt-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
-    alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
-    alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
+    alt-shift-1 = 'move-node-to-workspace 1'
+    alt-shift-2 = 'move-node-to-workspace 2'
+    alt-shift-3 = 'move-node-to-workspace 3'
+    alt-shift-4 = 'move-node-to-workspace 4'
+    alt-shift-5 = 'move-node-to-workspace 5'
+    alt-shift-6 = 'move-node-to-workspace 6'
+    alt-shift-7 = 'move-node-to-workspace 7'
+    alt-shift-8 = 'move-node-to-workspace 8'
+    alt-shift-9 = 'move-node-to-workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-leftSquareBracket = 'workspace --wrap-around prev'
