@@ -68,12 +68,12 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 12
-    inner.vertical =   12
-    outer.left =       12
-    outer.bottom =     12
-    outer.top =        12
-    outer.right =      12
+    inner.horizontal = 5
+    inner.vertical =   5
+    outer.left =       5
+    outer.bottom =     5
+    outer.top =        5
+    outer.right =      5
 
 # Assign workspaces to monitors. Pattern is a case insensitive regex substring of monitor name.
 # Array of patterns: the first matching pattern is used (fallback chain).
