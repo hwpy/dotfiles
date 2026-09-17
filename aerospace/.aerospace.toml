@@ -142,7 +142,7 @@ on-mode-changed = []
     alt-shift-ctrl-l = 'move-node-to-monitor right'
     alt-shift-ctrl-j = 'move-node-to-monitor up'
     alt-shift-ctrl-k = 'move-node-to-monitor down'
-    alt-ctrl-space = 'focus-monitor --wrap-around next'
+    alt-ctrl-tab = 'focus-monitor --wrap-around next'
     alt-shift-ctrl-space = 'move-node-to-monitor --wrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
