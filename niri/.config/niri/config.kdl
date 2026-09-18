@@ -118,6 +118,11 @@ input {
     position x=1280 y=0
 }
 
+output "DP-2" {
+    mode "2560x1440@59.951"
+    scale 1.1
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Layout
