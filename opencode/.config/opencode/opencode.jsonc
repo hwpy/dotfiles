@@ -2,7 +2,8 @@
   "$schema": "https://opencode.ai/config.json",
   "permission": {
     "external_directory": {
-      "*": "allow",
+      "*": "deny",
+      "~/*": "allow",
       "~/.ssh/id_*": "deny",
       "~/.ssh/*.pem": "deny",
       "~/.ssh/authorized_keys": "deny",
@@ -10,7 +11,13 @@
     }
   },
   "model": "deepseek/deepseek-v4-pro",
-  "small_model": "deepseek/deepseek-v4-flash",
+  "small_model": "deepseek/deepseek-flash",
+  "share": "disabled",
+  "autoupdate": "notify",
+  "compaction": {
+    "auto": true,
+    "tail_turns": 15
+  },
   "subagent_depth": 2,
   "lsp": true,
   "formatter": true,
@@ -20,13 +27,13 @@
       "variant": "max",
       "temperature": 0.1,
       "permission": {
-        "edit": "allow",
-        "bash": "allow"
+        "edit": "ask",
+        "bash": "ask"
       }
     },
     "plan": {
-      "model": "deepseek/deepseek-v4-flash",
-      "variant": "max",
+      "model": "deepseek/deepseek-flash",
+      "variant": "default",
       "temperature": 0.1,
       "permission": {
         "edit": "deny",
@@ -40,13 +47,13 @@
     },
     "explore": {
       "description": "Use for codebase exploration: find files, functions, symbols, read code, answer questions about the repo. Fast, read-only. Do NOT use for writing code.",
-      "model": "deepseek/deepseek-v4-flash",
+      "model": "deepseek/deepseek-flash",
       "temperature": 0.0
     },
     "scout": {
       "description": "Use for external research: dependency source code, library docs, web pages. Read-only.",
       "mode": "subagent",
-      "model": "deepseek/deepseek-v4-flash"
+      "model": "deepseek/deepseek-flash"
     }
   }
 }
