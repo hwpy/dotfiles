@@ -50,6 +50,7 @@ rofi/.config/rofi/config.rasi
 !/ssh/
 ssh/.ssh/*
 !/ssh/.ssh/config
+!/ssh/.ssh/config_template.local
 !/sxhkd/
 !/tmux/
 !/touchegg/

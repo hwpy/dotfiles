@@ -24,12 +24,12 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 30
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'accordion'
+default-root-container-layout = 'tiles'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
 #               tall monitor (anything higher than wide) gets vertical orientation
-default-root-container-orientation = 'vertical'
+default-root-container-orientation = 'auto'
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
@@ -261,5 +261,5 @@ on-mode-changed = []
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.rdc.macos'
-    run = ['move-node-to-workspace 4']
+    run = ['layout v_accordion', 'move-node-to-workspace 4']
 
