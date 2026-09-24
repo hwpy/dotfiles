@@ -36,8 +36,8 @@
       "variant": "default",
       "temperature": 0.1,
       "permission": {
-        "edit": "deny",
-        "bash": "deny"
+        "edit": "ask",
+        "bash": "ask"
       }
     },
     "general": {
