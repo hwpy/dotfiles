@@ -36,7 +36,6 @@
       "variant": "default",
       "temperature": 0.1,
       "permission": {
-        "edit": "ask",
         "bash": "ask"
       }
     },
