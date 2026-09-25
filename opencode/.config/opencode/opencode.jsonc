@@ -9,6 +9,7 @@
   "permissions": [
     { "action": "external_directory", "resource": "*", "effect": "deny" },
     { "action": "external_directory", "resource": "~/*", "effect": "allow" },
+    { "action": "external_directory", "resource": "~/.ssh/*", "effect": "deny" },
     { "action": "read", "resource": "~/.ssh/id_*", "effect": "deny" },
     { "action": "edit", "resource": "~/.ssh/id_*", "effect": "deny" },
     { "action": "read", "resource": "~/.ssh/*.pem", "effect": "deny" },
@@ -16,7 +17,26 @@
     { "action": "read", "resource": "~/.ssh/authorized_keys", "effect": "deny" },
     { "action": "edit", "resource": "~/.ssh/authorized_keys", "effect": "deny" },
     { "action": "read", "resource": "~/.ssh/known_hosts", "effect": "deny" },
-    { "action": "edit", "resource": "~/.ssh/known_hosts", "effect": "deny" }
+    { "action": "edit", "resource": "~/.ssh/known_hosts", "effect": "deny" },
+    { "action": "shell", "resource": "git commit *", "effect": "ask" },
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
+    { "action": "shell", "resource": "git pull *", "effect": "ask" },
+    { "action": "shell", "resource": "git merge *", "effect": "ask" },
+    { "action": "shell", "resource": "git rebase *", "effect": "ask" },
+    { "action": "shell", "resource": "git cherry-pick *", "effect": "ask" },
+    { "action": "shell", "resource": "git revert *", "effect": "ask" },
+    { "action": "shell", "resource": "git reset *", "effect": "ask" },
+    { "action": "shell", "resource": "git tag *", "effect": "ask" },
+    { "action": "shell", "resource": "git branch *", "effect": "ask" },
+    { "action": "shell", "resource": "git checkout *", "effect": "ask" },
+    { "action": "shell", "resource": "git switch *", "effect": "ask" },
+    { "action": "shell", "resource": "git restore *", "effect": "ask" },
+    { "action": "shell", "resource": "git stash *", "effect": "ask" },
+    { "action": "shell", "resource": "git clean *", "effect": "ask" },
+    { "action": "shell", "resource": "git remote *", "effect": "ask" },
+    { "action": "shell", "resource": "git worktree *", "effect": "ask" },
+    { "action": "shell", "resource": "git submodule *", "effect": "ask" },
+    { "action": "shell", "resource": "git rm *", "effect": "ask" }
   ],
   "providers": {
     "deepseek": {
