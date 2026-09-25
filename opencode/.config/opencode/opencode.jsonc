@@ -27,8 +27,8 @@
       "variant": "max",
       "temperature": 0.1,
       "permission": {
-        "edit": "ask",
-        "bash": "ask"
+        "edit": "allow",
+        "bash": "allow"
       }
     },
     "plan": {
