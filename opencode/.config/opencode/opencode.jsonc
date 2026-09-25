@@ -1,53 +1,54 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "permission": {
-    "external_directory": {
-      "*": "deny",
-      "~/*": "allow",
-      "~/.ssh/id_*": "deny",
-      "~/.ssh/*.pem": "deny",
-      "~/.ssh/authorized_keys": "deny",
-      "~/.ssh/known_hosts": "deny"
+  "model": "deepseek/deepseek-v4-pro",
+  "share": "disabled",
+  "update": "notify",
+  "formatter": false,
+  "experimental": { "subagent_depth": 2 },
+  "compaction": { "auto": true, "keep": { "tokens": 15000 } },
+  "permissions": [
+    { "action": "external_directory", "resource": "*", "effect": "deny" },
+    { "action": "external_directory", "resource": "~/*", "effect": "allow" },
+    { "action": "external_directory", "resource": "~/.ssh/id_*", "effect": "deny" },
+    { "action": "external_directory", "resource": "~/.ssh/*.pem", "effect": "deny" },
+    { "action": "external_directory", "resource": "~/.ssh/authorized_keys", "effect": "deny" },
+    { "action": "external_directory", "resource": "~/.ssh/known_hosts", "effect": "deny" }
+  ],
+  "providers": {
+    "deepseek": {
+      "models": {
+        "deepseek-v4-pro": { "body": { "temperature": 0.1 } },
+        "deepseek-flash": {
+          "body": { "temperature": 0.0 },
+          "variants": [
+            { "id": "default", "body": { "temperature": 0.1 } }
+          ]
+        }
+      }
     }
   },
-  "model": "deepseek/deepseek-v4-pro",
-  "small_model": "deepseek/deepseek-flash",
-  "share": "disabled",
-  "autoupdate": "notify",
-  "compaction": {
-    "auto": true,
-    "tail_turns": 15
-  },
-  "subagent_depth": 2,
-  "lsp": true,
-  "formatter": false,
-  "agent": {
+  "agents": {
+    "title": { "model": "deepseek/deepseek-flash" },
     "build": {
-      "model": "deepseek/deepseek-v4-pro",
-      "variant": "max",
-      "temperature": 0.1,
-      "permission": {
-        "edit": "allow",
-        "bash": "allow"
-      }
+      "model": "deepseek/deepseek-v4-pro#max",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "allow" },
+        { "action": "shell", "resource": "*", "effect": "allow" }
+      ]
     },
     "plan": {
-      "model": "deepseek/deepseek-flash",
-      "variant": "default",
-      "temperature": 0.1,
-      "permission": {
-        "bash": "ask"
-      }
+      "model": "deepseek/deepseek-flash#default",
+      "permissions": [
+        { "action": "shell", "resource": "*", "effect": "ask" }
+      ]
     },
     "general": {
       "description": "Use for complex multi-step sub-tasks needing deep reasoning: hard bugs, architecture, large refactors. Invoke when a task is too big to handle in the main flow. Can edit files.",
-      "model": "deepseek/deepseek-v4-pro",
-      "variant": "max"
+      "model": "deepseek/deepseek-v4-pro#max"
     },
     "explore": {
       "description": "Use for codebase exploration: find files, functions, symbols, read code, answer questions about the repo. Fast, read-only. Do NOT use for writing code.",
-      "model": "deepseek/deepseek-flash",
-      "temperature": 0.0
+      "model": "deepseek/deepseek-flash"
     },
     "scout": {
       "description": "Use for external research: dependency source code, library docs, web pages. Read-only.",
