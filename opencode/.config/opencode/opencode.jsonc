@@ -9,10 +9,14 @@
   "permissions": [
     { "action": "external_directory", "resource": "*", "effect": "deny" },
     { "action": "external_directory", "resource": "~/*", "effect": "allow" },
-    { "action": "external_directory", "resource": "~/.ssh/id_*", "effect": "deny" },
-    { "action": "external_directory", "resource": "~/.ssh/*.pem", "effect": "deny" },
-    { "action": "external_directory", "resource": "~/.ssh/authorized_keys", "effect": "deny" },
-    { "action": "external_directory", "resource": "~/.ssh/known_hosts", "effect": "deny" }
+    { "action": "read", "resource": "~/.ssh/id_*", "effect": "deny" },
+    { "action": "edit", "resource": "~/.ssh/id_*", "effect": "deny" },
+    { "action": "read", "resource": "~/.ssh/*.pem", "effect": "deny" },
+    { "action": "edit", "resource": "~/.ssh/*.pem", "effect": "deny" },
+    { "action": "read", "resource": "~/.ssh/authorized_keys", "effect": "deny" },
+    { "action": "edit", "resource": "~/.ssh/authorized_keys", "effect": "deny" },
+    { "action": "read", "resource": "~/.ssh/known_hosts", "effect": "deny" },
+    { "action": "edit", "resource": "~/.ssh/known_hosts", "effect": "deny" }
   ],
   "providers": {
     "deepseek": {
@@ -30,11 +34,7 @@
   "agents": {
     "title": { "model": "deepseek/deepseek-flash" },
     "build": {
-      "model": "deepseek/deepseek-v4-pro#max",
-      "permissions": [
-        { "action": "edit", "resource": "*", "effect": "allow" },
-        { "action": "shell", "resource": "*", "effect": "allow" }
-      ]
+      "model": "deepseek/deepseek-v4-pro#max"
     },
     "plan": {
       "model": "deepseek/deepseek-flash#default",
