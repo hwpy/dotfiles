@@ -89,10 +89,10 @@ input {
 // Remember to uncomment the node by removing "/-"!
 
 output "DP-2" {
-    mode "2560x1440@59.951"
-    // mode "3840x2160@30.000"
+    // mode "2560x1440@59.951"
+    mode "3840x2160@30.000"
     // mode "1920x1080@60.000"
-    // scale 1.7
+    scale 1.7
     focus-at-startup
 }
 
