@@ -253,7 +253,11 @@ on-mode-changed = []
 [[on-window-detected]]
     if.app-id = 'org.videolan.vlc'
     if.app-name-regex-substring = 'VLC'
-    run = ['move-node-to-workspace 2']
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.app-id = 'io.mpv'
+    run = ['layout floating']
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.Outlook'
