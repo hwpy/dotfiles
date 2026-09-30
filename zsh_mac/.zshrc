@@ -27,6 +27,8 @@ alias ht="htop"
 alias bt="btop"
 alias cm="cmatrix -u 20"
 alias gdu="gdu-go"
+alias op="opencode"
+alias ops="opencode service stop"
 t() {
   if tmux list-sessions >/dev/null 2>&1; then
     local session

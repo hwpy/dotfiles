@@ -24,6 +24,8 @@ alias n="nvim"
 alias ht="htop"
 alias bt="btop"
 alias ra="ranger"
+alias op="opencode"
+alias ops="opencode service stop"
 t() {
   if tmux list-sessions >/dev/null 2>&1; then
     local session
