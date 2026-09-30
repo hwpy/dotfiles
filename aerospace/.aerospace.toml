@@ -219,6 +219,14 @@ on-mode-changed = []
     run = ['layout floating']
 
 [[on-window-detected]]
+    if.app-id = 'com.yourcompany.AmneziaVPN'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.app-id = 'org.amnezia.awg'
+    run = ['layout floating']
+
+[[on-window-detected]]
     if.app-id = 'com.vscodium'
     run = ['move-node-to-workspace 1']
 
