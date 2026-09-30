@@ -87,6 +87,15 @@ input {
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
+
+output "DP-2" {
+    mode "2560x1440@59.951"
+    // mode "3840x2160@30.000"
+    // mode "1920x1080@60.000"
+    // scale 1.7
+    focus-at-startup
+}
+
 output "eDP-1" {
     // Uncomment this line to disable this output.
     // off
@@ -116,13 +125,7 @@ output "eDP-1" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     position x=1280 y=0
-}
-
-output "DP-2" {
-    mode "2560x1440@59.951"
-    // mode "3840x2160@30.000"
-    // mode "1920x1080@60.000"
-    scale 1
+    focus-at-startup
 }
 
 // Settings that influence how windows are positioned and sized.
