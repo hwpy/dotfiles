@@ -122,11 +122,17 @@ on-mode-changed = []
     #     activate
     # end tell'
     # '''
+    cmd-h = [] # Disable "hide application"
+    cmd-alt-h = [] # Disable "hide others"
+    cmd-m = [] # Disable "minimize"
 
     # Open apps
     alt-enter = 'exec-and-forget open -b org.alacritty'
     alt-b = 'exec-and-forget open -b org.mozilla.firefox'
     alt-e = 'exec-and-forget open ~/Downloads'
+
+    # Screen
+    alt-shift-s = 'exec-and-forget screencapture -i -c'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
