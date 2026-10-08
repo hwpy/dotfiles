@@ -6,21 +6,27 @@
       "value" : "/Applications/MacPorts/Alacritty.app"
     },
     {
+      "actions" : [
+        {
+          "key" : "f",
+          "type" : "application",
+          "value" : "/Applications/Firefox.app"
+        },
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Safari.app"
+        },
+        {
+          "key" : "y",
+          "type" : "application",
+          "value" : "/Applications/Yandex.app"
+        }
+      ],
+      "iconPath" : "globe",
       "key" : "b",
-      "type" : "application",
-      "value" : "/Applications/Firefox.app"
-    },
-    {
-      "iconPath" : "hammer.fill",
-      "key" : "w",
-      "label" : "Workspace",
-      "type" : "command",
-      "value" : "$HOME/.config/leaderkey/open-work.sh"
-    },
-    {
-      "key" : "p",
-      "type" : "application",
-      "value" : "/System/Applications/System Settings.app"
+      "label" : "Browsers",
+      "type" : "group"
     },
     {
       "iconPath" : "/System/Library/CoreServices/Finder.app",
@@ -30,57 +36,23 @@
       "value" : "open -a Finder ~/Downloads/"
     },
     {
+      "iconPath" : "hammer.fill",
+      "key" : "w",
+      "label" : "Workspace",
+      "type" : "command",
+      "value" : "$HOME/.config/leaderkey/open-work.sh"
+    },
+    {
       "actions" : [
         {
-          "key" : "1",
+          "key" : "m",
           "type" : "application",
-          "value" : "/Applications/1Password.app"
+          "value" : "/System/Applications/Mail.app"
         },
         {
-          "actions" : [
-            {
-              "key" : "a",
-              "type" : "application",
-              "value" : "/System/Applications/App Store.app"
-            },
-            {
-              "key" : "c",
-              "type" : "application",
-              "value" : "/System/Applications/Calendar.app"
-            },
-            {
-              "key" : "e",
-              "type" : "application",
-              "value" : "/System/Applications/Mail.app"
-            },
-            {
-              "key" : "s",
-              "type" : "application",
-              "value" : "/Applications/Safari.app"
-            },
-            {
-              "key" : "m",
-              "type" : "application",
-              "value" : "/System/Applications/Music.app"
-            },
-            {
-              "key" : "r",
-              "type" : "application",
-              "value" : "/System/Applications/Utilities/Activity Monitor.app"
-            }
-          ],
-          "key" : "a",
-          "type" : "group"
-        },
-        {
-          "key" : "o",
+          "key" : "c",
           "type" : "application",
-          "value" : "/Applications/Obsidian.app"
-        },
-        {
-          "key" : "s",
-          "type" : "application",
-          "value" : "/Applications/Steam.app"
+          "value" : "/System/Applications/Calendar.app"
         },
         {
           "key" : "t",
@@ -88,23 +60,129 @@
           "value" : "/Applications/Telegram.app"
         },
         {
-          "actions" : [
-            {
-              "key" : "m",
-              "type" : "application",
-              "value" : "/Applications/Яндекс Музыка.app"
-            },
-            {
-              "key" : "b",
-              "type" : "application",
-              "value" : "/Applications/Yandex.app"
-            }
-          ],
-          "key" : "y",
-          "type" : "group"
+          "iconPath" : "bubble.right.fill",
+          "key" : "k",
+          "label" : "Kontur Talk",
+          "type" : "command",
+          "value" : "open -b kontur.talk"
+        },
+        {
+          "key" : "w",
+          "type" : "application",
+          "value" : "/Applications/Mattermost.app"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "value" : "/Applications/Microsoft Outlook.app"
         }
       ],
-      "key" : "o",
+      "iconPath" : "bubble.left.and.bubble.right.fill",
+      "key" : "c",
+      "label" : "Communication",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "c",
+          "type" : "application",
+          "value" : "/Applications/VSCodium.app"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "value" : "/Applications/Obsidian.app"
+        }
+      ],
+      "iconPath" : "chevron.left.forwardslash.chevron.right",
+      "key" : "d",
+      "label" : "Dev",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "m",
+          "type" : "application",
+          "value" : "/System/Applications/Music.app"
+        },
+        {
+          "key" : "y",
+          "type" : "application",
+          "value" : "/Applications/Яндекс Музыка.app"
+        },
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Steam.app"
+        },
+        {
+          "key" : "v",
+          "type" : "application",
+          "value" : "/Applications/VLC.app"
+        },
+        {
+          "iconPath" : "play.rectangle.fill",
+          "key" : "p",
+          "label" : "mpv",
+          "type" : "command",
+          "value" : "open -b io.mpv"
+        }
+      ],
+      "iconPath" : "play.rectangle.on.rectangle",
+      "key" : "m",
+      "label" : "Media",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "iconPath" : "lock.shield.fill",
+          "key" : "v",
+          "label" : "AmneziaVPN",
+          "type" : "command",
+          "value" : "open -b com.yourcompany.AmneziaVPN"
+        },
+        {
+          "iconPath" : "network",
+          "key" : "w",
+          "label" : "AmneziaWG",
+          "type" : "command",
+          "value" : "open -b org.amnezia.awg"
+        }
+      ],
+      "iconPath" : "network",
+      "key" : "n",
+      "label" : "Network",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/System/Applications/System Settings.app"
+        },
+        {
+          "key" : "a",
+          "type" : "application",
+          "value" : "/System/Applications/Utilities/Activity Monitor.app"
+        },
+        {
+          "key" : "t",
+          "type" : "application",
+          "value" : "/System/Applications/App Store.app"
+        },
+        {
+          "key" : "p",
+          "type" : "application",
+          "value" : "/Applications/1Password.app"
+        }
+      ],
+      "iconPath" : "gearshape.fill",
+      "key" : "s",
+      "label" : "System",
       "type" : "group"
     }
   ],
