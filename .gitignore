@@ -35,10 +35,9 @@ noctalia/.config/noctalia/*
 !/nvim/
 nvim/.config/nvim/lazy-lock.json
 !/opencode/
-opencode/.config/opencode/node_modules/
-opencode/.config/opencode/package.json
-opencode/.config/opencode/package-lock.json
-opencode/.config/opencode/.gitignore
+opencode/.config/opencode/*
+!opencode/.config/opencode/AGENTS.md
+!opencode/.config/opencode/opencode.jsonc
 !/picom/
 !/polybar/
 polybar/.config/polybar/scale_active.ini
