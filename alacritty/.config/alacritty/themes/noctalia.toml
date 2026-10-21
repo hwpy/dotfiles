@@ -1,68 +1,68 @@
 [colors.primary]
-background = '#0e1416'
-foreground = '#dee3e5'
+background = '#0f1417'
+foreground = '#dfe3e7'
 
 [colors.cursor]
-text = '#0e1416'
-cursor = '#dee3e5'
+text = '#0f1417'
+cursor = '#dfe3e7'
 
 [colors.vi_mode_cursor]
-text = '#0e1416'
-cursor = '#83d2e4'
+text = '#0f1417'
+cursor = '#8dcff1'
 
 [colors.search.matches]
-foreground = '#3f484b'
-background = '#bdc5eb'
+foreground = '#40484c'
+background = '#c8c2ea'
 
 [colors.search.focused_match]
-foreground = '#3f484b'
-background = '#83d2e4'
+foreground = '#40484c'
+background = '#8dcff1'
 
 [colors.footer_bar]
-foreground = '#3f484b'
-background = '#dee3e5'
+foreground = '#40484c'
+background = '#dfe3e7'
 
 [colors.hints.start]
-foreground = '#3f484b'
-background = '#b2cbd1'
+foreground = '#40484c'
+background = '#b4cad6'
 
 [colors.hints.end]
-foreground = '#3f484b'
-background = '#b2cbd1'
+foreground = '#40484c'
+background = '#b4cad6'
 
 [colors.selection]
-text = '#bfc8cb'
-background = '#3f484b'
+text = '#c0c7cd'
+background = '#40484c'
 
 
 [colors.normal]
-black   = '#3f484b'
+black   = '#40484c'
 red     = '#ffb4ab'
-green   = '#83d2e4'
-yellow  = '#b2cbd1'
-blue    = '#bdc5eb'
-magenta = '#83d2e4'
-cyan    = '#b2cbd1'
-white   = '#dee3e5'
+green   = '#8dcff1'
+yellow  = '#b4cad6'
+blue    = '#c8c2ea'
+magenta = '#8dcff1'
+cyan    = '#b4cad6'
+white   = '#dfe3e7'
 
 
 [colors.bright]
-black   = '#899295'
+black   = '#8a9297'
 red     = '#ffb4ab'
-green   = '#83d2e4'
-yellow  = '#b2cbd1'
-blue    = '#bdc5eb'
-magenta = '#83d2e4'
-cyan    = '#b2cbd1'
-white   = '#dee3e5'
+green   = '#8dcff1'
+yellow  = '#b4cad6'
+blue    = '#c8c2ea'
+magenta = '#8dcff1'
+cyan    = '#b4cad6'
+white   = '#dfe3e7'
 
 
 [colors.dim]
-black   = '#3f484b'
+black   = '#40484c'
 red     = '#ffb4ab'
-green   = '#83d2e4'
-yellow  = '#b2cbd1'
-blue    = '#bdc5eb'
-magenta = '#83d2e4'
-cyan    = '#b2cbd1'
-white   = '#dee3e5'
+green   = '#8dcff1'
+yellow  = '#b4cad6'
+blue    = '#c8c2ea'
+magenta = '#8dcff1'
+cyan    = '#b4cad6'
+white   = '#dfe3e7'
