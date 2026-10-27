@@ -58,9 +58,9 @@
     },
     "plan": {
       "model": "deepseek/deepseek-flash#default",
-      "permissions": [
-        { "action": "shell", "resource": "*", "effect": "ask" }
-      ]
+//      "permissions": [
+//        { "action": "shell", "resource": "*", "effect": "ask" }
+//      ]
     },
     "general": {
       "description": "Use for complex multi-step sub-tasks needing deep reasoning: hard bugs, architecture, large refactors. Invoke when a task is too big to handle in the main flow. Can edit files.",
