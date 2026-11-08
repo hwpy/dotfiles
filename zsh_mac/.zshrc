@@ -30,14 +30,28 @@ alias gdu="gdu-go"
 alias op="opencode"
 alias ops="opencode service stop"
 t() {
-  if tmux list-sessions >/dev/null 2>&1; then
-    local session
-    session=$(tmux list-sessions -F '#S' | fzf --no-preview --height 40% --reverse --prompt='Выберите сессию tmux: ')
-    if [[ -n "$session" ]]; then
-      tmux attach-session -t "$session"
+  local sessions session
+
+  if ! tmux list-sessions >/dev/null 2>&1; then
+    tmux start-server 2>/dev/null
+    # холодный старт: ждать фоновый restore continuum
+    [[ -f ~/.local/share/tmux/resurrect/last ]] && sleep 2
+  fi
+
+  sessions=$(tmux list-sessions -F '#S' 2>/dev/null)
+  if [[ -z "$sessions" ]]; then
+    tmux new-session
+    return
+  fi
+
+  session=$(printf '%s\n' "$sessions" | fzf --no-preview --height 40% --reverse --prompt='Выберите сессию tmux: ')
+
+  if [[ -n "$session" ]]; then
+    if [[ -n "$TMUX" ]]; then
+      tmux switch-client -t "=$session"
+    else
+      tmux attach-session -t "=$session"
     fi
-  else
-    tmux
   fi
 }
 
