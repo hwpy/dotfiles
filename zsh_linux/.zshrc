@@ -16,7 +16,8 @@ fi
 
 # aliases
 # alias pclean="sh ~/Documents/macports_clean.sh"
-alias c="clear && exec zsh"
+alias c="clear"
+alias ff="fastfetch"
 alias cm="cmatrix -u 20"
 alias h="history"
 alias q="exit"
@@ -56,9 +57,6 @@ export LUA_LS="/sbin/lua-language-server"
 
 # Настройки fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --prompt='> ' --preview 'cat {} | head -n 200'"
-
-# Вывод системной информации
-fastfetch
 
 # yazi
 function y() {

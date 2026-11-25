@@ -19,7 +19,8 @@ if [[ -z "$SSH_AUTH_SOCK" ]]; then
 fi
 
 # aliases
-alias c="clear && fastfetch"
+alias c="clear"
+alias ff="fastfetch"
 alias h="history"
 alias q="exit"
 alias n="nvim"
@@ -69,10 +70,6 @@ export VISUAL="nvim"
 #export CXX="$(brew --prefix gcc@14)/bin/g++-14"
 
 #PROMPT='%n@%m %~$ '
-
-
-# вывод системной информации
-fastfetch
 
 # yazi
 function y() {

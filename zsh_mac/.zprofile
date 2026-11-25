@@ -35,3 +35,6 @@ export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
 
 # user path
 export PATH="~/.local/bin:$PATH"
+
+# вывод системной информации
+fastfetch
