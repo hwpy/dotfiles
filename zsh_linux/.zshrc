@@ -55,6 +55,8 @@ t() {
 
 export LUA_LS="/sbin/lua-language-server"
 
+[[ -t 1 ]] && fastfetch
+
 # Настройки fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --prompt='> ' --preview 'cat {} | head -n 200'"
 

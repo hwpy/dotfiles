@@ -56,6 +56,8 @@ t() {
   fi
 }
 
+[[ -t 1 ]] && fastfetch
+
 # настройки fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --prompt='> ' --preview 'cat {} | head -n 200'"
 # редактор по умолчанию
