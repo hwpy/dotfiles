@@ -11,5 +11,5 @@ run = "plugin bunny fuzzy"
 
 [[mgr.prepend_keymap]]
 on = [ "M" ]
-run = "shell 'mpv %h' --orphan"
-desc = "Play in mpv (detached)"
+run = "shell 'mpv --force-window=yes %h' --orphan"
+desc = "Play in mpv (detached window)"
