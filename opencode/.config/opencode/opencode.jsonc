@@ -9,6 +9,9 @@
   "permissions": [
     { "action": "external_directory", "resource": "*", "effect": "deny" },
     { "action": "external_directory", "resource": "~/*", "effect": "allow" },
+    { "action": "external_directory", "resource": "/private/var/folders/*", "effect": "allow" },
+    { "action": "external_directory", "resource": "/tmp/*", "effect": "allow" },
+    { "action": "external_directory", "resource": "/private/tmp/*", "effect": "allow" },
     { "action": "external_directory", "resource": "~/.ssh/*", "effect": "deny" },
     { "action": "read", "resource": "~/.ssh/id_*", "effect": "deny" },
     { "action": "edit", "resource": "~/.ssh/id_*", "effect": "deny" },
@@ -18,6 +21,19 @@
     { "action": "edit", "resource": "~/.ssh/authorized_keys", "effect": "deny" },
     { "action": "read", "resource": "~/.ssh/known_hosts", "effect": "deny" },
     { "action": "edit", "resource": "~/.ssh/known_hosts", "effect": "deny" },
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "cd *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
     { "action": "shell", "resource": "git commit *", "effect": "ask" },
     { "action": "shell", "resource": "git push *", "effect": "ask" },
     { "action": "shell", "resource": "git pull *", "effect": "ask" },
@@ -58,9 +74,24 @@
     },
     "plan": {
       "model": "deepseek/deepseek-flash#default",
-//      "permissions": [
-//        { "action": "shell", "resource": "*", "effect": "ask" }
-//      ]
+      "permissions": [
+        { "action": "shell", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "cd *", "effect": "allow" },
+        { "action": "shell", "resource": "ls *", "effect": "allow" },
+        { "action": "shell", "resource": "cat *", "effect": "allow" },
+        { "action": "shell", "resource": "head *", "effect": "allow" },
+        { "action": "shell", "resource": "tail *", "effect": "allow" },
+        { "action": "shell", "resource": "wc *", "effect": "allow" },
+        { "action": "shell", "resource": "grep *", "effect": "allow" },
+        { "action": "shell", "resource": "rg *", "effect": "allow" },
+        { "action": "shell", "resource": "git status *", "effect": "allow" },
+        { "action": "shell", "resource": "git diff *", "effect": "allow" },
+        { "action": "shell", "resource": "git log *", "effect": "allow" },
+        { "action": "shell", "resource": "git show *", "effect": "allow" },
+        { "action": "shell", "resource": "rm *", "effect": "ask" },
+        { "action": "shell", "resource": "rmdir *", "effect": "ask" },
+        { "action": "shell", "resource": "unlink *", "effect": "ask" }
+      ]
     },
     "general": {
       "description": "Use for complex multi-step sub-tasks needing deep reasoning: hard bugs, architecture, large refactors. Invoke when a task is too big to handle in the main flow. Can edit files.",
